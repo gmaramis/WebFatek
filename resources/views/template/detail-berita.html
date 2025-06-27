@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Berita - Fakultas Teknik UNIMA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    .fade-in { animation: fadeIn 1s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(30px);} to { opacity: 1; transform: none; } }
+    .dropcap::first-letter { float: left; font-size: 2.5em; line-height: 1; font-weight: bold; color: #ea580c; margin-right: 0.1em; }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Top Bar Info -->
+  <div class="w-full bg-orange-600 text-white text-xs md:text-sm h-8 flex items-center">
+    <div class="container mx-auto flex justify-between items-center px-2 md:px-4">
+      <div class="flex items-center space-x-3">
+        <span class="flex items-center"><i class="fas fa-university mr-1"></i> Fakultas Teknik</span>
+        <span class="hidden md:inline-block h-3 w-px bg-orange-200 mx-2"></span>
+        <span class="flex items-center"><i class="fas fa-envelope mr-1"></i> fatek@unima.ac.id</span>
+      </div>
+      <form class="hidden md:flex items-center space-x-1 mt-3">
+        <input type="text" placeholder="Search..." class="rounded px-2 py-1 text-orange-800 text-xs md:text-sm h-6 md:h-7" />
+        <button type="submit" class="px-2 py-1 bg-white text-orange-600 rounded text-xs md:text-sm h-6 md:h-7">Cari</button>
+      </form>
+    </div>
+  </div>
+  <!-- Header Logo + Judul -->
+  <header class="w-full bg-orange-600 shadow z-50">
+    <div class="container mx-auto flex items-center justify-between py-3 px-4">
+      <div class="flex items-center space-x-4">
+        <img src="img/logo unima.png" alt="Logo UNIMA" class="w-14 h-14 object-contain bg-white rounded-full p-1" />
+        <div>
+          <h1 class="text-xl font-bold text-white leading-tight">Fakultas Teknik</h1>
+          <p class="text-sm text-orange-100">Universitas Negeri Manado</p>
+        </div>
+      </div>
+      <form class="md:hidden">
+        <input type="text" placeholder="Search..." class="rounded px-2 py-1 text-orange-800" />
+      </form>
+      <button id="mobile-menu-btn" class="md:hidden text-white ml-4">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    <!-- Navigation -->
+    <nav class="w-full border-t border-orange-400 bg-orange-600">
+      <div class="container mx-auto px-4">
+        <div class="hidden md:flex items-center space-x-6 py-2">
+          <a href="index.html#home" class="nav-link text-white hover:text-orange-200 font-semibold">Home</a>
+          <!-- Profil Dropdown -->
+          <div class="relative group">
+            <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center">Profil <i class="fas fa-caret-down ml-1"></i></button>
+            <ul class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
+              <li><a href="visi-misi.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Visi Misi</a></li>
+              <li><a href="kebijakan.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Kebijakan</a></li>
+              <li><a href="dosen.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Dosen</a></li>
+              <li><a href="struktur.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Struktur Pimpinan</a></li>
+              <li><a href="jurusan.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Jurusan</a></li>
+            </ul>
+          </div>
+          <!-- Akademik Dropdown -->
+          <div class="relative group">
+            <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center">Akademik <i class="fas fa-caret-down ml-1"></i></button>
+            <ul class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
+              <li><a href="magang-kkn.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Magang & KKN</a></li>
+              <li><a href="pedoman-akademik.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Pedoman Akademik</a></li>
+              <li><a href="kalender-akademik.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Kalender Akademik</a></li>
+              <li><a href="si-unima.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">SI Unima</a></li>
+              <li><a href="lms-unima.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">LMS Unima</a></li>
+            </ul>
+          </div>
+          <!-- Kemahasiswaan & Alumni Dropdown -->
+          <div class="relative group">
+            <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center">Kemahasiswaan & Alumni <i class="fas fa-caret-down ml-1"></i></button>
+            <ul class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
+              <li><a href="ormawa.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">ORMAWA</a></li>
+              <li><a href="alumni.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Alumni</a></li>
+            </ul>
+          </div>
+          <!-- Unit Dropdown -->
+          <div class="relative group">
+            <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center">Unit <i class="fas fa-caret-down ml-1"></i></button>
+            <ul class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
+              <li><a href="penjaminan-mutu.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Unit Penjaminan Mutu</a></li>
+              <li><a href="p3ki.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Rumah Publikasi (P3KI)</a></li>
+              <li><a href="p3rpm.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Ruang Kolaborasi (P3RPM)</a></li>
+            </ul>
+          </div>
+          <a href="zona-integritas.html" class="nav-link text-white hover:text-orange-200 font-semibold">Zona Integritas</a>
+          <a href="humas-kerjasama.html" class="nav-link text-white hover:text-orange-200 font-semibold">Humas & Kerjasama</a>
+          <!-- Layanan Dropdown -->
+          <div class="relative group">
+            <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center">Layanan <i class="fas fa-caret-down ml-1"></i></button>
+            <ul class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
+              <li>
+                <div class="relative group">
+                  <a href="#" class="block px-4 py-2 text-orange-800 hover:bg-orange-50 flex items-center justify-between">Download <i class="fas fa-caret-right ml-2"></i></a>
+                  <ul class="absolute left-full top-0 mt-0 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
+                    <li><a href="akreditasi.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Link Akreditasi Institusi Unima</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="tracer-study.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Tracer Study</a></li>
+              <li><a href="survei-layanan.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Survei Layanan</a></li>
+              <li><a href="laboratorium.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Layanan Laboratorium</a></li>
+              <li><a href="layanan-akademik.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Layanan Akademik</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Hero Berita -->
+  <section class="relative w-full h-72 md:h-96 flex items-end mb-8 fade-in">
+    <img src="img/fto fatek 1.jpg" alt="Gambar Berita" class="absolute inset-0 w-full h-full object-cover object-center rounded-b-3xl shadow-lg" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-b-3xl"></div>
+    <div class="relative z-10 p-8 md:p-12">
+      <span class="inline-block bg-orange-600/90 text-white text-xs px-3 py-1 rounded-full mb-3 shadow">Kategori: Prestasi</span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-2 drop-shadow-lg">Mahasiswa FT UNIMA Raih Juara Kompetisi Robotik Nasional</h1>
+      <div class="flex items-center text-orange-100 text-sm space-x-4">
+        <span><i class="fas fa-calendar-alt mr-1"></i> 15 Desember 2024</span>
+        <span><i class="fas fa-user mr-1"></i> Admin Fatek</span>
+      </div>
+    </div>
+  </section>
+  <main class="container mx-auto px-4 max-w-6xl fade-in">
+    <a href="index.html#news" class="inline-flex items-center text-orange-700 hover:underline mb-6"><i class="fas fa-arrow-left mr-2"></i>Kembali ke Daftar Berita</a>
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Kolom Kiri: Detail Berita -->
+      <div class="w-full lg:w-2/3">
+        <article class="bg-white rounded-2xl shadow-xl p-6 md:p-10 mb-8">
+          <div class="text-gray-800 leading-relaxed space-y-6">
+            <p class="dropcap">
+              Tim robotik Fakultas Teknik UNIMA berhasil meraih juara pertama dalam kompetisi robotik nasional yang diselenggarakan di Bandung. Prestasi ini menjadi bukti nyata kualitas mahasiswa dan dosen dalam bidang teknologi dan inovasi.
+            </p>
+            <blockquote class="border-l-4 border-orange-500 pl-4 italic text-orange-800 bg-orange-50 py-2 rounded-r-lg font-semibold">
+              "Kemenangan ini adalah hasil kerja keras, kolaborasi, dan semangat pantang menyerah seluruh tim robotik Fatek UNIMA."
+            </blockquote>
+            <p>
+              Kompetisi ini diikuti oleh lebih dari 50 tim dari berbagai universitas di Indonesia. Tim Fatek UNIMA menampilkan robot cerdas yang mampu menyelesaikan tantangan dengan presisi dan kecepatan tinggi. Keberhasilan ini diharapkan dapat memotivasi mahasiswa lain untuk terus berinovasi dan berprestasi di tingkat nasional maupun internasional.
+            </p>
+            <p>
+              <span class="font-bold text-orange-700">Bagikan berita ini:</span>
+              <span class="inline-flex space-x-2 ml-2">
+                <a href="https://wa.me/?text=https://fatek.unima.ac.id/detail-berita.html" target="_blank" class="hover:text-green-500 transition"><i class="fab fa-whatsapp fa-lg"></i></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://fatek.unima.ac.id/detail-berita.html" target="_blank" class="hover:text-blue-600 transition"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="https://twitter.com/intent/tweet?url=https://fatek.unima.ac.id/detail-berita.html" target="_blank" class="hover:text-sky-500 transition"><i class="fab fa-twitter fa-lg"></i></a>
+              </span>
+            </p>
+          </div>
+        </article>
+        <div class="flex justify-between items-center mb-12">
+          <a href="#" class="text-orange-700 hover:underline flex items-center"><i class="fas fa-arrow-left mr-2"></i> Berita Sebelumnya</a>
+          <a href="#" class="text-orange-700 hover:underline flex items-center">Berita Berikutnya <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+      </div>
+      <!-- Kolom Kanan: Berita Lainnya -->
+      <aside class="w-full lg:w-1/3">
+        <div class="bg-white rounded-2xl shadow-xl p-6 mb-8">
+          <h3 class="text-xl font-bold text-orange-800 mb-4">Berita Lainnya</h3>
+          <div class="space-y-6">
+            <a href="detail-berita.html" class="flex items-center space-x-4 group">
+              <img src="img/fto fatek 1.jpg" alt="Berita 1" class="w-20 h-16 object-cover rounded-lg shadow group-hover:scale-105 transition" />
+              <div>
+                <div class="text-sm text-gray-500 mb-1"><i class="fas fa-calendar-alt mr-1"></i> 12 Des 2024</div>
+                <div class="font-semibold text-secondary group-hover:text-orange-700 transition">Kerjasama Baru dengan Google untuk Program AI</div>
+              </div>
+            </a>
+            <a href="detail-berita.html" class="flex items-center space-x-4 group">
+              <img src="img/mesin.jpg" alt="Berita 2" class="w-20 h-16 object-cover rounded-lg shadow group-hover:scale-105 transition" />
+              <div>
+                <div class="text-sm text-gray-500 mb-1"><i class="fas fa-calendar-alt mr-1"></i> 10 Des 2024</div>
+                <div class="font-semibold text-secondary group-hover:text-orange-700 transition">Laboratorium Baru untuk Teknologi Hijau</div>
+              </div>
+            </a>
+            <a href="detail-berita.html" class="flex items-center space-x-4 group">
+              <img src="img/ars.jpg" alt="Berita 3" class="w-20 h-16 object-cover rounded-lg shadow group-hover:scale-105 transition" />
+              <div>
+                <div class="text-sm text-gray-500 mb-1"><i class="fas fa-calendar-alt mr-1"></i> 8 Des 2024</div>
+                <div class="font-semibold text-secondary group-hover:text-orange-700 transition">Mahasiswa Arsitektur Menang Lomba Desain Nasional</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer id="contact" class="bg-secondary text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="flex flex-col items-center justify-center">
+          <div class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4">
+            <img src="img/logo unima.png" alt="Logo UNIMA" class="w-28 h-28 object-contain" />
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Informasi Kontak</h4>
+          <div class="space-y-4">
+            <div class="flex items-center text-gray-300">
+              <i class="fas fa-map-marker-alt mr-3 text-accent"></i>
+              <span>Jl. Kampus UNIMA, Tondano, Minahasa, Sulawesi Utara</span>
+            </div>
+            <div class="flex items-center text-gray-300">
+              <i class="fas fa-phone mr-3 text-accent"></i>
+              <span>+62 431 325 123</span>
+            </div>
+            <div class="flex items-center text-gray-300">
+              <i class="fas fa-envelope mr-3 text-accent"></i>
+              <span>fatek@unima.ac.id</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Link Cepat</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Program Studi</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Fakultas & UNIMA</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Penelitian</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Publikasi</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Alumni</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Kerjasama</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+          <div class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4">
+            <img src="img/logo blu.png" alt="Logo BLU" class="w-28 h-28 object-contain" />
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-12 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex space-x-4 mb-4 md:mb-0">
+            <a href="https://www.facebook.com/share/16qPWv3mWv/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-youtube"></i></a>
+          </div>
+          <p class="text-gray-400 text-center md:text-right">© 2024 Fakultas Teknik Universitas Negeri Manado. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html> 
