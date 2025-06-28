@@ -19,6 +19,8 @@ class DosenResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
     
+    protected static ?string $navigationGroup = 'Profil';
+    
     protected static ?string $navigationLabel = 'Dosen';
     
     protected static ?string $modelLabel = 'Dosen';

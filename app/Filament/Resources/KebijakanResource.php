@@ -19,6 +19,8 @@ class KebijakanResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     
+    protected static ?string $navigationGroup = 'Profil';
+    
     protected static ?string $navigationLabel = 'Kebijakan';
     
     protected static ?string $modelLabel = 'Kebijakan';
