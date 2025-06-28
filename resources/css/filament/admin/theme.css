@@ -1,0 +1,53 @@
+/* Filament Performance Optimizations */
+
+/* Reduce animation duration for faster feel */
+.fi-btn,
+.fi-dropdown,
+.fi-modal,
+.fi-sidebar {
+    transition-duration: 150ms !important;
+}
+
+/* Optimize loading states */
+.fi-loading {
+    transition: opacity 0.1s ease-in-out;
+}
+
+/* Reduce shadow complexity for better performance */
+.fi-sidebar,
+.fi-modal,
+.fi-dropdown {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1) !important;
+}
+
+/* Optimize table rendering */
+.fi-ta-table {
+    contain: layout style paint;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .fi-btn,
+    .fi-dropdown,
+    .fi-modal,
+    .fi-sidebar,
+    .fi-loading {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Optimize form inputs */
+.fi-fo-field {
+    contain: layout style;
+}
+
+/* Reduce layout shift */
+.fi-sidebar {
+    will-change: transform;
+}
+
+/* Optimize notifications */
+.fi-no-item {
+    contain: layout style paint;
+}

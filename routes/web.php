@@ -1,9 +1,27 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Kebijakan;
 
 Route::get('/', function () {
     return view('home');
+});
+
+// API Routes
+Route::get('/api/kebijakan/{id}', function ($id) {
+    $kebijakan = Kebijakan::active()->find($id);
+    
+    if ($kebijakan) {
+        return response()->json([
+            'success' => true,
+            'kebijakan' => $kebijakan
+        ]);
+    } else {
+        return response()->json([
+            'success' => false,
+            'message' => 'Kebijakan tidak ditemukan'
+        ], 404);
+    }
 });
 
 // Profil
