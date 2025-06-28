@@ -23,10 +23,10 @@
   </div>
 </div>
 <!-- Header Logo + Judul -->
-<header class="w-full bg-orange-600 shadow z-50">
+<header class="w-full bg-orange-600 shadow-lg">
   <div class="container mx-auto flex items-center justify-between py-3 px-4">
     <div class="flex items-center space-x-4">
-      <img src="{{ asset('img/logo unima.png') }}" alt="Logo UNIMA" class="w-14 h-14 object-contain bg-white rounded-full p-1" />
+      <img src="{{ asset('img/logo-unima.png') }}" alt="Logo UNIMA" class="w-14 h-14 object-contain bg-white rounded-full p-1" />
       <div>
         <h1 class="text-xl font-bold text-white leading-tight">Fakultas Teknik</h1>
         <p class="text-sm text-orange-100">Universitas Negeri Manado</p>
@@ -107,4 +107,94 @@
       </div>
     </div>
   </nav>
-</header> 
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden hidden bg-orange-600 border-t border-orange-400">
+  <div class="container mx-auto px-4 py-4">
+    <div class="space-y-4">
+      <a href="{{ url('/home') }}" class="block text-white hover:text-orange-200 font-semibold">Home</a>
+      
+      <!-- Mobile Profil -->
+      <div class="space-y-2">
+        <div class="text-white font-semibold">Profil</div>
+        <div class="pl-4 space-y-2">
+          <a href="{{ url('/visi-misi') }}" class="block text-orange-100 hover:text-white">Visi Misi</a>
+          <a href="{{ url('/kebijakan') }}" class="block text-orange-100 hover:text-white">Kebijakan</a>
+          <a href="{{ url('/dosen') }}" class="block text-orange-100 hover:text-white">Dosen</a>
+          <a href="{{ url('/struktur') }}" class="block text-orange-100 hover:text-white">Struktur Pimpinan</a>
+          <a href="{{ url('/jurusan') }}" class="block text-orange-100 hover:text-white">Jurusan</a>
+        </div>
+      </div>
+      
+      <!-- Mobile Akademik -->
+      <div class="space-y-2">
+        <div class="text-white font-semibold">Akademik</div>
+        <div class="pl-4 space-y-2">
+          <a href="{{ url('/#programs') }}" class="block text-orange-100 hover:text-white">Program Studi</a>
+          <a href="{{ url('/magang-kkn') }}" class="block text-orange-100 hover:text-white">Magang & KKN</a>
+          <a href="{{ url('/pedoman-akademik') }}" class="block text-orange-100 hover:text-white">Pedoman Akademik</a>
+          <a href="{{ url('/kalender-akademik') }}" class="block text-orange-100 hover:text-white">Kalender Akademik</a>
+          <a href="{{ url('/si-unima') }}" class="block text-orange-100 hover:text-white">SI Unima</a>
+          <a href="{{ url('/lms-unima') }}" class="block text-orange-100 hover:text-white">LMS Unima</a>
+        </div>
+      </div>
+      
+      <!-- Mobile Kemahasiswaan -->
+      <div class="space-y-2">
+        <div class="text-white font-semibold">Kemahasiswaan & Alumni</div>
+        <div class="pl-4 space-y-2">
+          <a href="{{ url('/ormawa') }}" class="block text-orange-100 hover:text-white">ORMAWA</a>
+          <a href="{{ url('/alumni') }}" class="block text-orange-100 hover:text-white">Alumni</a>
+        </div>
+      </div>
+      
+      <!-- Mobile Unit -->
+      <div class="space-y-2">
+        <div class="text-white font-semibold">Unit</div>
+        <div class="pl-4 space-y-2">
+          <a href="{{ url('/penjaminan-mutu') }}" class="block text-orange-100 hover:text-white">Unit Penjaminan Mutu</a>
+          <a href="{{ url('/p3ki') }}" class="block text-orange-100 hover:text-white">Rumah Publikasi (P3KI)</a>
+          <a href="{{ url('/p3rpm') }}" class="block text-orange-100 hover:text-white">Ruang Kolaborasi (P3RPM)</a>
+        </div>
+      </div>
+      
+      <a href="{{ url('/zona-integritas') }}" class="block text-white hover:text-orange-200 font-semibold">Zona Integritas</a>
+      <a href="{{ url('/humas-kerjasama') }}" class="block text-white hover:text-orange-200 font-semibold">Humas & Kerjasama</a>
+      
+      <!-- Mobile Layanan -->
+      <div class="space-y-2">
+        <div class="text-white font-semibold">Layanan</div>
+        <div class="pl-4 space-y-2">
+          <a href="{{ url('/akreditasi') }}" class="block text-orange-100 hover:text-white">Link Akreditasi Institusi Unima</a>
+          <a href="{{ url('/tracer-study') }}" class="block text-orange-100 hover:text-white">Tracer Study</a>
+          <a href="{{ url('/survei-layanan') }}" class="block text-orange-100 hover:text-white">Survei Layanan</a>
+          <a href="{{ url('/laboratorium') }}" class="block text-orange-100 hover:text-white">Layanan Laboratorium</a>
+          <a href="{{ url('/layanan-akademik') }}" class="block text-orange-100 hover:text-white">Layanan Akademik</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('#mobile-menu') && !event.target.closest('#mobile-menu-btn')) {
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+    });
+});
+</script> 

@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Fakultas Teknik - Universitas Negeri Manado')</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="{{ asset('css/style.css') }}" as="style">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
     tailwind.config = {
@@ -55,6 +61,23 @@
     };
     </script>
     <style>
+        /* Navbar Protection - Ensure navbar stays on top */
+        header, nav, .bg-secondary-800 {
+            position: relative !important;
+            z-index: 9999 !important;
+        }
+        
+        /* Ensure main content doesn't interfere with navbar */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Fix for any potential overflow issues */
+        body {
+            overflow-x: hidden;
+        }
+        
         /* Custom Scrollbar Styling */
         ::-webkit-scrollbar {
             width: 12px;
@@ -67,8 +90,37 @@
             border-radius: 6px;
             border: 3px solid #f1f5f9; /* Padding around handle */
         }
+        
+        /* Lazy loading placeholder */
+        .lazy-image {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .lazy-image.loaded {
+            opacity: 1;
+        }
+        
+        /* Navbar specific fixes */
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-1px);
+        }
+        
+        /* Mobile menu fixes */
+        #mobile-menu {
+            transition: all 0.3s ease;
+        }
+        
+        #mobile-menu.hidden {
+            display: none !important;
+        }
     </style>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/optimization.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     @stack('head')
     <!-- AOS Animate On Scroll CSS -->
@@ -84,6 +136,7 @@
     @include('partials.footer')
 
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/optimization.js') }}"></script>
     <!-- AOS Animate On Scroll JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -91,6 +144,32 @@
         once: true,
         duration: 800,
         easing: 'ease-out-cubic',
+      });
+      
+      // Lazy loading for images
+      document.addEventListener('DOMContentLoaded', function() {
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.classList.add('loaded');
+              img.removeAttribute('data-src');
+              observer.unobserve(img);
+            }
+          });
+        });
+        
+        lazyImages.forEach(img => imageObserver.observe(img));
+        
+        // Ensure navbar is always visible
+        const navbar = document.querySelector('header');
+        if (navbar) {
+            navbar.style.position = 'relative';
+            navbar.style.zIndex = '9999';
+        }
       });
     </script>
     @stack('scripts')

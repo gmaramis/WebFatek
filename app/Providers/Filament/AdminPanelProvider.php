@@ -53,6 +53,18 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->maxContentWidth('full')
+            ->sidebarCollapsibleOnDesktop()
+            ->navigationGroups([
+                'Profil',
+                'Content Management',
+                'System',
+            ])
+            ->plugins([
+                // Add any performance plugins here
+            ])
+            ->databaseNotifications()
+            ->databaseNotificationsPolling('30s');
     }
 }

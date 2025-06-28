@@ -5,7 +5,7 @@
       <!-- Logo Template Left -->
       <div class="flex flex-col items-center justify-center">
         <div class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4">
-          <img src="{{ asset('img/logo unima.png') }}" alt="Logo UNIMA" class="w-28 h-28 object-contain" />
+          <img src="{{ asset('img/logo-unima.png') }}" alt="Logo UNIMA" class="w-28 h-28 object-contain" />
         </div>
       </div>
       <!-- Contact Info -->
@@ -41,7 +41,7 @@
       <!-- Logo Template Right -->
       <div class="flex flex-col items-center justify-center">
         <div class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4">
-          <img src="{{ asset('img/logo blu.png') }}" alt="Logo BLU" class="w-28 h-28 object-contain" />
+          <img src="{{ asset('img/logo-blu.png') }}" alt="Logo BLU" class="w-28 h-28 object-contain" />
         </div>
       </div>
     </div>
