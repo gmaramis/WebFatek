@@ -99,21 +99,16 @@ Route::post('/alumni/daftar', [AlumniController::class, 'store'])->name('alumni.
 
 
 // Unit
-Route::get('/penjaminan-mutu', function () {
-    return view('pages.penjaminan-mutu');
-});
-Route::get('/p3ki', function () {
-    return view('pages.p3ki');
-});
-Route::get('/p3rpm', function () {
-    return view('pages.p3rpm');
-});
+Route::get('/penjaminan-mutu', [App\Http\Controllers\UnitPenjaminanMutuController::class, 'index']);
+Route::get('/p3ki', [App\Http\Controllers\JurnalController::class, 'index']);
+Route::get('/p3rpm', [App\Http\Controllers\P3rpmController::class, 'index']);
 Route::get('/zona-integritas', function () {
     return view('pages.zona-integritas');
 });
 Route::get('/humas-kerjasama', function () {
     return view('pages.humas-kerjasama');
 });
+Route::view('/unit-penjaminan-mutu', 'pages.unit-penjaminan-mutu')->name('unit-penjaminan-mutu');
 
 // Informasi
 Route::get('/akreditasi', function () {

@@ -32,7 +32,7 @@ class Alumni extends Model
     ];
 
     protected $casts = [
-        'gaji' => 'decimal:2',
+        'gaji' => 'float',
         'is_active' => 'boolean',
         'newsletter' => 'boolean',
         'tahun_lulus' => 'integer',
@@ -93,10 +93,11 @@ class Alumni extends Model
     // Accessor untuk gaji yang diformat
     public function getGajiFormattedAttribute()
     {
-        if (!$this->gaji) {
+        $gaji = $this->getRawOriginal('gaji');
+        if (!$gaji) {
             return '-';
         }
-        return 'Rp ' . number_format($this->gaji, 0, ',', '.');
+        return 'Rp ' . number_format((float) $gaji, 0, ',', '.');
     }
 
     // Accessor untuk foto dengan default

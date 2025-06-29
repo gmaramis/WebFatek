@@ -19,7 +19,7 @@ class MagangKknResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
     
-    protected static ?string $navigationGroup = 'Content Management';
+    protected static ?string $navigationGroup = 'Kemahasiswaan';
     
     protected static ?string $navigationLabel = 'Magang & KKN';
     
