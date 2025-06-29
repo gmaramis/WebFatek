@@ -145,7 +145,7 @@
                             </div>
                             
                             <div class="flex items-center justify-between text-sm text-gray-500">
-                                <span>Diupdate: {{ $kebijakan->updated_at->format('d M Y') }}</span>
+                                <span>Diupdate: {{ $kebijakan->updated_at_formatted }}</span>
                                 <button class="text-orange-600 hover:text-orange-700 font-medium" 
                                         onclick="showKebijakanDetail({{ $kebijakan->id }})">
                                     Baca Selengkapnya

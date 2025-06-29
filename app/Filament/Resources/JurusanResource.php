@@ -23,6 +23,12 @@ class JurusanResource extends Resource
 
     protected static ?string $navigationLabel = 'Jurusan';
 
+    protected static ?int $navigationSort = 5;
+
+    protected static ?string $modelLabel = 'Jurusan';
+
+    protected static ?string $pluralModelLabel = 'Jurusan';
+
     public static function form(Form $form): Form
     {
         return $form
