@@ -31,4 +31,17 @@ class Kebijakan extends Model
     {
         return $query->where('kategori', $kategori);
     }
+
+    // Accessor untuk updated_at yang aman
+    public function getUpdatedAtFormattedAttribute()
+    {
+        if (!$this->updated_at) {
+            return null;
+        }
+        try {
+            return \Illuminate\Support\Carbon::parse((string) $this->updated_at)->format('d M Y');
+        } catch (\Exception $e) {
+            return (string) $this->updated_at;
+        }
+    }
 }

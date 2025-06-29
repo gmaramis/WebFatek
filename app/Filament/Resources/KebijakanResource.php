@@ -27,6 +27,8 @@ class KebijakanResource extends Resource
     
     protected static ?string $pluralModelLabel = 'Kebijakan';
 
+    protected static ?int $navigationSort = 2;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -102,15 +104,17 @@ class KebijakanResource extends Resource
                     ->searchable()
                     ->limit(50),
                 
-                Tables\Columns\BadgeColumn::make('kategori')
+                Tables\Columns\TextColumn::make('kategori')
                     ->label('Kategori')
-                    ->colors([
-                        'primary' => 'akademik',
-                        'success' => 'kemahasiswaan',
-                        'warning' => 'kepegawaian',
-                        'danger' => 'keuangan',
-                        'secondary' => 'umum',
-                    ]),
+                    ->badge()
+                    ->color(fn ($state) => match ($state) {
+                        'akademik' => 'primary',
+                        'kemahasiswaan' => 'success',
+                        'kepegawaian' => 'warning',
+                        'keuangan' => 'danger',
+                        'umum' => 'secondary',
+                        default => 'secondary',
+                    }),
                 
                 Tables\Columns\IconColumn::make('is_active')
                     ->label('Status')

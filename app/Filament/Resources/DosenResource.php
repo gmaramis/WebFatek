@@ -27,6 +27,8 @@ class DosenResource extends Resource
     
     protected static ?string $pluralModelLabel = 'Dosen';
 
+    protected static ?int $navigationSort = 3;
+
     public static function form(Form $form): Form
     {
         return $form
@@ -152,33 +154,39 @@ class DosenResource extends Resource
                     ->sortable()
                     ->limit(40),
                 
-                Tables\Columns\BadgeColumn::make('pendidikan_terakhir')
+                Tables\Columns\TextColumn::make('pendidikan_terakhir')
                     ->label('Pendidikan')
-                    ->colors([
-                        'primary' => 'S3',
-                        'success' => 'S2',
-                        'warning' => 'S1',
-                    ]),
+                    ->badge()
+                    ->color(fn ($state) => match ($state) {
+                        'S3' => 'primary',
+                        'S2' => 'success',
+                        'S1' => 'warning',
+                        default => 'secondary',
+                    }),
                 
-                Tables\Columns\BadgeColumn::make('jurusan')
+                Tables\Columns\TextColumn::make('jurusan')
                     ->label('Jurusan')
+                    ->badge()
                     ->formatStateUsing(fn ($state) => ucwords(str_replace('-', ' ', $state)))
-                    ->colors([
-                        'primary' => 'teknik-informatika',
-                        'success' => 'teknik-sipil',
-                        'warning' => 'teknik-elektro',
-                        'danger' => 'teknik-mesin',
-                        'secondary' => 'arsitektur',
-                        'info' => 'teknik-bangunan',
-                    ]),
+                    ->color(fn ($state) => match ($state) {
+                        'teknik-informatika' => 'primary',
+                        'teknik-sipil' => 'success',
+                        'teknik-elektro' => 'warning',
+                        'teknik-mesin' => 'danger',
+                        'arsitektur' => 'secondary',
+                        'teknik-bangunan' => 'info',
+                        default => 'secondary',
+                    }),
                 
-                Tables\Columns\BadgeColumn::make('status')
+                Tables\Columns\TextColumn::make('status')
                     ->label('Status')
-                    ->colors([
-                        'success' => 'Aktif',
-                        'danger' => 'Tidak Aktif',
-                        'warning' => 'Tugas Belajar',
-                    ]),
+                    ->badge()
+                    ->color(fn ($state) => match ($state) {
+                        'Aktif' => 'success',
+                        'Tidak Aktif' => 'danger',
+                        'Tugas Belajar' => 'warning',
+                        default => 'secondary',
+                    }),
                 
                 Tables\Columns\IconColumn::make('is_active')
                     ->label('Tampil')

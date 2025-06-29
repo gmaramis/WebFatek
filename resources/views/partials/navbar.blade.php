@@ -59,7 +59,6 @@
         <div class="relative group">
           <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center focus:outline-none">Akademik <i class="fas fa-caret-down ml-1"></i></button>
           <ul class="absolute left-0 top-full pt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
-            <li><a href="{{ url('/#programs') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Program Studi</a></li>
             <li><a href="{{ url('/magang-kkn') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Magang & KKN</a></li>
             <li><a href="{{ url('/pedoman-akademik') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Pedoman Akademik</a></li>
             <li><a href="{{ url('/kalender-akademik') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Kalender Akademik</a></li>
@@ -131,7 +130,6 @@
       <div class="space-y-2">
         <div class="text-white font-semibold">Akademik</div>
         <div class="pl-4 space-y-2">
-          <a href="{{ url('/#programs') }}" class="block text-orange-100 hover:text-white">Program Studi</a>
           <a href="{{ url('/magang-kkn') }}" class="block text-orange-100 hover:text-white">Magang & KKN</a>
           <a href="{{ url('/pedoman-akademik') }}" class="block text-orange-100 hover:text-white">Pedoman Akademik</a>
           <a href="{{ url('/kalender-akademik') }}" class="block text-orange-100 hover:text-white">Kalender Akademik</a>

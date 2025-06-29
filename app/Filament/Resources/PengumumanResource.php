@@ -17,7 +17,6 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\Filter;
 use Illuminate\Database\Eloquent\Model;

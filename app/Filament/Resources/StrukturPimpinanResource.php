@@ -23,6 +23,12 @@ class StrukturPimpinanResource extends Resource
 
     protected static ?string $navigationLabel = 'Struktur Pimpinan';
 
+    protected static ?int $navigationSort = 4;
+
+    protected static ?string $modelLabel = 'Struktur Pimpinan';
+
+    protected static ?string $pluralModelLabel = 'Struktur Pimpinan';
+
     public static function form(Form $form): Form
     {
         return $form
