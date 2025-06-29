@@ -18,29 +18,22 @@
 
 <div class="container mx-auto px-4">
     <!-- Profil Ketua UPM -->
-    @if($ketuaUPM)
     <div class="flex flex-col md:flex-row gap-8 mb-10 items-center">
         <div class="flex-shrink-0">
-            <img src="{{ $ketuaUPM->foto_url }}" alt="Ketua UPM" class="rounded-xl shadow-lg w-40 h-40 object-cover">
+            <img src="https://ui-avatars.com/api/?name=Prof.+Dr.+Meytij+Jeanne+Rampe&background=ea580c&color=fff&size=160" alt="Ketua UPM" class="rounded-xl shadow-lg w-40 h-40 object-cover">
         </div>
         <div>
-            <h2 class="text-2xl font-bold mb-1">{{ $ketuaUPM->nama_lengkap }}</h2>
-            <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">{{ $ketuaUPM->jabatan }}</span>
-            @if($ketuaUPM->deskripsi)
-            <p class="mb-2 text-gray-700">"{{ $ketuaUPM->deskripsi }}"</p>
-            @endif
-            @if($ketuaUPM->email)
+            <h2 class="text-2xl font-bold mb-1">Prof. Dr. Meytij Jeanne Rampe, M.Si.</h2>
+            <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">Ketua Unit Penjaminan Mutu (UPM) Fatek</span>
+            <p class="mb-2 text-gray-700">"Bersama membangun budaya mutu di lingkungan Fakultas Teknik UNIMA untuk pendidikan yang unggul dan berdaya saing."</p>
             <div class="flex items-center gap-3 text-gray-600">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 01-8 0 4 4 0 018 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7m0 0H9m3 0h3"/></svg>
-                <span>{{ $ketuaUPM->email }}</span>
+                <span>upm.fatek@unima.ac.id</span>
             </div>
-            @endif
         </div>
     </div>
-    @endif
 
     <!-- Daftar GPM per Prodi -->
-    @if($gpmList->count() > 0)
     <div class="mb-10">
         <h3 class="text-xl font-bold mb-4 text-blue-900">Gugus Penjaminan Mutu (GPM) per Program Studi</h3>
         <div class="overflow-x-auto">
@@ -53,50 +46,60 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($gpmList as $gpm)
                     <tr>
-                        <td class="py-2 px-4">{{ $gpm->program_studi_formatted }}</td>
-                        <td class="py-2 px-4">{{ $gpm->nama_lengkap }}</td>
-                        <td class="py-2 px-4">{{ $gpm->email ?: 'Tidak ada' }}</td>
+                        <td class="py-2 px-4">Teknik Informatika</td>
+                        <td class="py-2 px-4">Dr. John Doe, M.Kom</td>
+                        <td class="py-2 px-4">john.doe@unima.ac.id</td>
                     </tr>
-                    @endforeach
+                    <tr>
+                        <td class="py-2 px-4">Teknik Sipil</td>
+                        <td class="py-2 px-4">Ir. Jane Smith, M.T.</td>
+                        <td class="py-2 px-4">jane.smith@unima.ac.id</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-4">Teknik Elektro</td>
+                        <td class="py-2 px-4">Dr. Albertus, S.T., M.Eng</td>
+                        <td class="py-2 px-4">albertus@unima.ac.id</td>
+                    </tr>
+                    <!-- Tambahkan prodi lain sesuai kebutuhan -->
                 </tbody>
             </table>
         </div>
     </div>
-    @endif
 
     <!-- Dokumen Audit Mutu Internal (AMI) -->
-    @if($dokumenAMI->count() > 0)
     <div class="mb-10">
         <h3 class="text-xl font-bold mb-4 text-blue-900">Dokumen Audit Mutu Internal (AMI)</h3>
         <div id="accordion-ami">
-            @foreach($tahunList as $tahun)
             <div class="mb-2 border rounded-lg">
-                <button type="button" class="w-full flex justify-between items-center px-4 py-3 bg-blue-50 hover:bg-blue-100 font-semibold focus:outline-none" onclick="document.getElementById('ami{{ $tahun }}').classList.toggle('hidden')">
-                    <span>{{ $tahun }}</span>
+                <button type="button" class="w-full flex justify-between items-center px-4 py-3 bg-blue-50 hover:bg-blue-100 font-semibold focus:outline-none" onclick="document.getElementById('ami2024').classList.toggle('hidden')">
+                    <span>2024</span>
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                 </button>
-                <div id="ami{{ $tahun }}" class="hidden px-4 pb-4">
+                <div id="ami2024" class="hidden px-4 pb-4">
                     <ul class="list-disc ml-6 mt-2">
-                        @foreach($dokumenAMI[$tahun] as $dokumen)
-                        <li>{{ $dokumen->program_studi_formatted }}: 
-                            @if($dokumen->file_dokumen)
-                                <a href="{{ $dokumen->file_url }}" target="_blank" class="text-blue-700 underline hover:text-orange-500">{{ $dokumen->judul_dokumen }}</a>
-                            @elseif($dokumen->link_eksternal)
-                                <a href="{{ $dokumen->link_eksternal }}" target="_blank" class="text-blue-700 underline hover:text-orange-500">{{ $dokumen->judul_dokumen }}</a>
-                            @else
-                                <span class="text-gray-500">{{ $dokumen->judul_dokumen }} (Belum tersedia)</span>
-                            @endif
-                        </li>
-                        @endforeach
+                        <li>Teknik Informatika: <a href="#" class="text-blue-700 underline hover:text-orange-500">Laporan AMI 2024</a></li>
+                        <li>Teknik Sipil: <a href="#" class="text-blue-700 underline hover:text-orange-500">Laporan AMI 2024</a></li>
+                        <li>Teknik Elektro: <a href="#" class="text-blue-700 underline hover:text-orange-500">Laporan AMI 2024</a></li>
                     </ul>
                 </div>
             </div>
-            @endforeach
+            <div class="mb-2 border rounded-lg">
+                <button type="button" class="w-full flex justify-between items-center px-4 py-3 bg-blue-50 hover:bg-blue-100 font-semibold focus:outline-none" onclick="document.getElementById('ami2023').classList.toggle('hidden')">
+                    <span>2023</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div id="ami2023" class="hidden px-4 pb-4">
+                    <ul class="list-disc ml-6 mt-2">
+                        <li>Teknik Informatika: <a href="#" class="text-blue-700 underline hover:text-orange-500">Laporan AMI 2023</a></li>
+                        <li>Teknik Sipil: <a href="#" class="text-blue-700 underline hover:text-orange-500">Laporan AMI 2023</a></li>
+                        <li>Teknik Elektro: <a href="#" class="text-blue-700 underline hover:text-orange-500">Laporan AMI 2023</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Tambahkan tahun lain sesuai kebutuhan -->
         </div>
     </div>
-    @endif
 
     <!-- Berita/Kegiatan Terkait UPM -->
     <div class="mb-10">
@@ -131,12 +134,10 @@
         <h3 class="text-xl font-bold mb-4 text-blue-900">Kontak & Lokasi</h3>
         <div class="bg-blue-50 rounded-lg p-6 flex flex-col md:flex-row gap-6 items-center">
             <div class="flex-1">
-                @if($ketuaUPM && $ketuaUPM->email)
                 <div class="mb-2 flex items-center gap-2 text-gray-700">
                     <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 01-8 0 4 4 0 018 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7m0 0H9m3 0h3"/></svg>
-                    <span>{{ $ketuaUPM->email }}</span>
+                    <span>upm.fatek@unima.ac.id</span>
                 </div>
-                @endif
                 <div class="mb-2 flex items-center gap-2 text-gray-700">
                     <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 12.414a8 8 0 111.414-1.414l4.243 4.243a1 1 0 01-1.414 1.414z"/></svg>
                     <span>Jl. Kampus Unima, Tondano Selatan, Minahasa</span>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumni;
+use App\Models\AlumniContent;
 use Illuminate\Http\Request;
 
 class AlumniController extends Controller
@@ -50,13 +51,24 @@ class AlumniController extends Controller
             'Pemerintahan' => Alumni::active()->where('bidang_industri', 'pemerintahan')->count(),
             'Lainnya' => Alumni::active()->where('bidang_industri', 'lainnya')->count(),
         ];
+
+        // Ambil konten dari CMS
+        $cmsContent = [
+            'hero' => AlumniContent::getSectionContent('hero'),
+            'statistik' => AlumniContent::getSectionContent('statistik'),
+            'testimonial' => AlumniContent::getSectionContent('testimonial'),
+            'galeri_kegiatan' => AlumniContent::getSectionContent('galeri_kegiatan'),
+            'jaringan_alumni' => AlumniContent::getSectionContent('jaringan_alumni'),
+            'kontribusi' => AlumniContent::getSectionContent('kontribusi'),
+        ];
         
         return view('pages.alumni', compact(
             'totalAlumni',
             'tingkatPenyerapan',
             'alumniBerprestasi',
             'alumniByProgram',
-            'alumniByIndustri'
+            'alumniByIndustri',
+            'cmsContent'
         ));
     }
     

@@ -34,6 +34,12 @@ class DatabaseSeeder extends Seeder
             JadwalAkademikSeeder::class,
             OrmawaSeeder::class,
             AlumniSeeder::class,
+            AlumniContentSeeder::class,
+            UnitPenjaminanMutuSeeder::class,
+            GugusPenjaminanMutuSeeder::class,
+            DokumenAmiSeeder::class,
+            JurnalSeeder::class,
+            P3rpmContentSeeder::class,
         ]);
     }
 }
