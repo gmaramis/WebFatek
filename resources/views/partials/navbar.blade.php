@@ -62,8 +62,8 @@
             <li><a href="{{ url('/magang-kkn') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Magang & KKN</a></li>
             <li><a href="{{ url('/pedoman-akademik') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Pedoman Akademik</a></li>
             <li><a href="{{ url('/kalender-akademik') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Kalender Akademik</a></li>
-            <li><a href="{{ url('/si-unima') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">SI Unima</a></li>
-            <li><a href="{{ url('/lms-unima') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">LMS Unima</a></li>
+            <li><a href="https://si.unima.ac.id/gtakademik_portal/" class="block px-4 py-2 text-orange-800 hover:bg-orange-50" target="_blank" rel="noopener">SI Unima</a></li>
+            <li><a href="https://lms.unima.ac.id" class="block px-4 py-2 text-orange-800 hover:bg-orange-50" target="_blank" rel="noopener">LMS Unima</a></li>
           </ul>
         </div>
         <!-- Kemahasiswaan & Alumni Dropdown -->
@@ -133,8 +133,8 @@
           <a href="{{ url('/magang-kkn') }}" class="block text-orange-100 hover:text-white">Magang & KKN</a>
           <a href="{{ url('/pedoman-akademik') }}" class="block text-orange-100 hover:text-white">Pedoman Akademik</a>
           <a href="{{ url('/kalender-akademik') }}" class="block text-orange-100 hover:text-white">Kalender Akademik</a>
-          <a href="{{ url('/si-unima') }}" class="block text-orange-100 hover:text-white">SI Unima</a>
-          <a href="{{ url('/lms-unima') }}" class="block text-orange-100 hover:text-white">LMS Unima</a>
+          <a href="https://si.unima.ac.id/gtakademik_portal/" class="block text-orange-100 hover:text-white" target="_blank" rel="noopener">SI Unima</a>
+          <a href="https://lms.unima.ac.id" class="block text-orange-100 hover:text-white" target="_blank" rel="noopener">LMS Unima</a>
         </div>
       </div>
       

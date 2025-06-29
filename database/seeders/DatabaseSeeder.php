@@ -22,10 +22,18 @@ class DatabaseSeeder extends Seeder
 
         // Call other seeders
         $this->call([
+            VisiMisiSeeder::class,
+            KebijakanSeeder::class,
+            DosenSeeder::class,
+            JurusanSeeder::class,
             BeritaSeeder::class,
             PengumumanSeeder::class,
-            JurusanSeeder::class,
+            PedomanAkademikSeeder::class,
+            KalenderAkademikSeeder::class,
+            TimelineAkademikSeeder::class,
             JadwalAkademikSeeder::class,
+            OrmawaSeeder::class,
+            AlumniSeeder::class,
         ]);
     }
 }

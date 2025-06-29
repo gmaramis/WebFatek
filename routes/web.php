@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Kebijakan;
+use App\Http\Controllers\AlumniController;
 
 Route::get('/', function () {
     return view('home');
@@ -93,9 +94,8 @@ Route::get('/lms-unima', function () {
 Route::get('/ormawa', function () {
     return view('pages.ormawa');
 });
-Route::get('/alumni', function () {
-    return view('pages.alumni');
-});
+Route::get('/alumni', [AlumniController::class, 'index']);
+Route::post('/alumni/daftar', [AlumniController::class, 'store'])->name('alumni.store');
 
 
 // Unit
