@@ -2,21 +2,11 @@
 
 namespace App\Filament\Widgets;
 
-use Filament\Widgets\ChartWidget;
+use Filament\Widgets\Widget;
 
-class DashboardTitle extends ChartWidget
+class DashboardTitle extends Widget
 {
-    protected static ?string $heading = 'Chart';
-
-    protected function getData(): array
-    {
-        return [
-            //
-        ];
-    }
-
-    protected function getType(): string
-    {
-        return 'bar';
-    }
+    protected static string $view = 'filament.widgets.dashboard-title';
+    
+    protected int | string | array $columnSpan = 'full';
 }

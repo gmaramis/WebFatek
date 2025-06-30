@@ -44,6 +44,7 @@
     <div class="container mx-auto px-4">
       <div class="hidden md:flex items-center justify-center space-x-6 py-2">
         <a href="{{ url('/home') }}" class="nav-link text-white hover:text-orange-200 font-semibold">Home</a>
+        <a href="{{ url('/berita') }}" class="nav-link text-white hover:text-orange-200 font-semibold">Berita</a>
         <!-- Profil Dropdown -->
         <div class="relative group">
           <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center focus:outline-none">Profil <i class="fas fa-caret-down ml-1"></i></button>
@@ -98,9 +99,10 @@
               </div>
             </li>
             <li><a href="{{ url('/tracer-study') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Tracer Study</a></li>
-            <li><a href="{{ url('/survei-layanan') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Survei Layanan</a></li>
+            <li><a href="{{ route('survey-layanan') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Survei Layanan</a></li>
             <li><a href="{{ url('/laboratorium') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Layanan Laboratorium</a></li>
             <li><a href="{{ url('/layanan-akademik') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Layanan Akademik</a></li>
+            <li><a href="{{ url('/download') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50"><i class="fas fa-download mr-2"></i>Download</a></li>
           </ul>
         </div>
       </div>
@@ -113,6 +115,7 @@
   <div class="container mx-auto px-4 py-4">
     <div class="space-y-4">
       <a href="{{ url('/home') }}" class="block text-white hover:text-orange-200 font-semibold">Home</a>
+      <a href="{{ url('/berita') }}" class="block text-white hover:text-orange-200 font-semibold">Berita</a>
       
       <!-- Mobile Profil -->
       <div class="space-y-2">
@@ -166,9 +169,10 @@
         <div class="pl-4 space-y-2">
           <a href="{{ url('/akreditasi') }}" class="block text-orange-100 hover:text-white">Link Akreditasi Institusi Unima</a>
           <a href="{{ url('/tracer-study') }}" class="block text-orange-100 hover:text-white">Tracer Study</a>
-          <a href="{{ url('/survei-layanan') }}" class="block text-orange-100 hover:text-white">Survei Layanan</a>
+          <a href="{{ route('survey-layanan') }}" class="block text-orange-100 hover:text-white">Survei Layanan</a>
           <a href="{{ url('/laboratorium') }}" class="block text-orange-100 hover:text-white">Layanan Laboratorium</a>
           <a href="{{ url('/layanan-akademik') }}" class="block text-orange-100 hover:text-white">Layanan Akademik</a>
+          <a href="{{ url('/download') }}" class="block text-orange-100 hover:text-white"><i class="fas fa-download mr-2"></i>Download</a>
         </div>
       </div>
     </div>

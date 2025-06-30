@@ -183,7 +183,7 @@ class P3rpmContentSeeder extends Seeder
             'title' => 'Informasi Kontak P3RPM',
             'content' => 'p3rpm.fatek@unima.ac.id',
             'description' => '+62-431-123456 ext. 789 | Gedung P3RPM Lt. 3, Fatek UNIMA',
-            'icon' => 'heroicon-o-envelope',
+            'icon' => 'heroicon-o-envelope-open',
             'color' => 'indigo',
             'order' => 16,
             'is_active' => true,

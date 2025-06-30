@@ -4,9 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Kebijakan;
 use App\Http\Controllers\AlumniController;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 // API Routes
 Route::get('/api/kebijakan/{id}', function ($id) {
@@ -102,20 +100,17 @@ Route::post('/alumni/daftar', [AlumniController::class, 'store'])->name('alumni.
 Route::get('/penjaminan-mutu', [App\Http\Controllers\UnitPenjaminanMutuController::class, 'index']);
 Route::get('/p3ki', [App\Http\Controllers\JurnalController::class, 'index']);
 Route::get('/p3rpm', [App\Http\Controllers\P3rpmController::class, 'index']);
-Route::get('/zona-integritas', function () {
-    return view('pages.zona-integritas');
-});
-Route::get('/humas-kerjasama', function () {
-    return view('pages.humas-kerjasama');
+Route::get('/zona-integritas', [App\Http\Controllers\ZonaIntegritasController::class, 'index']);
+Route::get('/humas-kerjasama', [App\Http\Controllers\MitraKerjasamaController::class, 'index'])->name('humas-kerjasama');
+Route::get('/test-filter', function() {
+    $data = App\Models\MitraKerjasama::active()->ordered()->get();
+    return view('test-filter', compact('data'));
 });
 Route::view('/unit-penjaminan-mutu', 'pages.unit-penjaminan-mutu')->name('unit-penjaminan-mutu');
 
 // Informasi
 Route::get('/akreditasi', function () {
     return view('pages.akreditasi');
-});
-Route::get('/tracer-study', function () {
-    return view('pages.tracer-study');
 });
 Route::get('/survei-layanan', function () {
     return view('pages.survei-layanan');
@@ -132,12 +127,31 @@ Route::get('/kontak', function () {
 Route::get('/tentang', function () {
     return view('pages.tentang');
 });
-Route::get('/pengumuman', function () {
-    return view('pages.pengumuman');
-});
+Route::get('/pengumuman', [App\Http\Controllers\PengumumanController::class, 'index']);
+Route::get('/pengumuman/{id}', [App\Http\Controllers\PengumumanController::class, 'show'])->name('pengumuman.detail');
+Route::get('/berita', [App\Http\Controllers\BeritaController::class, 'index']);
+Route::get('/berita/{slug}', [App\Http\Controllers\BeritaController::class, 'show']);
 Route::get('/detail-berita', function () {
     return view('pages.detail-berita');
 });
+
+// Tracer Study Routes
+Route::get('/tracer-study', [App\Http\Controllers\TracerStudyController::class, 'index'])->name('tracer-study');
+Route::get('/tracer-study/form', [App\Http\Controllers\TracerStudyController::class, 'form'])->name('tracer-study.form');
+Route::post('/tracer-study/store', [App\Http\Controllers\TracerStudyController::class, 'store'])->name('tracer-study.store');
+Route::get('/tracer-study/statistics', [App\Http\Controllers\TracerStudyController::class, 'statistics'])->name('tracer-study.statistics');
+Route::get('/tracer-study/{id}', [App\Http\Controllers\TracerStudyController::class, 'show'])->name('tracer-study.show');
+
+// Survey Layanan Routes
+Route::get('/survey-layanan', [App\Http\Controllers\SurveyLayananController::class, 'index'])->name('survey-layanan');
+Route::get('/survey-layanan/form', [App\Http\Controllers\SurveyLayananController::class, 'form'])->name('survey-layanan.form');
+Route::post('/survey-layanan/store', [App\Http\Controllers\SurveyLayananController::class, 'store'])->name('survey-layanan.store');
+Route::get('/survey-layanan/statistics', [App\Http\Controllers\SurveyLayananController::class, 'statistics'])->name('survey-layanan.statistics');
+Route::get('/survey-layanan/{id}', [App\Http\Controllers\SurveyLayananController::class, 'show'])->name('survey-layanan.show');
+
+// Dokumen Download Routes
+Route::get('/download', [App\Http\Controllers\DokumenDownloadController::class, 'index'])->name('download');
+Route::get('/download/{id}', [App\Http\Controllers\DokumenDownloadController::class, 'download'])->name('download.file');
 
 // Fallback untuk halaman utama jika diperlukan
 Route::get('/home', function () {

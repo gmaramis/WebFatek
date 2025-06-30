@@ -262,8 +262,8 @@ class AlumniResource extends Resource
                 Tables\Columns\IconColumn::make('newsletter')
                     ->label('Newsletter')
                     ->boolean()
-                    ->trueIcon('heroicon-o-envelope')
-                    ->falseIcon('heroicon-o-envelope-slash')
+                    ->trueIcon('heroicon-o-envelope-open')
+                    ->falseIcon('heroicon-o-x-circle')
                     ->trueColor('success')
                     ->falseColor('gray'),
                 
