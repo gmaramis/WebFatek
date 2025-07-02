@@ -30,9 +30,7 @@ Route::get('/sejarah', function () {
 Route::get('/visi-misi', function () {
     return view('pages.visi-misi');
 });
-Route::get('/struktur', function () {
-    return view('pages.struktur');
-});
+Route::get('/struktur', [App\Http\Controllers\StrukturPimpinanController::class, 'index']);
 Route::get('/dosen', function () {
     return view('pages.dosen');
 });

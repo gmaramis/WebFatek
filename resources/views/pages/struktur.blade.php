@@ -19,6 +19,7 @@
     <!-- Struktur Pimpinan -->
     <div class="container mx-auto px-4 py-16">
         <!-- Dekan -->
+        @if($dekan)
         <div class="max-w-4xl mx-auto mb-20">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Dekan</h2>
@@ -28,13 +29,20 @@
             <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
                 <div class="flex flex-col md:flex-row items-center gap-8">
                     <div class="flex-shrink-0">
-                        <div class="w-48 h-48 bg-gray-200 rounded-full flex items-center justify-center shadow-lg border-4 border-orange-400">
-                            <i class="fas fa-user-tie text-4xl text-gray-500"></i>
-                        </div>
+                        @if($dekan->foto)
+                            <img src="{{ asset('storage/' . $dekan->foto) }}" alt="{{ $dekan->nama }}" class="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-orange-400">
+                        @else
+                            <div class="w-48 h-48 bg-gray-200 rounded-full flex items-center justify-center shadow-lg border-4 border-orange-400">
+                                <i class="fas fa-user-tie text-4xl text-gray-500"></i>
+                            </div>
+                        @endif
                     </div>
                     <div class="flex-1 text-center md:text-left">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Dr. Ir. JOHAN REVO UNTUNG, M.T.</h3>
-                        <p class="text-gray-600 mb-4">NIP. 196501011990031001</p>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ $dekan->nama }}</h3>
+                        <p class="text-gray-600 mb-4">NIP. {{ $dekan->nip }}</p>
+                        @if($dekan->pendidikan_terakhir)
+                            <p class="text-gray-600 mb-4">{{ $dekan->pendidikan_terakhir }}</p>
+                        @endif
                         <div class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
                             <i class="fas fa-calendar-alt mr-2"></i>
                             Masa Jabatan: 2023 - 2027
@@ -43,8 +51,10 @@
                 </div>
             </div>
         </div>
+        @endif
 
         <!-- Wakil Dekan -->
+        @if($wakilDekan->count() > 0)
         <div class="max-w-6xl mx-auto mb-20">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Wakil Dekan</h2>
@@ -52,52 +62,43 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- WD1 -->
+                @foreach($wakilDekan as $wd)
                 <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
                     <div class="text-center">
-                        <div class="w-32 h-32 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-orange-400">
-                            <i class="fas fa-user-graduate text-2xl text-gray-500"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800 mb-2">Wakil Dekan I</h3>
-                        <h4 class="text-md font-semibold text-gray-700 mb-2">Dr. Ir. RUDY TAMBUNAN, M.T.</h4>
-                        <p class="text-gray-600 text-sm mb-3">NIP. 196502021990031002</p>
-                        <div class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
-                            Bidang Akademik
-                        </div>
+                        @if($wd->foto)
+                            <img src="{{ asset('storage/' . $wd->foto) }}" alt="{{ $wd->nama }}" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-lg border-4 border-orange-400">
+                        @else
+                            <div class="w-32 h-32 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-4 border-orange-400">
+                                @if($wd->urutan == 1)
+                                    <i class="fas fa-user-graduate text-2xl text-gray-500"></i>
+                                @elseif($wd->urutan == 2)
+                                    <i class="fas fa-chart-line text-2xl text-gray-500"></i>
+                                @else
+                                    <i class="fas fa-handshake text-2xl text-gray-500"></i>
+                                @endif
+                            </div>
+                        @endif
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">{{ $wd->jabatan }}</h3>
+                        <h4 class="text-md font-semibold text-gray-700 mb-2">{{ $wd->nama }}</h4>
+                        <p class="text-gray-600 text-sm mb-3">NIP. {{ $wd->nip }}</p>
+                        @if($wd->pendidikan_terakhir)
+                            <p class="text-gray-600 text-sm mb-3">{{ $wd->pendidikan_terakhir }}</p>
+                        @endif
+                        @if($wd->bidang)
+                            <div class="inline-flex items-center px-3 py-1 
+                                @if($wd->urutan == 1) bg-blue-100 text-blue-800
+                                @elseif($wd->urutan == 2) bg-green-100 text-green-800
+                                @else bg-purple-100 text-purple-800
+                                @endif rounded-full text-xs font-medium">
+                                {{ $wd->bidang }}
+                            </div>
+                        @endif
                     </div>
                 </div>
-
-                <!-- WD2 -->
-                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
-                    <div class="text-center">
-                        <div class="w-32 h-32 bg-gray-200 rounded-full border-4 border-orange-400 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <i class="fas fa-chart-line text-2xl text-gray-500"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800 mb-2">Wakil Dekan II</h3>
-                        <h4 class="text-md font-semibold text-gray-700 mb-2">Dr. Ir. ALEXANDER KARUNDENG, M.T.</h4>
-                        <p class="text-gray-600 text-sm mb-3">NIP. 196506061990031006</p>
-                        <div class="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">
-                            Bidang Umum & Keuangan
-                        </div>
-                    </div>
-                </div>
-
-                <!-- WD3 -->
-                <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
-                    <div class="text-center">
-                        <div class="w-32 h-32 bg-gray-200 rounded-full border-4 border-orange-400 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                            <i class="fas fa-handshake text-2xl text-gray-500"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-800 mb-2">Wakil Dekan III</h3>
-                        <h4 class="text-md font-semibold text-gray-700 mb-2">Dr. Ir. JOHANES BAMBANG, M.T.</h4>
-                        <p class="text-gray-600 text-sm mb-3">NIP. 196509091990031009</p>
-                        <div class="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">
-                            Bidang Kemahasiswaan & Kerjasama
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
+        @endif
 
         <!-- Struktur Organisasi Visual -->
         <div class="max-w-6xl mx-auto">
@@ -110,6 +111,7 @@
                 <!-- Hierarki Visual -->
                 <div class="space-y-12">
                     <!-- Level 1: Dekan -->
+                    @if($dekan)
                     <div class="flex justify-center">
                         <div class="relative">
                             <div class="bg-orange-600 text-white px-8 py-4 rounded-xl shadow-lg">
@@ -118,95 +120,59 @@
                                         <i class="fas fa-crown text-2xl text-white"></i>
                                     </div>
                                     <p class="font-bold text-lg">DEKAN</p>
-                                    <p class="text-sm opacity-90">Dr. Ir. JOHAN REVO UNTUNG, M.T.</p>
+                                    <p class="text-sm opacity-90">{{ $dekan->nama }}</p>
                                 </div>
                             </div>
                             <!-- Garis ke WD -->
                             <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-1 h-8 bg-orange-300"></div>
                         </div>
                     </div>
+                    @endif
 
                     <!-- Level 2: Wakil Dekan -->
+                    @if($wakilDekan->count() > 0)
                     <div class="flex justify-center">
                         <div class="grid md:grid-cols-3 gap-8 max-w-4xl">
-                            <!-- WD1 -->
+                            @foreach($wakilDekan as $wd)
                             <div class="relative">
                                 <div class="bg-orange-500 text-white px-6 py-3 rounded-lg shadow-md">
                                     <div class="text-center">
                                         <div class="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center mx-auto mb-2">
-                                            <i class="fas fa-graduation-cap text-lg text-white"></i>
+                                            @if($wd->urutan == 1)
+                                                <i class="fas fa-graduation-cap text-lg text-white"></i>
+                                            @elseif($wd->urutan == 2)
+                                                <i class="fas fa-chart-line text-lg text-white"></i>
+                                            @else
+                                                <i class="fas fa-handshake text-lg text-white"></i>
+                                            @endif
                                         </div>
-                                        <p class="font-bold">WD I</p>
-                                        <p class="text-xs opacity-90">Akademik</p>
+                                        <p class="font-bold">{{ $wd->jabatan }}</p>
+                                        <p class="text-xs opacity-90">{{ $wd->bidang ?? 'Bidang' }}</p>
                                     </div>
                                 </div>
                                 <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-1 h-6 bg-orange-300"></div>
                             </div>
-
-                            <!-- WD2 -->
-                            <div class="relative">
-                                <div class="bg-orange-500 text-white px-6 py-3 rounded-lg shadow-md">
-                                    <div class="text-center">
-                                        <div class="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center mx-auto mb-2">
-                                            <i class="fas fa-chart-line text-lg text-white"></i>
-                                        </div>
-                                        <p class="font-bold">WD II</p>
-                                        <p class="text-xs opacity-90">Umum & Keuangan</p>
-                                    </div>
-                                </div>
-                                <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-1 h-6 bg-orange-300"></div>
-                            </div>
-
-                            <!-- WD3 -->
-                            <div class="relative">
-                                <div class="bg-orange-500 text-white px-6 py-3 rounded-lg shadow-md">
-                                    <div class="text-center">
-                                        <div class="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center mx-auto mb-2">
-                                            <i class="fas fa-handshake text-lg text-white"></i>
-                                        </div>
-                                        <p class="font-bold">WD III</p>
-                                        <p class="text-xs opacity-90">Kemahasiswaan</p>
-                                    </div>
-                                </div>
-                                <div class="absolute top-full left-1/2 transform -translate-x-1/2 w-1 h-6 bg-orange-300"></div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
+                    @endif
 
                     <!-- Level 3: Jurusan -->
+                    @if($kepalaJurusan->count() > 0)
                     <div class="flex justify-center">
                         <div class="grid md:grid-cols-3 gap-6 max-w-4xl">
-                            <div class="bg-orange-50 px-6 py-4 rounded-lg text-center border border-orange-200">
-                                <i class="fas fa-laptop-code text-2xl text-orange-600 mb-2"></i>
-                                <p class="font-semibold text-gray-800">Teknik Informatika</p>
-                            </div>
-                            <div class="bg-orange-50 px-6 py-4 rounded-lg text-center border border-orange-200">
-                                <i class="fas fa-building text-2xl text-orange-600 mb-2"></i>
-                                <p class="font-semibold text-gray-800">Teknik Sipil</p>
-                            </div>
-                            <div class="bg-orange-50 px-6 py-4 rounded-lg text-center border border-orange-200">
-                                <i class="fas fa-bolt text-2xl text-orange-600 mb-2"></i>
-                                <p class="font-semibold text-gray-800">Teknik Elektro</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-center">
-                        <div class="grid md:grid-cols-3 gap-6 max-w-4xl">
+                            @foreach($kepalaJurusan as $kj)
                             <div class="bg-orange-50 px-6 py-4 rounded-lg text-center border border-orange-200">
                                 <i class="fas fa-cogs text-2xl text-orange-600 mb-2"></i>
-                                <p class="font-semibold text-gray-800">Teknik Mesin</p>
+                                <p class="font-semibold text-gray-800">{{ $kj->bidang ?? $kj->jabatan }}</p>
+                                @if($kj->nama)
+                                    <p class="text-sm text-gray-600 mt-1">{{ $kj->nama }}</p>
+                                @endif
                             </div>
-                            <div class="bg-orange-50 px-6 py-4 rounded-lg text-center border border-orange-200">
-                                <i class="fas fa-drafting-compass text-2xl text-orange-600 mb-2"></i>
-                                <p class="font-semibold text-gray-800">Arsitektur</p>
-                            </div>
-                            <div class="bg-orange-50 px-6 py-4 rounded-lg text-center border border-orange-200">
-                                <i class="fas fa-hammer text-2xl text-orange-600 mb-2"></i>
-                                <p class="font-semibold text-gray-800">Teknik Bangunan</p>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

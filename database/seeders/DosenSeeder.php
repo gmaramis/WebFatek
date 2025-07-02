@@ -182,7 +182,10 @@ class DosenSeeder extends Seeder
         ];
 
         foreach ($dosens as $dosen) {
-            Dosen::create($dosen);
+            Dosen::firstOrCreate(
+                ['nip' => $dosen['nip']], // Cari berdasarkan NIP
+                $dosen
+            );
         }
     }
 }

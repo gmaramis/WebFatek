@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
 
         // Call other seeders
         $this->call([
+            UserSeeder::class,
             VisiMisiSeeder::class,
             KebijakanSeeder::class,
             DosenSeeder::class,
@@ -39,6 +40,7 @@ class DatabaseSeeder extends Seeder
             GugusPenjaminanMutuSeeder::class,
             DokumenAmiSeeder::class,
             JurnalSeeder::class,
+            MitraKerjasamaSeeder::class,
             P3rpmContentSeeder::class,
         ]);
     }

@@ -22,8 +22,8 @@ class PengumumanSeeder extends Seeder
                 'tanggal_berakhir' => Carbon::now()->addDays(30),
                 'status' => 'published',
                 'kategori' => 'akademik',
-                'created_by' => 1,
-                'updated_by' => 1,
+                'created_by' => null,
+                'updated_by' => null,
             ],
             [
                 'judul' => 'Jadwal Ujian Tengah Semester Genap 2023/2024',
@@ -32,8 +32,8 @@ class PengumumanSeeder extends Seeder
                 'tanggal_berakhir' => Carbon::now()->addDays(15),
                 'status' => 'published',
                 'kategori' => 'akademik',
-                'created_by' => 1,
-                'updated_by' => 1,
+                'created_by' => null,
+                'updated_by' => null,
             ],
             [
                 'judul' => 'Pembukaan Pendaftaran KKN Tematik 2024',
@@ -42,8 +42,8 @@ class PengumumanSeeder extends Seeder
                 'tanggal_berakhir' => Carbon::now()->addDays(45),
                 'status' => 'published',
                 'kategori' => 'kemahasiswaan',
-                'created_by' => 1,
-                'updated_by' => 1,
+                'created_by' => null,
+                'updated_by' => null,
             ],
             [
                 'judul' => 'Maintenance Sistem Akademik UNIMA',
@@ -52,8 +52,8 @@ class PengumumanSeeder extends Seeder
                 'tanggal_berakhir' => Carbon::now()->addDays(7),
                 'status' => 'published',
                 'kategori' => 'penting',
-                'created_by' => 1,
-                'updated_by' => 1,
+                'created_by' => null,
+                'updated_by' => null,
             ],
             [
                 'judul' => 'Workshop Penulisan Karya Ilmiah untuk Dosen',
@@ -62,8 +62,8 @@ class PengumumanSeeder extends Seeder
                 'tanggal_berakhir' => Carbon::now()->addDays(20),
                 'status' => 'published',
                 'kategori' => 'umum',
-                'created_by' => 1,
-                'updated_by' => 1,
+                'created_by' => null,
+                'updated_by' => null,
             ],
             [
                 'judul' => 'Peringatan Hari Pendidikan Nasional 2024',
@@ -72,8 +72,8 @@ class PengumumanSeeder extends Seeder
                 'tanggal_berakhir' => Carbon::now()->addDays(60),
                 'status' => 'published',
                 'kategori' => 'umum',
-                'created_by' => 1,
-                'updated_by' => 1,
+                'created_by' => null,
+                'updated_by' => null,
             ],
         ];
 

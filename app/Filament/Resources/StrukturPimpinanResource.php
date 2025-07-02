@@ -43,8 +43,17 @@ class StrukturPimpinanResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Textarea::make('pendidikan_terakhir')
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('foto')
-                    ->maxLength(255),
+                Forms\Components\FileUpload::make('foto')
+                    ->label('Foto Pimpinan')
+                    ->image()
+                    ->imageEditor()
+                    ->imageCropAspectRatio('1:1')
+                    ->imageResizeTargetWidth(300)
+                    ->imageResizeTargetHeight(300)
+                    ->helperText('Upload foto pimpinan (format: JPG, PNG. Maksimal 2MB)')
+                    ->maxSize(2048)
+                    ->directory('struktur-pimpinan')
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('urutan')
                     ->required()
                     ->numeric(),
@@ -68,8 +77,11 @@ class StrukturPimpinanResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('nip')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('foto')
-                    ->searchable(),
+                Tables\Columns\ImageColumn::make('foto')
+                    ->label('Foto')
+                    ->circular()
+                    ->size(40)
+                    ->defaultImageUrl(fn ($record) => 'https://ui-avatars.com/api/?name=' . urlencode($record->nama) . '&color=ea580c&background=fef3c7'),
                 Tables\Columns\TextColumn::make('urutan')
                     ->numeric()
                     ->sortable(),
