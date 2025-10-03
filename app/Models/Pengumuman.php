@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Laravel\Scout\Searchable;
+
 class Pengumuman extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     protected $table = 'pengumumans';
 
@@ -24,12 +26,19 @@ class Pengumuman extends Model
     ];
 
     protected $casts = [
-        'tanggal_posting' => 'datetime',
+        'tanggal_posting'  => 'datetime',
         'tanggal_berakhir' => 'datetime',
     ];
 
-    public function user()
+    public function toSearchableArray(): array
     {
-        return $this->belongsTo(User::class, 'created_by');
+        return [
+            'id'              => $this->id,
+            'judul'           => $this->judul,
+            'isi'             => strip_tags($this->isi),
+            'kategori'        => $this->kategori,
+            'tanggal_posting' => optional($this->tanggal_posting)->toDateString(),
+            'type'            => 'pengumuman',
+        ];
     }
 }

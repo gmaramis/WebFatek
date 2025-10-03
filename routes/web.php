@@ -3,13 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Kebijakan;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\StrukturOrganisasiController;
+
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 // API Routes
 Route::get('/api/kebijakan/{id}', function ($id) {
     $kebijakan = Kebijakan::active()->find($id);
-    
+
     if ($kebijakan) {
         return response()->json([
             'success' => true,
@@ -39,31 +43,43 @@ Route::get('/kebijakan', function () {
 });
 
 // Jurusan
-Route::get('/jurusan', function () {
-    return view('pages.jurusan');
+// Route::get('/jurusan', function () {
+//     return view('pages.jurusan');
+// });
+
+Route::get('/test-upload', function () {
+    \Illuminate\Support\Facades\Storage::disk('public')
+        ->put('livewire-tmp/test.txt', 'hello');
+    return 'ok: ' . (\Illuminate\Support\Facades\Storage::disk('public')->exists('livewire-tmp/test.txt') ? 'exists' : 'missing');
 });
-Route::get('/teknik-informatika', function() {
+
+
+
+Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan');
+
+
+Route::get('/teknik-informatika', function () {
     return view('pages.teknik-informatika');
 });
-Route::get('/teknik-sipil', function() {
+Route::get('/teknik-sipil', function () {
     return view('pages.teknik-sipil');
 });
-Route::get('/arsitektur', function() {
+Route::get('/arsitektur', function () {
     return view('pages.arsitektur');
 });
-Route::get('/teknik-mesin', function() {
+Route::get('/teknik-mesin', function () {
     return view('pages.teknik-mesin');
 });
-Route::get('/teknik-elektro', function() {
+Route::get('/teknik-elektro', function () {
     return view('pages.teknik-elektro');
 });
-Route::get('/pkk', function() {
+Route::get('/pkk', function () {
     return view('pages.pkk');
 });
-Route::get('/ptik', function() {
+Route::get('/ptik', function () {
     return view('pages.ptik');
 });
-Route::get('/teknik-bangunan', function() {
+Route::get('/teknik-bangunan', function () {
     return view('pages.teknik-bangunan');
 });
 
@@ -100,7 +116,7 @@ Route::get('/p3ki', [App\Http\Controllers\JurnalController::class, 'index']);
 Route::get('/p3rpm', [App\Http\Controllers\P3rpmController::class, 'index']);
 Route::get('/zona-integritas', [App\Http\Controllers\ZonaIntegritasController::class, 'index']);
 Route::get('/humas-kerjasama', [App\Http\Controllers\MitraKerjasamaController::class, 'index'])->name('humas-kerjasama');
-Route::get('/test-filter', function() {
+Route::get('/test-filter', function () {
     $data = App\Models\MitraKerjasama::active()->ordered()->get();
     return view('test-filter', compact('data'));
 });
@@ -152,6 +168,16 @@ Route::get('/download', [App\Http\Controllers\DokumenDownloadController::class, 
 Route::get('/download/{id}', [App\Http\Controllers\DokumenDownloadController::class, 'download'])->name('download.file');
 
 // Fallback untuk halaman utama jika diperlukan
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
+
+// /home juga ambil data dari HomeController (supaya $sliders, $beritaTerbaru, $pengumumanTerbaru ada)
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+
+Route::get('/search', [SearchController::class, 'index'])->name('search.index');
+// TAMBAHKAN ini:
+Route::get('/jurusan/{jurusan}', [JurusanController::class, 'show'])->name('jurusan.show');
+
+
+Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');

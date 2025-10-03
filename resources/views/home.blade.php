@@ -69,7 +69,7 @@
             </div>
           </div>
         @endif
-        
+
         <!-- Slider Controls -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
           @if(isset($sliders) && $sliders->count() > 0)
@@ -113,7 +113,7 @@
               <p class="text-gray-600 mb-4">
                 Program studi yang mempersiapkan pendidik profesional dalam bidang teknologi informasi dan komunikasi.
               </p>
-              <a href="{{ url('pages/ptik') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a>
+              {{-- <a href="{{ url('pages/ptik') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a> --}}
             </div>
           </div>
 
@@ -127,7 +127,7 @@
               <p class="text-gray-600 mb-4">
                 Program studi yang fokus pada pengembangan software, artificial intelligence, dan teknologi informasi.
               </p>
-              <a href="{{ url('pages/teknik-informatika') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a>
+              {{-- <a href="{{ url('pages/teknik-informatika') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a> --}}
             </div>
           </div>
 
@@ -141,7 +141,7 @@
               <p class="text-gray-600 mb-4">
                 Program studi yang mempersiapkan pendidik profesional dalam bidang teknik elektro dan elektronika.
               </p>
-              <a href="{{ url('pages/teknik-elektro') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a>
+              {{-- <a href="{{ url('pages/teknik-elektro') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a> --}}
             </div>
           </div>
 
@@ -155,7 +155,7 @@
               <p class="text-gray-600 mb-4">
                 Program studi yang mempersiapkan pendidik profesional dalam bidang teknik mesin dan mekatronika.
               </p>
-              <a href="{{ url('pages/teknik-mesin') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a>
+              {{-- <a href="{{ url('pages/teknik-mesin') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a> --}}
             </div>
           </div>
 
@@ -169,7 +169,7 @@
               <p class="text-gray-600 mb-4">
                 Program studi yang mempersiapkan pendidik profesional dalam bidang teknik bangunan dan konstruksi.
               </p>
-              <a href="{{ url('pages/teknik-bangunan') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a>
+              {{-- <a href="{{ url('pages/teknik-bangunan') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a> --}}
             </div>
           </div>
 
@@ -183,7 +183,7 @@
               <p class="text-gray-600 mb-4">
                 Program studi yang mempersiapkan pendidik profesional dalam bidang kesejahteraan keluarga dan tata boga.
               </p>
-              <a href="{{ url('pages/pkk') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a>
+              {{-- <a href="{{ url('pages/pkk') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a> --}}
             </div>
           </div>
 
@@ -197,7 +197,7 @@
               <p class="text-gray-600 mb-4">
                 Program studi yang fokus pada desain dan perencanaan bangunan yang berkelanjutan dan ramah lingkungan.
               </p>
-              <a href="{{ url('pages/arsitektur') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a>
+              {{-- <a href="{{ url('pages/arsitektur') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a> --}}
             </div>
           </div>
 
@@ -211,7 +211,7 @@
               <p class="text-gray-600 mb-4">
                 Program studi yang fokus pada perencanaan, desain, dan konstruksi infrastruktur untuk pembangunan berkelanjutan.
               </p>
-              <a href="{{ url('pages/teknik-sipil') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a>
+              {{-- <a href="{{ url('pages/teknik-sipil') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a> --}}
             </div>
           </div>
 
@@ -225,7 +225,7 @@
               <p class="text-gray-600 mb-4">
                 Program studi yang fokus pada desain dan pengembangan sistem mekanik untuk berbagai aplikasi industri.
               </p>
-              <a href="{{ url('pages/teknik-mesin') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a>
+              {{-- <a href="{{ url('pages/teknik-mesin') }}" class="text-primary hover:text-accent font-semibold">Pelajari Lebih Lanjut →</a> --}}
             </div>
           </div>
         </div>
@@ -321,12 +321,12 @@
             <h3 class="text-2xl font-bold text-secondary mb-8">Video Teknik</h3>
             <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-100">
               <div class="relative">
-                <iframe 
-                  class="w-full h-80 md:h-96" 
-                  src="https://www.youtube.com/embed/XNj2W-tLkic?si=uxgSYOVmwYB5IiiP" 
-                  title="Video Profil Fakultas Teknik UNIMA" 
-                  frameborder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                <iframe
+                  class="w-full h-80 md:h-96"
+                  src="https://www.youtube.com/embed/XNj2W-tLkic?si=uxgSYOVmwYB5IiiP"
+                  title="Video Profil Fakultas Teknik UNIMA"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen>
                 </iframe>
               </div>
@@ -447,7 +447,7 @@
               </div>
             @endif
           </div>
-          
+
           <div class="text-center mt-8">
             <a href="{{ url('pengumuman') }}" class="bg-primary hover:bg-accent text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block">
               Lihat Semua Pengumuman
@@ -456,4 +456,4 @@
         </div>
       </div>
     </section>
-@endsection 
+@endsection

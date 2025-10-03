@@ -14,6 +14,7 @@ class HomeController extends Controller
         // Ambil slider yang aktif
         $sliders = Slider::where('is_active', true)
             ->orderBy('urutan', 'asc')
+            ->take(3)
             ->get();
 
         // Ambil berita terbaru untuk section berita

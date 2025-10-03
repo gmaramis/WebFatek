@@ -3,28 +3,22 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\SliderResource\Pages;
-use App\Filament\Resources\SliderResource\RelationManagers;
 use App\Models\Slider;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
+use Intervention\Image\Laravel\Facades\Image; // <-- pakai facade v3
 
 class SliderResource extends Resource
 {
     protected static ?string $model = Slider::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-photo';
-
     protected static ?string $navigationGroup = 'Konten Website';
-
     protected static ?string $navigationLabel = 'Slider Halaman Depan';
-
     protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
@@ -61,26 +55,33 @@ class SliderResource extends Resource
                             ->imageResizeTargetWidth('1920')
                             ->imageResizeTargetHeight('1080')
                             ->required()
+                            ->disk('public')
+                            ->directory('sliders')
                             ->helperText('Ukuran yang disarankan: 1920x1080px (16:9). Minimal 1200x675px. Maksimal 5MB.')
                             ->rules([
                                 'required',
                                 'image',
                                 'mimes:jpeg,png,jpg,webp',
-                                'max:5120', // 5MB
-                                'dimensions:min_width=1200,min_height=675'
+                                'max:5120',
+                                'dimensions:min_width=1200,min_height=675',
                             ])
-                            ->afterStateUpdated(function ($state, $set) {
+                            ->afterStateUpdated(function ($state) {
                                 if ($state) {
-                                    // Auto-resize jika gambar terlalu besar
                                     $path = Storage::disk('public')->path($state);
-                                    $image = Image::make($path);
-                                    
-                                    // Resize jika lebih besar dari 1920x1080
+                                    $image = Image::read($path); // v3 pakai read()
+
+                                    // Resize kalau lebih besar dari 1920x1080
                                     if ($image->width() > 1920 || $image->height() > 1080) {
-                                        $image->resize(1920, 1080, function ($constraint) {
-                                            $constraint->aspectRatio();
-                                            $constraint->upsize();
-                                        });
+                                        $ratio = min(
+                                            1920 / $image->width(),
+                                            1080 / $image->height(),
+                                            1 // jangan upsize
+                                        );
+
+                                        $newW = (int) floor($image->width() * $ratio);
+                                        $newH = (int) floor($image->height() * $ratio);
+
+                                        $image->resize($newW, $newH);
                                         $image->save($path);
                                     }
                                 }
@@ -90,7 +91,7 @@ class SliderResource extends Resource
                             ->label('Urutan')
                             ->options([
                                 1 => 'Pertama',
-                                2 => 'Kedua', 
+                                2 => 'Kedua',
                                 3 => 'Ketiga'
                             ])
                             ->required()
@@ -109,10 +110,14 @@ class SliderResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image_base64')
+                Tables\Columns\ImageColumn::make('gambar')
                     ->label('Gambar')
+                    ->state(fn($record) => $record->gambar
+                        ? asset('storage/' . $record->gambar)   // hasilkan URL publik
+                        : null)
                     ->size(100)
                     ->circular(),
+
 
                 Tables\Columns\TextColumn::make('judul')
                     ->label('Judul')
@@ -156,9 +161,7 @@ class SliderResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

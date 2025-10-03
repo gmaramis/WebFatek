@@ -18,13 +18,13 @@ class OrmawaResource extends Resource
     protected static ?string $model = Ormawa::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
-    
+
     protected static ?string $navigationGroup = 'Kemahasiswaan';
-    
+
     protected static ?string $navigationLabel = 'ORMAWA';
-    
+
     protected static ?string $modelLabel = 'Organisasi Mahasiswa';
-    
+
     protected static ?string $pluralModelLabel = 'Organisasi Mahasiswa';
 
     protected static ?int $navigationSort = 1;
@@ -39,24 +39,26 @@ class OrmawaResource extends Resource
                             ->label('Jenis Organisasi')
                             ->required()
                             ->options([
-                                'bem' => 'BEM (Badan Eksekutif Mahasiswa)',
+                                'bem'     => 'BEM (Badan Eksekutif Mahasiswa)',
+                                'dpm'     => 'DPM (Dewan Perwakilan Mahasiswa)',
+                                'kprm'    => 'KPRM (Komisi Pemilihan Raya Mhs)',
                                 'himpunan' => 'Himpunan Jurusan',
-                                'ukm' => 'UKM (Unit Kegiatan Mahasiswa)',
+                                'ukm'     => 'UKM (Unit Kegiatan Mahasiswa)',
                             ])
                             ->default('bem')
                             ->placeholder('Pilih jenis organisasi'),
-                        
+
                         Forms\Components\TextInput::make('nama')
                             ->label('Nama Organisasi')
                             ->required()
                             ->maxLength(255)
                             ->placeholder('Contoh: Badan Eksekutif Mahasiswa Fakultas Teknik'),
-                        
+
                         Forms\Components\TextInput::make('singkatan')
                             ->label('Singkatan')
                             ->maxLength(50)
                             ->placeholder('Contoh: BEM Fatek, HMTI, UKM Seni'),
-                        
+
                         Forms\Components\Textarea::make('deskripsi')
                             ->label('Deskripsi Organisasi')
                             ->required()
@@ -64,47 +66,47 @@ class OrmawaResource extends Resource
                             ->placeholder('Tulis deskripsi lengkap tentang organisasi ini...')
                             ->helperText('Deskripsi yang akan ditampilkan di halaman website'),
                     ])->columns(2),
-                
+
                 Forms\Components\Section::make('Informasi Kepengurusan')
                     ->schema([
                         Forms\Components\TextInput::make('ketua')
                             ->label('Nama Ketua')
                             ->placeholder('Nama ketua organisasi saat ini'),
-                        
+
                         Forms\Components\TextInput::make('email')
                             ->label('Email Kontak')
                             ->email()
                             ->placeholder('ormawa@fatek.unima.ac.id'),
-                        
+
                         Forms\Components\TextInput::make('telepon')
                             ->label('Nomor Telepon')
                             ->placeholder('+62-431-123456 ext. 123'),
-                        
+
                         Forms\Components\TextInput::make('lokasi')
                             ->label('Lokasi Kantor')
                             ->placeholder('Contoh: Ruang BEM Lt. 1, Gedung Fatek'),
                     ])->columns(2),
-                
+
                 Forms\Components\Section::make('Media & Sosial Media')
                     ->schema([
                         Forms\Components\TextInput::make('website')
                             ->label('Website')
                             ->url()
                             ->placeholder('https://bem-fatek.unima.ac.id'),
-                        
+
                         Forms\Components\TextInput::make('instagram')
                             ->label('Instagram')
                             ->placeholder('@bemfatek_unima'),
-                        
+
                         Forms\Components\TextInput::make('facebook')
                             ->label('Facebook')
                             ->placeholder('BEM Fatek UNIMA'),
-                        
+
                         Forms\Components\TextInput::make('youtube')
                             ->label('YouTube')
                             ->placeholder('BEM Fatek UNIMA Official'),
                     ])->columns(2),
-                
+
                 Forms\Components\Section::make('Pengaturan Tampilan')
                     ->schema([
                         Forms\Components\Select::make('warna')
@@ -121,25 +123,25 @@ class OrmawaResource extends Resource
                             ])
                             ->default('orange')
                             ->required(),
-                        
+
                         Forms\Components\TextInput::make('icon')
                             ->label('Icon FontAwesome')
                             ->placeholder('Contoh: fas fa-users, fas fa-graduation-cap')
                             ->helperText('Icon yang akan ditampilkan di halaman website'),
-                        
+
                         Forms\Components\TextInput::make('urutan')
                             ->label('Urutan Tampilan')
                             ->numeric()
                             ->default(1)
                             ->minValue(1)
                             ->helperText('Angka kecil = tampil di atas'),
-                        
+
                         Forms\Components\Toggle::make('is_active')
                             ->label('Aktif')
                             ->helperText('Organisasi akan ditampilkan di website jika diaktifkan')
                             ->default(true),
                     ])->columns(2),
-                
+
                 Forms\Components\Section::make('Prestasi Organisasi')
                     ->description('Daftar prestasi yang telah diraih oleh organisasi ini')
                     ->schema([
@@ -153,7 +155,7 @@ class OrmawaResource extends Resource
                             ->helperText('Contoh: <b>Juara 1 Kompetisi Robotik Nasional</b> = 2024, <b>Best Paper Award</b> = Konferensi Nasional 2023')
                             ->columnSpanFull(),
                     ]),
-                
+
                 Forms\Components\Section::make('Program Unggulan')
                     ->description('Program-program unggulan yang diselenggarakan organisasi')
                     ->schema([
@@ -167,7 +169,7 @@ class OrmawaResource extends Resource
                             ->helperText('Contoh: <b>Fatek Mengajar</b> = Program pengabdian ke sekolah-sekolah, <b>Startup Competition</b> = Kompetisi startup mahasiswa')
                             ->columnSpanFull(),
                     ]),
-                
+
                 Forms\Components\Section::make('Catatan Tambahan')
                     ->schema([
                         Forms\Components\Textarea::make('catatan')
@@ -186,40 +188,44 @@ class OrmawaResource extends Resource
                 Tables\Columns\TextColumn::make('jenis')
                     ->label('Jenis')
                     ->badge()
-                    ->formatStateUsing(fn ($state) => match($state) {
-                        'bem' => 'BEM',
+                    ->formatStateUsing(fn($state) => match ($state) {
+                        'bem'      => 'BEM',
+                        'dpm'      => 'DPM',
+                        'kprm'     => 'KPRM',
                         'himpunan' => 'Himpunan',
-                        'ukm' => 'UKM',
-                        default => ucfirst($state)
+                        'ukm'      => 'UKM',
+                        default    => ucfirst($state)
                     })
-                    ->color(fn ($state) => match ($state) {
-                        'bem' => 'primary',
+                    ->color(fn($state) => match ($state) {
+                        'bem'      => 'primary',
+                        'dpm'      => 'info',
+                        'kprm'     => 'warning',
                         'himpunan' => 'success',
-                        'ukm' => 'warning',
-                        default => 'secondary',
+                        'ukm'      => 'gray',
+                        default    => 'secondary',
                     })
                     ->sortable(),
-                
+
                 Tables\Columns\TextColumn::make('nama_lengkap')
                     ->label('Nama Organisasi')
                     ->searchable()
                     ->sortable()
                     ->limit(40),
-                
+
                 Tables\Columns\TextColumn::make('ketua')
                     ->label('Ketua')
                     ->placeholder('Belum ditentukan')
                     ->searchable(),
-                
+
                 Tables\Columns\TextColumn::make('email')
                     ->label('Email')
                     ->placeholder('Belum diisi')
                     ->searchable(),
-                
+
                 Tables\Columns\TextColumn::make('warna')
                     ->label('Warna')
                     ->badge()
-                    ->formatStateUsing(fn ($state) => match($state) {
+                    ->formatStateUsing(fn($state) => match ($state) {
                         'orange' => '🟠 Orange',
                         'blue' => '🔵 Biru',
                         'green' => '🟢 Hijau',
@@ -230,7 +236,7 @@ class OrmawaResource extends Resource
                         'indigo' => '🟦 Indigo',
                         default => $state,
                     })
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn(string $state): string => match ($state) {
                         'orange' => 'orange',
                         'blue' => 'blue',
                         'green' => 'green',
@@ -241,22 +247,22 @@ class OrmawaResource extends Resource
                         'indigo' => 'indigo',
                         default => 'gray',
                     }),
-                
+
                 Tables\Columns\TextColumn::make('urutan')
                     ->label('Urutan')
                     ->sortable()
                     ->badge(),
-                
+
                 Tables\Columns\TextColumn::make('prestasi_count')
                     ->label('Prestasi')
                     ->badge()
                     ->color('success'),
-                
+
                 Tables\Columns\TextColumn::make('program_count')
                     ->label('Program')
                     ->badge()
                     ->color('info'),
-                
+
                 Tables\Columns\IconColumn::make('is_active')
                     ->label('Status')
                     ->boolean()
@@ -264,7 +270,7 @@ class OrmawaResource extends Resource
                     ->falseIcon('heroicon-o-x-circle')
                     ->trueColor('success')
                     ->falseColor('danger'),
-                
+
                 Tables\Columns\TextColumn::make('updated_at')
                     ->label('Terakhir Diupdate')
                     ->dateTime('d M Y H:i')
@@ -275,11 +281,14 @@ class OrmawaResource extends Resource
                 Tables\Filters\SelectFilter::make('jenis')
                     ->label('Jenis Organisasi')
                     ->options([
-                        'bem' => 'BEM',
+                        'bem'      => 'BEM',
+                        'dpm'      => 'DPM',
+                        'kprm'     => 'KPRM',
                         'himpunan' => 'Himpunan Jurusan',
-                        'ukm' => 'UKM',
+                        'ukm'      => 'UKM',
                     ]),
-                
+
+
                 Tables\Filters\TernaryFilter::make('is_active')
                     ->label('Status Aktif'),
             ])

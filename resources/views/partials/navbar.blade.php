@@ -16,10 +16,10 @@
       <span class="flex items-center"><i class="fas fa-envelope mr-1"></i> fatek@unima.ac.id</span>
         </div>
     </div>
-    <form class="hidden md:flex items-center space-x-1">
-      <input type="text" placeholder="Search..." class="rounded px-2 py-1 text-orange-800 text-xs md:text-sm h-6 md:h-7" />
-      <button type="submit" class="px-2 py-1 bg-white text-orange-600 rounded text-xs md:text-sm h-6 md:h-7">Cari</button>
-    </form>
+    <form class="hidden md:flex items-center space-x-1" action="{{ route('search.index') }}" method="GET">
+        <input name="q" type="text" placeholder="Search..." class="rounded px-2 py-1 text-orange-800 text-xs md:text-sm h-6 md:h-7" />
+        <button type="submit" class="px-2 py-1 bg-white text-orange-600 rounded text-xs md:text-sm h-6 md:h-7">Cari</button>
+      </form>
   </div>
 </div>
 <!-- Header Logo + Judul -->
@@ -32,8 +32,9 @@
         <p class="text-sm text-orange-100">Universitas Negeri Manado</p>
       </div>
     </div>
-    <form class="md:hidden">
-      <input type="text" placeholder="Search..." class="rounded px-2 py-1 text-orange-800" />
+    <!-- versi mobile -->
+    <form class="md:hidden" action="{{ route('search.index') }}" method="GET">
+        <input name="q" type="text" placeholder="Search..." class="rounded px-2 py-1 text-orange-800" />
     </form>
     <button id="mobile-menu-btn" class="md:hidden text-white ml-4 focus:outline-none">
       <i class="fas fa-bars text-2xl"></i>
@@ -52,6 +53,7 @@
             <li><a href="{{ url('/visi-misi') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Visi Misi</a></li>
             <li><a href="{{ url('/kebijakan') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Kebijakan</a></li>
             <li><a href="{{ url('/dosen') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Dosen</a></li>
+            <li><a href="{{ url('/struktur-organisasi') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Struktur Organisasi</a></li>
             <li><a href="{{ url('/struktur') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Struktur Pimpinan</a></li>
             <li><a href="{{ url('/jurusan') }}" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Jurusan</a></li>
           </ul>
@@ -116,7 +118,7 @@
     <div class="space-y-4">
       <a href="{{ url('/home') }}" class="block text-white hover:text-orange-200 font-semibold">Home</a>
       <a href="{{ url('/berita') }}" class="block text-white hover:text-orange-200 font-semibold">Berita</a>
-      
+
       <!-- Mobile Profil -->
       <div class="space-y-2">
         <div class="text-white font-semibold">Profil</div>
@@ -124,11 +126,12 @@
           <a href="{{ url('/visi-misi') }}" class="block text-orange-100 hover:text-white">Visi Misi</a>
           <a href="{{ url('/kebijakan') }}" class="block text-orange-100 hover:text-white">Kebijakan</a>
           <a href="{{ url('/dosen') }}" class="block text-orange-100 hover:text-white">Dosen</a>
+          <a href="{{ url('/struktur-organisasi') }}" class="block text-orange-100 hover:text-white">Struktur Organisasi</a>
           <a href="{{ url('/struktur') }}" class="block text-orange-100 hover:text-white">Struktur Pimpinan</a>
           <a href="{{ url('/jurusan') }}" class="block text-orange-100 hover:text-white">Jurusan</a>
         </div>
       </div>
-      
+
       <!-- Mobile Akademik -->
       <div class="space-y-2">
         <div class="text-white font-semibold">Akademik</div>
@@ -140,7 +143,7 @@
           <a href="https://lms.unima.ac.id" class="block text-orange-100 hover:text-white" target="_blank" rel="noopener">LMS Unima</a>
         </div>
       </div>
-      
+
       <!-- Mobile Kemahasiswaan -->
       <div class="space-y-2">
         <div class="text-white font-semibold">Kemahasiswaan & Alumni</div>
@@ -149,7 +152,7 @@
           <a href="{{ url('/alumni') }}" class="block text-orange-100 hover:text-white">Alumni</a>
         </div>
       </div>
-      
+
       <!-- Mobile Unit -->
       <div class="space-y-2">
         <div class="text-white font-semibold">Unit</div>
@@ -159,10 +162,10 @@
           <a href="{{ url('/p3rpm') }}" class="block text-orange-100 hover:text-white">Ruang Kolaborasi (P3RPM)</a>
         </div>
       </div>
-      
+
       <a href="{{ url('/zona-integritas') }}" class="block text-white hover:text-orange-200 font-semibold">Zona Integritas</a>
       <a href="{{ url('/humas-kerjasama') }}" class="block text-white hover:text-orange-200 font-semibold">Humas & Kerjasama</a>
-      
+
       <!-- Mobile Layanan -->
       <div class="space-y-2">
         <div class="text-white font-semibold">Layanan</div>
@@ -183,13 +186,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
         });
     }
-    
+
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
         if (!event.target.closest('#mobile-menu') && !event.target.closest('#mobile-menu-btn')) {
@@ -199,4 +202,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-</script> 
+</script>

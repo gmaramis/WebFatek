@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Laravel\Scout\Searchable;
+
 class Jurusan extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     protected $fillable = [
         'nama',
@@ -26,18 +28,17 @@ class Jurusan extends Model
         'is_active'
     ];
 
-    protected $casts = [
-        'is_active' => 'boolean',
-        'durasi_studi' => 'integer',
-    ];
+    protected $casts = ['is_active' => 'boolean', 'durasi_studi' => 'integer'];
 
-    public function scopeActive($query)
+    public function toSearchableArray(): array
     {
-        return $query->where('is_active', true);
-    }
-
-    public function scopeByJenjang($query, $jenjang)
-    {
-        return $query->where('jenjang', $jenjang);
+        return [
+            'id'         => $this->id,
+            'nama'       => $this->nama,
+            'deskripsi'  => strip_tags((string) $this->deskripsi),
+            'jenjang'    => $this->jenjang,
+            'akreditasi' => $this->akreditasi,
+            'type'       => 'jurusan',
+        ];
     }
 }

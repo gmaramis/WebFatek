@@ -51,9 +51,13 @@ class JurusanResource extends Resource
                 Forms\Components\Textarea::make('tujuan')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('gambar')
-                    ->required()
-                    ->maxLength(255),
+                Forms\Components\FileUpload::make('gambar')
+                    ->label('Gambar Jurusan')
+                    ->image()
+                    ->disk('public')
+                    ->directory('jurusans')
+                    ->maxSize(5120)   // 5MB
+                    ->required(),
                 Forms\Components\TextInput::make('kepala_jurusan')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('nip_kepala')
@@ -82,8 +86,12 @@ class JurusanResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('kode')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('gambar')
-                    ->searchable(),
+                Tables\Columns\ImageColumn::make('gambar')
+                    ->label('Gambar')
+                    ->disk('public')
+                    ->square() // biar thumbnail kotak, bisa diganti ->circular()
+                    ->size(80),
+
                 Tables\Columns\TextColumn::make('kepala_jurusan')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('nip_kepala')
