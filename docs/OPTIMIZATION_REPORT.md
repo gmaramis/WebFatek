@@ -11,7 +11,7 @@ Optimasi telah berhasil dilakukan dengan fokus pada gambar dan performa website 
 -   `ars.jpg`: 3.8MB → **199KB** (95% pengurangan)
 -   `PTIK.jpg`: 2.4MB → **190KB** (92% pengurangan)
 -   `mesin.jpg`: 1.6MB → **197KB** (88% pengurangan)
--   `mesin 2.jpg`: 1.2MB → **71KB** (94% pengurangan)
+-   `mesin-2.jpg`: 1.2MB → **71KB** (94% pengurangan)
 -   `elektro.jpg`: ~500KB → **84KB** (83% pengurangan)
 -   `sipil.jpg`: ~400KB → **70KB** (82% pengurangan)
 -   `TI.jpg`: ~300KB → **73KB** (76% pengurangan)

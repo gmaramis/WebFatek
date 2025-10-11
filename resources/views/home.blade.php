@@ -30,7 +30,7 @@
         @else
           <!-- Fallback: Slide 1: Foto Gedung Fakultas Teknik -->
           <div class="slide active absolute inset-0 flex items-center justify-center bg-black transition-all duration-1000" data-aos="fade-in">
-            <img src="{{ asset('img/fto fatek 1.jpg') }}" alt="Gedung Fakultas Teknik" class="object-cover w-full h-full opacity-80" />
+            <img src="{{ asset('img/foto-fakultas.jpg') }}" alt="Gedung Fakultas Teknik" class="object-cover w-full h-full opacity-80" />
             <div class="absolute left-0 right-0 bottom-0 p-8 bg-gradient-to-t from-black/70 to-transparent">
               <div class="max-w-2xl mx-auto text-white text-center">
                 <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg" data-aos="fade-up" data-aos-delay="200">
@@ -217,7 +217,7 @@
 
           <!-- Teknik Mesin -->
           <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-300" data-aos="zoom-in">
-            <div class="h-48 bg-cover bg-center" style="background-image: url('{{ asset('img/mesin 2.jpg') }}');"></div>
+            <div class="h-48 bg-cover bg-center" style="background-image: url('{{ asset('img/mesin-2.jpg') }}');"></div>
             <div class="p-6">
               <h3 class="text-xl font-semibold text-secondary mb-3">
                 Teknik Mesin
