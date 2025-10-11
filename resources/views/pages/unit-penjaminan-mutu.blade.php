@@ -6,7 +6,7 @@
 <div class="bg-gradient-to-r from-blue-900 via-blue-700 to-orange-400 py-12 mb-8">
     <div class="container mx-auto px-4 text-center text-white">
         <h1 class="text-4xl md:text-5xl font-bold mb-2">Unit Penjaminan Mutu</h1>
-        <p class="text-lg md:text-xl font-light mb-4">Lembaga Pengembangan Pembelajaran dan Penjaminan Mutu (LP3M) Fatek UNIMA</p>
+        <p class="text-lg md:text-xl font-light mb-4">Lembaga Pengembangan Pembelajaran dan Penjaminan Mutu (LP3M) Fakultas Teknik UNIMAUNIMA</p>
         <div class="flex justify-center">
             <span class="inline-flex items-center bg-white/20 px-4 py-2 rounded-full text-base font-semibold">
                 <svg class="w-6 h-6 mr-2 text-orange-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3zm0 0c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z"/></svg>
@@ -24,11 +24,11 @@
         </div>
         <div>
             <h2 class="text-2xl font-bold mb-1">Prof. Dr. Meytij Jeanne Rampe, M.Si.</h2>
-            <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">Ketua Unit Penjaminan Mutu (UPM) Fatek</span>
+            <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mb-2">Ketua Unit Penjaminan Mutu (UPM) Fakultas Teknik UNIMA</span>
             <p class="mb-2 text-gray-700">"Bersama membangun budaya mutu di lingkungan Fakultas Teknik UNIMA untuk pendidikan yang unggul dan berdaya saing."</p>
             <div class="flex items-center gap-3 text-gray-600">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 01-8 0 4 4 0 018 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7m0 0H9m3 0h3"/></svg>
-                <span>upm.fatek@unima.ac.id</span>
+                <span>upm.ft@unima.ac.id</span>
             </div>
         </div>
     </div>
@@ -107,22 +107,22 @@
         <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-white rounded-lg shadow p-4 flex flex-col">
                 <img src="https://source.unsplash.com/400x200/?meeting,university" alt="Berita 1" class="rounded mb-3 object-cover h-32 w-full">
-                <h4 class="font-bold text-lg mb-1">Penarikan Mahasiswa KKN Fatek 2024</h4>
-                <p class="text-gray-600 text-sm mb-2">Sebanyak 300 mahasiswa Fatek menyelesaikan pengabdian KKN di berbagai daerah...</p>
+                <h4 class="font-bold text-lg mb-1">Penarikan Mahasiswa KKN Fakultas Teknik UNIMA2024</h4>
+                <p class="text-gray-600 text-sm mb-2">Sebanyak 300 mahasiswa Fakultas Teknik UNIMAmenyelesaikan pengabdian KKN di berbagai daerah...</p>
                 <span class="text-xs text-gray-400 mb-2">27 Januari 2024</span>
                 <a href="#" class="mt-auto text-blue-700 hover:text-orange-500 font-semibold">Baca Selengkapnya</a>
             </div>
             <div class="bg-white rounded-lg shadow p-4 flex flex-col">
                 <img src="https://source.unsplash.com/400x200/?audit,document" alt="Berita 2" class="rounded mb-3 object-cover h-32 w-full">
                 <h4 class="font-bold text-lg mb-1">Audit Mutu Internal Prodi Teknik Sipil</h4>
-                <p class="text-gray-600 text-sm mb-2">Prodi Teknik Sipil Fatek berhasil mempertahankan predikat mutu A pada audit tahun ini...</p>
+                <p class="text-gray-600 text-sm mb-2">Prodi Teknik Sipil Fakultas Teknik UNIMAberhasil mempertahankan predikat mutu A pada audit tahun ini...</p>
                 <span class="text-xs text-gray-400 mb-2">15 Januari 2024</span>
                 <a href="#" class="mt-auto text-blue-700 hover:text-orange-500 font-semibold">Baca Selengkapnya</a>
             </div>
             <div class="bg-white rounded-lg shadow p-4 flex flex-col">
                 <img src="https://source.unsplash.com/400x200/?teamwork,university" alt="Berita 3" class="rounded mb-3 object-cover h-32 w-full">
                 <h4 class="font-bold text-lg mb-1">Workshop Penyusunan Dokumen Mutu</h4>
-                <p class="text-gray-600 text-sm mb-2">UPM Fatek mengadakan workshop untuk meningkatkan pemahaman dosen tentang dokumen mutu...</p>
+                <p class="text-gray-600 text-sm mb-2">UPM Fakultas Teknik UNIMAmengadakan workshop untuk meningkatkan pemahaman dosen tentang dokumen mutu...</p>
                 <span class="text-xs text-gray-400 mb-2">10 Januari 2024</span>
                 <a href="#" class="mt-auto text-blue-700 hover:text-orange-500 font-semibold">Baca Selengkapnya</a>
             </div>
@@ -136,7 +136,7 @@
             <div class="flex-1">
                 <div class="mb-2 flex items-center gap-2 text-gray-700">
                     <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 01-8 0 4 4 0 018 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7m0 0H9m3 0h3"/></svg>
-                    <span>upm.fatek@unima.ac.id</span>
+                    <span>upm.ft@unima.ac.id</span>
                 </div>
                 <div class="mb-2 flex items-center gap-2 text-gray-700">
                     <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 12.414a8 8 0 111.414-1.414l4.243 4.243a1 1 0 01-1.414 1.414z"/></svg>
@@ -154,4 +154,4 @@
         </div>
     </div>
 </div>
-@endsection 
+@endsection

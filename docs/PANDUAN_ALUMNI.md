@@ -1,14 +1,14 @@
-# PANDUAN HALAMAN ALUMNI FATEK UNIMA
+# PANDUAN HALAMAN ALUMNI FT UNIMA
 
 ## Deskripsi
 
-Halaman Alumni Fatek UNIMA adalah halaman yang menampilkan informasi tentang jaringan alumni, statistik, alumni berprestasi, dan form pendaftaran untuk alumni baru.
+Halaman Alumni FT UNIMA adalah halaman yang menampilkan informasi tentang jaringan alumni, statistik, alumni berprestasi, dan form pendaftaran untuk alumni baru.
 
 ## Fitur yang Tersedia
 
 ### 1. Hero Section
 
--   **Judul Utama**: "Alumni Fatek UNIMA"
+-   **Judul Utama**: "Alumni FT UNIMA"
 -   **Subtitle**: Deskripsi singkat tentang jaringan alumni
 -   **Statistik Cepat**: Total alumni, tingkat penyerapan, perusahaan mitra, tahun pengalaman
 -   **Desain**: Gradient orange dengan efek backdrop blur
@@ -18,7 +18,7 @@ Halaman Alumni Fatek UNIMA adalah halaman yang menampilkan informasi tentang jar
 -   **Total Alumni**: Menampilkan jumlah alumni yang terdaftar
 -   **Tingkat Penyerapan**: Persentase alumni yang bekerja/wirausaha
 -   **Perusahaan Mitra**: Jumlah perusahaan yang bermitra
--   **Tahun Pengalaman**: Pengalaman sejak berdirinya Fatek
+-   **Tahun Pengalaman**: Pengalaman sejak berdirinya Fakultas Teknik
 -   **Desain**: Card dengan icon dan hover effect
 
 ### 3. Alumni Berprestasi
@@ -314,6 +314,6 @@ Route::post('/alumni/daftar', [AlumniController::class, 'store'])->name('alumni.
 
 ## Kontak Support
 
--   **Email**: alumni@fatek.unima.ac.id
+-   **Email**: alumni@ft.unima.ac.id
 -   **Admin Panel**: `/admin`
 -   **Documentation**: Lihat file ini dan komentar kode

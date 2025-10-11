@@ -1,4 +1,4 @@
-# WebFatek - Website Fakultas Teknik UNIMA
+# WebFT - Website Fakultas Teknik UNIMA
 
 Website resmi Fakultas Teknik Universitas Negeri Manado (UNIMA) yang dibangun dengan Laravel dan Tailwind CSS.
 
@@ -86,8 +86,8 @@ Fatek/
 
 ## 📞 Kontak
 
--   **Website**: [fatek.unima.ac.id](https://fatek.unima.ac.id)
--   **Email**: fatek@unima.ac.id
+-   **Website**: [ft.unima.ac.id](https://ft.unima.ac.id)
+-   **Email**: ft@unima.ac.id
 -   **Alamat**: Kampus UNIMA Tondano, Minahasa, Sulawesi Utara
 
 ## 📄 Lisensi

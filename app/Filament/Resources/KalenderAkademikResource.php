@@ -78,7 +78,7 @@ class KalenderAkademikResource extends Resource
 
                         Forms\Components\TextInput::make('pdf_name')
                             ->label('Nama File PDF')
-                            ->placeholder('Contoh: Kalender_Akademik_Fatek_2024_2025.pdf'),
+                            ->placeholder('Contoh: Kalender_Akademik_FT_2024_2025.pdf'),
 
                         Forms\Components\TextInput::make('pdf_size')
                             ->label('Ukuran File PDF')
@@ -95,7 +95,7 @@ class KalenderAkademikResource extends Resource
 
                         Forms\Components\TextInput::make('jpg_name')
                             ->label('Nama File JPG')
-                            ->placeholder('Contoh: Kalender_Akademik_Fatek_2024_2025.jpg'),
+                            ->placeholder('Contoh: Kalender_Akademik_FT_2024_2025.jpg'),
 
                         Forms\Components\TextInput::make('jpg_size')
                             ->label('Ukuran File JPG')
@@ -216,4 +216,4 @@ class KalenderAkademikResource extends Resource
             'edit' => Pages\EditKalenderAkademik::route('/{record}/edit'),
         ];
     }
-} 
+}

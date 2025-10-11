@@ -7,7 +7,7 @@
 <div class="bg-gradient-to-r from-purple-900 via-purple-700 to-pink-500 py-16 mb-8">
     <div class="container mx-auto px-4 text-center text-white">
         <h1 class="text-4xl md:text-6xl font-bold mb-4">Rumah Publikasi</h1>
-        <p class="text-xl md:text-2xl font-light mb-6">Pusat Pengembangan Publikasi dan Karya Ilmiah (P3KI) Fatek UNIMA</p>
+        <p class="text-xl md:text-2xl font-light mb-6">Pusat Pengembangan Publikasi dan Karya Ilmiah (P3KI) Fakultas Teknik UNIMA</p>
         <div class="flex justify-center">
             <span class="inline-flex items-center bg-white/20 px-6 py-3 rounded-full text-lg font-semibold">
                 <svg class="w-6 h-6 mr-2 text-pink-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -22,7 +22,7 @@
 <div class="container mx-auto px-4">
     <!-- Statistik Publikasi -->
     <div class="mb-12">
-        <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">Statistik Publikasi Fatek</h2>
+        <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">Statistik Publikasi Fakultas Teknik UNIMA</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div class="bg-white rounded-xl shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
                 <div class="text-3xl font-bold text-purple-600 mb-2">{{ $statistik['jurnal_terpublikasi'] }}+</div>
@@ -46,7 +46,7 @@
     <!-- Jurnal per Program Studi -->
     <div class="mb-12">
         <h2 class="text-2xl font-bold mb-8 text-gray-800">Jurnal Akademik per Program Studi</h2>
-        
+
         @foreach($jurnals as $jurusan => $jurnalList)
             <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
                 <div class="flex items-center mb-4">
@@ -151,7 +151,7 @@
     <!-- Call to Action -->
     <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-8 text-center text-white mb-12">
         <h2 class="text-2xl font-bold mb-4">Ingin Mempublikasikan Karya Ilmiah?</h2>
-        <p class="text-lg mb-6">Bergabunglah dengan tim peneliti Fatek UNIMA dan berkontribusi dalam pengembangan ilmu pengetahuan</p>
+        <p class="text-lg mb-6">Bergabunglah dengan tim peneliti Fakultas Teknik UNIMA dan berkontribusi dalam pengembangan ilmu pengetahuan</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                 Panduan Publikasi
@@ -174,7 +174,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 01-8 0 4 4 0 018 0z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7m0 0H9m3 0h3"/>
                         </svg>
-                        <span>p3ki.fatek@unima.ac.id</span>
+                        <span>p3ki.ft@unima.ac.id</span>
                     </div>
                     <div class="flex items-center">
                         <svg class="w-5 h-5 text-purple-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -186,7 +186,7 @@
                         <svg class="w-5 h-5 text-purple-600 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 12.414a8 8 0 111.414-1.414l4.243 4.243a1 1 0 01-1.414 1.414z"/>
                         </svg>
-                        <span>Gedung P3KI Lt. 2, Fatek UNIMA</span>
+                        <span>Gedung P3KI Lt. 2, Fakultas Teknik UNIMA</span>
                     </div>
                 </div>
             </div>
@@ -242,4 +242,4 @@
         };
     }
 @endphp
-@endsection 
+@endsection

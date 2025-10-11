@@ -199,6 +199,6 @@ php artisan db:seed --class=JurnalSeeder
 
 Jika mengalami masalah dengan menu Jurnal Akademik, silakan hubungi:
 
--   Email: admin@fatek.unima.ac.id
+-   Email: admin@ft.unima.ac.id
 -   WhatsApp: +62-xxx-xxx-xxxx
 -   Jam kerja: Senin-Jumat 08:00-16:00

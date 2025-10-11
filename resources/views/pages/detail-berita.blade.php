@@ -74,15 +74,15 @@
                 <span>{{ \Carbon\Carbon::parse($berita->tanggal)->format('d F Y') }}</span>
                 <span class="mx-2">•</span>
                 <i class="fas fa-user mr-2"></i>
-                <span>Admin Fatek</span>
+                <span>Admin Fakultas Teknik UNIMA</span>
               </div>
-              
+
               <h1 class="text-3xl font-bold text-secondary mb-6">{{ $berita->judul }}</h1>
-              
+
               <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                 {!! $berita->isi !!}
               </div>
-              
+
               <div class="flex items-center space-x-4 mt-8">
                 <span class="font-bold text-orange-700">Bagikan berita ini:</span>
                 <a href="https://wa.me/?text={{ urlencode($berita->judul . ' - ' . url()->current()) }}" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-green-100 text-green-600 hover:bg-green-500 hover:text-white transition" title="Bagikan ke WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
@@ -91,7 +91,7 @@
               </div>
             </div>
           </article>
-          
+
           <!-- Navigation -->
           <div class="flex justify-between items-center mt-8">
             <a href="{{ url('berita') }}" class="text-orange-700 hover:underline flex items-center transition-colors duration-200">
@@ -107,30 +107,30 @@
                 <span>15 Desember 2024</span>
                 <span class="mx-2">•</span>
                 <i class="fas fa-user mr-2"></i>
-                <span>Admin Fatek</span>
+                <span>Admin Fakultas Teknik UNIMA</span>
               </div>
-              
+
               <h1 class="text-3xl font-bold text-secondary mb-6">Mahasiswa FT UNIMA Raih Juara Kompetisi Robotik Nasional</h1>
-              
+
               <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                 <p>Tim robotik Fakultas Teknik UNIMA berhasil meraih juara pertama dalam kompetisi robotik nasional yang diselenggarakan di Bandung pada tanggal 10-12 Desember 2024.</p>
-                
+
                 <p>Tim yang terdiri dari 5 mahasiswa dari berbagai program studi ini berhasil mengalahkan 50 tim dari berbagai universitas di Indonesia. Robot yang mereka desain menggunakan teknologi AI dan machine learning untuk navigasi otonom.</p>
-                
+
                 <p>"Kami sangat bangga dengan prestasi yang diraih oleh tim robotik kami. Ini membuktikan bahwa mahasiswa FT UNIMA memiliki kompetensi yang tidak kalah dengan mahasiswa dari universitas ternama lainnya," ujar Dekan Fakultas Teknik UNIMA.</p>
-                
+
                 <p>Kompetisi ini diselenggarakan oleh Kementerian Pendidikan dan Kebudayaan dalam rangka mempromosikan inovasi teknologi di kalangan mahasiswa teknik.</p>
               </div>
-              
+
               <div class="flex items-center space-x-4 mt-8">
                 <span class="font-bold text-orange-700">Bagikan berita ini:</span>
-                <a href="https://wa.me/?text=https://fatek.unima.ac.id/detail-berita.html" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-green-100 text-green-600 hover:bg-green-500 hover:text-white transition" title="Bagikan ke WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https://fatek.unima.ac.id/detail-berita.html" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white transition" title="Bagikan ke Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-                <a href="https://twitter.com/intent/tweet?url=https://fatek.unima.ac.id/detail-berita.html" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-sky-100 text-sky-500 hover:bg-sky-500 hover:text-white transition" title="Bagikan ke Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="https://wa.me/?text=https://ft.unima.ac.id/detail-berita.html" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-green-100 text-green-600 hover:bg-green-500 hover:text-white transition" title="Bagikan ke WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://ft.unima.ac.id/detail-berita.html" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white transition" title="Bagikan ke Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="https://twitter.com/intent/tweet?url=https://ft.unima.ac.id/detail-berita.html" target="_blank" class="w-9 h-9 flex items-center justify-center rounded-full bg-sky-100 text-sky-500 hover:bg-sky-500 hover:text-white transition" title="Bagikan ke Twitter"><i class="fab fa-twitter fa-lg"></i></a>
               </div>
             </div>
           </article>
-          
+
           <div class="flex justify-between items-center mt-8">
             <a href="{{ url('berita') }}" class="text-orange-700 hover:underline flex items-center transition-colors duration-200">
               <i class="fas fa-arrow-left mr-2"></i> Kembali ke Berita
@@ -138,7 +138,7 @@
           </div>
         @endif
       </div>
-      
+
       <!-- Sidebar -->
       <div class="lg:col-span-1">
         <!-- Berita Terkait -->
@@ -169,7 +169,7 @@
                 </h4>
                 <p class="text-sm text-gray-600">Fakultas Teknik UNIMA menandatangani kerjasama dengan Google untuk pengembangan program artificial intelligence.</p>
               </article>
-              
+
               <article class="border-b border-gray-200 pb-4 last:border-b-0">
                 <div class="flex items-center text-xs text-gray-500 mb-2">
                   <i class="fas fa-calendar mr-1"></i>
@@ -183,7 +183,7 @@
             @endif
           </div>
         </div>
-        
+
         <!-- Quick Links -->
         <div class="bg-white rounded-lg shadow-lg p-6">
           <h3 class="text-xl font-bold text-secondary mb-6">Link Cepat</h3>
@@ -235,4 +235,4 @@ beritaLinks.forEach(link => {
   });
 });
 </script>
-@endpush 
+@endpush

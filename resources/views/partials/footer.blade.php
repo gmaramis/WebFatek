@@ -22,7 +22,7 @@
           </div>
           <div class="flex items-center text-gray-300">
             <i class="fas fa-envelope mr-3 text-accent"></i>
-            <span>fatek@unima.ac.id</span>
+            <span>ft@unima.ac.id</span>
           </div>
         </div>
       </div>
@@ -61,4 +61,4 @@
       </div>
     </div>
   </div>
-</footer> 
+</footer>

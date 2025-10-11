@@ -287,6 +287,6 @@ http://localhost:8000/tracer-study/form
 
 Jika ada masalah atau pertanyaan tentang sistem Tracer Study, silakan hubungi:
 
--   Email: admin@fatek.unima.ac.id
+-   Email: admin@ft.unima.ac.id
 -   Phone: +62 431 123456
 -   WhatsApp: +62 812-3456-7890

@@ -56,17 +56,17 @@
                     <span>{{ \Carbon\Carbon::parse($berita->tanggal)->format("d F Y") }}</span>
                     <span class="mx-2">•</span>
                     <i class="fas fa-user mr-2"></i>
-                    <span>Admin Fatek</span>
+                    <span>Admin Fakultas Teknik UNIMA</span>
                   </div>
-                  
+
                   <h3 class="text-xl font-semibold text-secondary mb-3 hover:text-primary transition-colors">
                     <a href="{{ url("berita/" . $berita->slug) }}">{{ $berita->judul }}</a>
                   </h3>
-                  
+
                   <p class="text-gray-600 mb-4">
                     {!! Str::limit(strip_tags($berita->isi), 200) !!}
                   </p>
-                  
+
                   <a href="{{ url("berita/" . $berita->slug) }}" class="text-primary hover:text-accent font-semibold">Baca Selengkapnya →</a>
                 </div>
               </article>
@@ -83,7 +83,7 @@
           @endif
         </div>
       </div>
-      
+
       <!-- Sidebar -->
       <div class="lg:col-span-1">
         <!-- Berita Terbaru -->
@@ -114,7 +114,7 @@
                 </h4>
                 <p class="text-sm text-gray-600">Tim robotik Fakultas Teknik UNIMA berhasil meraih juara pertama dalam kompetisi robotik nasional.</p>
               </article>
-              
+
               <article class="border-b border-gray-200 pb-4 last:border-b-0">
                 <div class="flex items-center text-xs text-gray-500 mb-2">
                   <i class="fas fa-calendar mr-1"></i>
@@ -125,7 +125,7 @@
                 </h4>
                 <p class="text-sm text-gray-600">Fakultas Teknik UNIMA menandatangani kerjasama dengan Google untuk pengembangan program AI.</p>
               </article>
-              
+
               <article class="border-b border-gray-200 pb-4 last:border-b-0">
                 <div class="flex items-center text-xs text-gray-500 mb-2">
                   <i class="fas fa-calendar mr-1"></i>
@@ -139,7 +139,7 @@
             @endif
           </div>
         </div>
-        
+
         <!-- Quick Links -->
         <div class="bg-white rounded-lg shadow-lg p-6 fadein-anim">
           <h3 class="text-xl font-bold text-secondary mb-6">Link Cepat</h3>

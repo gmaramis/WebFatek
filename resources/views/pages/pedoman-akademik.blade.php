@@ -70,8 +70,8 @@
                             </div>
 
                             @if($pedoman->file_url)
-                                <a href="{{ $pedoman->file_url }}" 
-                                   target="_blank" 
+                                <a href="{{ $pedoman->file_url }}"
+                                   target="_blank"
                                    class="block w-full text-center px-4 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
                                     <i class="fas fa-download mr-2"></i>
                                     Download {{ $pedoman->format_file }}
@@ -117,7 +117,7 @@
                     Pedoman akademik mencakup berbagai aspek penting yang perlu diketahui oleh seluruh civitas akademika Fakultas Teknik
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
@@ -126,7 +126,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">Tata Tertib Akademik</h3>
                     <p class="text-gray-600">Aturan dan ketentuan yang berlaku dalam kegiatan akademik mahasiswa dan dosen</p>
                 </div>
-                
+
                 <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-calendar-alt text-white text-xl"></i>
@@ -134,7 +134,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">Kalender Akademik</h3>
                     <p class="text-gray-600">Jadwal kegiatan akademik, ujian, dan periode penting dalam tahun akademik</p>
                 </div>
-                
+
                 <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-book text-white text-xl"></i>
@@ -142,7 +142,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">Prosedur Administrasi</h3>
                     <p class="text-gray-600">Tata cara pengurusan dokumen akademik dan administrasi mahasiswa</p>
                 </div>
-                
+
                 <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div class="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-users text-white text-xl"></i>
@@ -150,7 +150,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">Hak dan Kewajiban</h3>
                     <p class="text-gray-600">Hak dan kewajiban mahasiswa, dosen, dan tenaga kependidikan</p>
                 </div>
-                
+
                 <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-exclamation-triangle text-white text-xl"></i>
@@ -158,7 +158,7 @@
                     <h3 class="text-xl font-semibold text-gray-800 mb-3">Sanksi Akademik</h3>
                     <p class="text-gray-600">Jenis sanksi dan tindakan disipliner untuk pelanggaran akademik</p>
                 </div>
-                
+
                 <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
                     <div class="w-12 h-12 bg-indigo-600 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-clipboard-list text-white text-xl"></i>
@@ -218,7 +218,7 @@
                     <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                         <i class="fas fa-envelope text-2xl mb-4"></i>
                         <h3 class="font-semibold mb-2">Email</h3>
-                        <p>akademik@fatek.unima.ac.id</p>
+                        <p>akademik@ft.unima.ac.id</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                         <i class="fas fa-phone text-2xl mb-4"></i>
@@ -228,11 +228,11 @@
                     <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                         <i class="fas fa-map-marker-alt text-2xl mb-4"></i>
                         <h3 class="font-semibold mb-2">Lokasi</h3>
-                        <p>Gedung Fatek Lt. 1</p>
+                        <p>Gedung Fakultas Teknik UNIMA Lt. 1</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 </main>
-@endsection 
+@endsection

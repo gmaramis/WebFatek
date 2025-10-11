@@ -1,237 +1,660 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jurusan - Fakultas Teknik UNIMA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-</head>
-<body class="bg-gray-50">
-  <!-- Top Bar Info -->
-  <div class="w-full bg-orange-600 text-white text-xs md:text-sm h-8 flex items-center">
-    <div class="container mx-auto flex justify-between items-center px-2 md:px-4">
-      <div class="flex items-center space-x-3">
-        <span class="flex items-center"><i class="fas fa-university mr-1"></i> Fakultas Teknik</span>
-        <span class="hidden md:inline-block h-3 w-px bg-orange-200 mx-2"></span>
-        <span class="flex items-center"><i class="fas fa-envelope mr-1"></i> fatek@unima.ac.id</span>
-      </div>
-      <form class="hidden md:flex items-center space-x-1">
-        <input type="text" placeholder="Search..." class="rounded px-2 py-1 text-orange-800 text-xs md:text-sm h-6 md:h-7" />
-        <button type="submit" class="px-2 py-1 bg-white text-orange-600 rounded text-xs md:text-sm h-6 md:h-7">Cari</button>
-      </form>
-    </div>
-  </div>
-  <!-- Header Logo + Judul -->
-  <header class="w-full bg-orange-600 shadow z-50">
-    <div class="container mx-auto flex items-center justify-between py-3 px-4">
-      <div class="flex items-center space-x-4">
-        <img src="img/logo unima.png" alt="Logo UNIMA" class="w-14 h-14 object-contain bg-white rounded-full p-1" />
-        <div>
-          <h1 class="text-xl font-bold text-white leading-tight">Fakultas Teknik</h1>
-          <p class="text-sm text-orange-100">Universitas Negeri Manado</p>
-        </div>
-      </div>
-      <form class="md:hidden">
-        <input type="text" placeholder="Search..." class="rounded px-2 py-1 text-orange-800" />
-      </form>
-      <button id="mobile-menu-btn" class="md:hidden text-white ml-4">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </div>
-    <!-- Navigation -->
-    <nav class="w-full border-t border-orange-400 bg-orange-600">
-      <div class="container mx-auto px-4">
-        <div class="hidden md:flex items-center space-x-6 py-2">
-          <a href="index.html#home" class="nav-link text-white hover:text-orange-200 font-semibold">Home</a>
-          <!-- Profil Dropdown -->
-          <div class="relative group">
-            <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center">Profil <i class="fas fa-caret-down ml-1"></i></button>
-            <ul class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
-              <li><a href="visi-misi.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Visi Misi</a></li>
-              <li><a href="kebijakan.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Kebijakan</a></li>
-              <li><a href="dosen.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Dosen</a></li>
-              <li><a href="struktur.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Struktur Pimpinan</a></li>
-              <li><a href="jurusan.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Jurusan</a></li>
-            </ul>
-          </div>
-          <!-- Akademik Dropdown -->
-          <div class="relative group">
-            <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center">Akademik <i class="fas fa-caret-down ml-1"></i></button>
-            <ul class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
-              <li><a href="magang-kkn.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Magang & KKN</a></li>
-              <li><a href="pedoman-akademik.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Pedoman Akademik</a></li>
-              <li><a href="kalender-akademik.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Kalender Akademik</a></li>
-              <li><a href="si-unima.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">SI Unima</a></li>
-              <li><a href="lms-unima.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">LMS Unima</a></li>
-            </ul>
-          </div>
-          <!-- Kemahasiswaan & Alumni Dropdown -->
-          <div class="relative group">
-            <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center">Kemahasiswaan & Alumni <i class="fas fa-caret-down ml-1"></i></button>
-            <ul class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
-              <li><a href="ormawa.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">ORMAWA</a></li>
-              <li><a href="alumni.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Alumni</a></li>
-            </ul>
-          </div>
-          <!-- Unit Dropdown -->
-          <div class="relative group">
-            <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center">Unit <i class="fas fa-caret-down ml-1"></i></button>
-            <ul class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
-              <li><a href="penjaminan-mutu.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Unit Penjaminan Mutu</a></li>
-              <li><a href="p3ki.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Rumah Publikasi (P3KI)</a></li>
-              <li><a href="p3rpm.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Ruang Kolaborasi (P3RPM)</a></li>
-            </ul>
-          </div>
-          <a href="zona-integritas.html" class="nav-link text-white hover:text-orange-200 font-semibold">Zona Integritas</a>
-          <a href="humas-kerjasama.html" class="nav-link text-white hover:text-orange-200 font-semibold">Humas & Kerjasama</a>
-          <!-- Layanan Dropdown -->
-          <div class="relative group">
-            <button class="nav-link text-white hover:text-orange-200 font-semibold flex items-center">Layanan <i class="fas fa-caret-down ml-1"></i></button>
-            <ul class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
-              <li>
-                <div class="relative group">
-                  <a href="#" class="block px-4 py-2 text-orange-800 hover:bg-orange-50 flex items-center justify-between">Download <i class="fas fa-caret-right ml-2"></i></a>
-                  <ul class="absolute left-full top-0 mt-0 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
-                    <li><a href="akreditasi.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Link Akreditasi Institusi Unima</a></li>
-                  </ul>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jurusan - Fakultas Teknik UNIMA</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="bg-gray-50">
+        <!-- Top Bar Info -->
+        <div
+            class="w-full bg-orange-600 text-white text-xs md:text-sm h-8 flex items-center"
+        >
+            <div
+                class="container mx-auto flex justify-between items-center px-2 md:px-4"
+            >
+                <div class="flex items-center space-x-3">
+                    <span class="flex items-center"
+                        ><i class="fas fa-university mr-1"></i> Fakultas
+                        Teknik</span
+                    >
+                    <span
+                        class="hidden md:inline-block h-3 w-px bg-orange-200 mx-2"
+                    ></span>
+                    <span class="flex items-center"
+                        ><i class="fas fa-envelope mr-1"></i>
+                        ft@unima.ac.id</span
+                    >
                 </div>
-              </li>
-              <li><a href="tracer-study.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Tracer Study</a></li>
-              <li><a href="survei-layanan.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Survei Layanan</a></li>
-              <li><a href="laboratorium.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Layanan Laboratorium</a></li>
-              <li><a href="layanan-akademik.html" class="block px-4 py-2 text-orange-800 hover:bg-orange-50">Layanan Akademik</a></li>
-            </ul>
-          </div>
+                <form class="hidden md:flex items-center space-x-1">
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        class="rounded px-2 py-1 text-orange-800 text-xs md:text-sm h-6 md:h-7"
+                    />
+                    <button
+                        type="submit"
+                        class="px-2 py-1 bg-white text-orange-600 rounded text-xs md:text-sm h-6 md:h-7"
+                    >
+                        Cari
+                    </button>
+                </form>
+            </div>
         </div>
-      </div>
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="md:hidden hidden pb-4">
-        <div class="flex flex-col space-y-2 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-          <a href="index.html#home" class="nav-link text-white hover:text-accent font-medium">Beranda</a>
-          <!-- Profil Dropdown Mobile -->
-          <details class="group">
-            <summary class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer">Profil <i class="fas fa-caret-down ml-1"></i></summary>
-            <div class="ml-4 flex flex-col space-y-1 mt-1">
-              <a href="visi-misi.html" class="nav-link text-white hover:text-accent font-medium">Visi Misi</a>
-              <a href="kebijakan.html" class="nav-link text-white hover:text-accent font-medium">Kebijakan</a>
-              <a href="dosen.html" class="nav-link text-white hover:text-accent font-medium">Dosen</a>
-              <a href="struktur.html" class="nav-link text-white hover:text-accent font-medium">Struktur Pimpinan</a>
-              <a href="jurusan.html" class="nav-link text-white hover:text-accent font-medium">Jurusan</a>
-            </div>
-          </details>
-          <!-- Akademik Dropdown Mobile -->
-          <details class="group">
-            <summary class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer">Akademik <i class="fas fa-caret-down ml-1"></i></summary>
-            <div class="ml-4 flex flex-col space-y-1 mt-1">
-              <a href="magang-kkn.html" class="nav-link text-white hover:text-accent font-medium">Magang & KKN</a>
-              <a href="pedoman-akademik.html" class="nav-link text-white hover:text-accent font-medium">Pedoman Akademik</a>
-              <a href="kalender-akademik.html" class="nav-link text-white hover:text-accent font-medium">Kalender Akademik</a>
-              <a href="si-unima.html" class="nav-link text-white hover:text-accent font-medium">SI Unima</a>
-              <a href="lms-unima.html" class="nav-link text-white hover:text-accent font-medium">LMS Unima</a>
-            </div>
-          </details>
-          <!-- Kemahasiswaan & Alumni Dropdown Mobile -->
-          <details class="group">
-            <summary class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer">Kemahasiswaan & Alumni <i class="fas fa-caret-down ml-1"></i></summary>
-            <div class="ml-4 flex flex-col space-y-1 mt-1">
-              <a href="ormawa.html" class="nav-link text-white hover:text-accent font-medium">ORMAWA</a>
-              <a href="alumni.html" class="nav-link text-white hover:text-accent font-medium">Alumni</a>
-            </div>
-          </details>
-          <!-- Unit Dropdown Mobile -->
-          <details class="group">
-            <summary class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer">Unit <i class="fas fa-caret-down ml-1"></i></summary>
-            <div class="ml-4 flex flex-col space-y-1 mt-1">
-              <a href="penjaminan-mutu.html" class="nav-link text-white hover:text-accent font-medium">Unit Penjaminan Mutu</a>
-              <a href="p3ki.html" class="nav-link text-white hover:text-accent font-medium">Rumah Publikasi (P3KI)</a>
-              <a href="p3rpm.html" class="nav-link text-white hover:text-accent font-medium">Ruang Kolaborasi (P3RPM)</a>
-            </div>
-          </details>
-          <a href="zona-integritas.html" class="nav-link text-white hover:text-accent font-medium">Zona Integritas</a>
-          <a href="humas-kerjasama.html" class="nav-link text-white hover:text-accent font-medium">Humas & Kerjasama</a>
-          <!-- Layanan Dropdown Mobile -->
-          <details class="group">
-            <summary class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer">Layanan <i class="fas fa-caret-down ml-1"></i></summary>
-            <div class="ml-4 flex flex-col space-y-1 mt-1">
-              <details class="group">
-                <summary class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer">Download <i class="fas fa-caret-right ml-1"></i></summary>
-                <div class="ml-4 flex flex-col space-y-1 mt-1">
-                  <a href="akreditasi.html" class="nav-link text-white hover:text-accent font-medium">Link Akreditasi Institusi Unima</a>
+        <!-- Header Logo + Judul -->
+        <header class="w-full bg-orange-600 shadow z-50">
+            <div
+                class="container mx-auto flex items-center justify-between py-3 px-4"
+            >
+                <div class="flex items-center space-x-4">
+                    <img
+                        src="img/logo unima.png"
+                        alt="Logo UNIMA"
+                        class="w-14 h-14 object-contain bg-white rounded-full p-1"
+                    />
+                    <div>
+                        <h1 class="text-xl font-bold text-white leading-tight">
+                            Fakultas Teknik
+                        </h1>
+                        <p class="text-sm text-orange-100">
+                            Universitas Negeri Manado
+                        </p>
+                    </div>
                 </div>
-              </details>
-              <a href="tracer-study.html" class="nav-link text-white hover:text-accent font-medium">Tracer Study</a>
-              <a href="survei-layanan.html" class="nav-link text-white hover:text-accent font-medium">Survei Layanan</a>
-              <a href="laboratorium.html" class="nav-link text-white hover:text-accent font-medium">Layanan Laboratorium</a>
-              <a href="layanan-akademik.html" class="nav-link text-white hover:text-accent font-medium">Layanan Akademik</a>
+                <form class="md:hidden">
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        class="rounded px-2 py-1 text-orange-800"
+                    />
+                </form>
+                <button id="mobile-menu-btn" class="md:hidden text-white ml-4">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
-          </details>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <main class="container mx-auto py-16 px-4 min-h-[40vh] flex flex-col items-center justify-center">
-    <h2 class="text-2xl md:text-3xl font-bold text-orange-800 mb-4">Jurusan</h2>
-    <p class="text-center text-orange-900 max-w-2xl">Halaman ini berisi informasi mengenai jurusan-jurusan yang ada di Fakultas Teknik Universitas Negeri Manado, termasuk program studi dan bidang keahlian masing-masing jurusan.</p>
-  </main>
-  <!-- Footer -->
-  <footer class="bg-secondary text-white py-16 mt-8">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="flex flex-col items-center justify-center">
-          <div class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4">
-            <img src="img/logo unima.png" alt="Logo UNIMA" class="w-28 h-28 object-contain" />
-          </div>
-        </div>
-        <div>
-          <h4 class="text-lg font-semibold mb-6">Informasi Kontak</h4>
-          <div class="space-y-4">
-            <div class="flex items-center text-gray-300">
-              <i class="fas fa-map-marker-alt mr-3 text-accent"></i>
-              <span>Jl. Kampus UNIMA, Tondano, Minahasa, Sulawesi Utara</span>
+            <!-- Navigation -->
+            <nav class="w-full border-t border-orange-400 bg-orange-600">
+                <div class="container mx-auto px-4">
+                    <div class="hidden md:flex items-center space-x-6 py-2">
+                        <a
+                            href="index.html#home"
+                            class="nav-link text-white hover:text-orange-200 font-semibold"
+                            >Home</a
+                        >
+                        <!-- Profil Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="nav-link text-white hover:text-orange-200 font-semibold flex items-center"
+                            >
+                                Profil <i class="fas fa-caret-down ml-1"></i>
+                            </button>
+                            <ul
+                                class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50"
+                            >
+                                <li>
+                                    <a
+                                        href="visi-misi.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Visi Misi</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="kebijakan.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Kebijakan</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="dosen.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Dosen</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="struktur.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Struktur Pimpinan</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="jurusan.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Jurusan</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Akademik Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="nav-link text-white hover:text-orange-200 font-semibold flex items-center"
+                            >
+                                Akademik <i class="fas fa-caret-down ml-1"></i>
+                            </button>
+                            <ul
+                                class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50"
+                            >
+                                <li>
+                                    <a
+                                        href="magang-kkn.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Magang & KKN</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="pedoman-akademik.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Pedoman Akademik</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="kalender-akademik.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Kalender Akademik</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="si-unima.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >SI Unima</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="lms-unima.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >LMS Unima</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Kemahasiswaan & Alumni Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="nav-link text-white hover:text-orange-200 font-semibold flex items-center"
+                            >
+                                Kemahasiswaan & Alumni
+                                <i class="fas fa-caret-down ml-1"></i>
+                            </button>
+                            <ul
+                                class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50"
+                            >
+                                <li>
+                                    <a
+                                        href="ormawa.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >ORMAWA</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="alumni.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Alumni</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Unit Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="nav-link text-white hover:text-orange-200 font-semibold flex items-center"
+                            >
+                                Unit <i class="fas fa-caret-down ml-1"></i>
+                            </button>
+                            <ul
+                                class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50"
+                            >
+                                <li>
+                                    <a
+                                        href="penjaminan-mutu.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Unit Penjaminan Mutu</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="p3ki.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Rumah Publikasi (P3KI)</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="p3rpm.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Ruang Kolaborasi (P3RPM)</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <a
+                            href="zona-integritas.html"
+                            class="nav-link text-white hover:text-orange-200 font-semibold"
+                            >Zona Integritas</a
+                        >
+                        <a
+                            href="humas-kerjasama.html"
+                            class="nav-link text-white hover:text-orange-200 font-semibold"
+                            >Humas & Kerjasama</a
+                        >
+                        <!-- Layanan Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="nav-link text-white hover:text-orange-200 font-semibold flex items-center"
+                            >
+                                Layanan <i class="fas fa-caret-down ml-1"></i>
+                            </button>
+                            <ul
+                                class="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50"
+                            >
+                                <li>
+                                    <div class="relative group">
+                                        <a
+                                            href="#"
+                                            class="block px-4 py-2 text-orange-800 hover:bg-orange-50 flex items-center justify-between"
+                                            >Download
+                                            <i
+                                                class="fas fa-caret-right ml-2"
+                                            ></i
+                                        ></a>
+                                        <ul
+                                            class="absolute left-full top-0 mt-0 w-56 bg-white shadow-lg rounded-lg border border-orange-200 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50"
+                                        >
+                                            <li>
+                                                <a
+                                                    href="akreditasi.html"
+                                                    class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                                    >Link Akreditasi Institusi
+                                                    Unima</a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a
+                                        href="tracer-study.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Tracer Study</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="survei-layanan.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Survei Layanan</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="laboratorium.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Layanan Laboratorium</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="layanan-akademik.html"
+                                        class="block px-4 py-2 text-orange-800 hover:bg-orange-50"
+                                        >Layanan Akademik</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="md:hidden hidden pb-4">
+                    <div
+                        class="flex flex-col space-y-2 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+                    >
+                        <a
+                            href="index.html#home"
+                            class="nav-link text-white hover:text-accent font-medium"
+                            >Beranda</a
+                        >
+                        <!-- Profil Dropdown Mobile -->
+                        <details class="group">
+                            <summary
+                                class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer"
+                            >
+                                Profil <i class="fas fa-caret-down ml-1"></i>
+                            </summary>
+                            <div class="ml-4 flex flex-col space-y-1 mt-1">
+                                <a
+                                    href="visi-misi.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Visi Misi</a
+                                >
+                                <a
+                                    href="kebijakan.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Kebijakan</a
+                                >
+                                <a
+                                    href="dosen.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Dosen</a
+                                >
+                                <a
+                                    href="struktur.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Struktur Pimpinan</a
+                                >
+                                <a
+                                    href="jurusan.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Jurusan</a
+                                >
+                            </div>
+                        </details>
+                        <!-- Akademik Dropdown Mobile -->
+                        <details class="group">
+                            <summary
+                                class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer"
+                            >
+                                Akademik <i class="fas fa-caret-down ml-1"></i>
+                            </summary>
+                            <div class="ml-4 flex flex-col space-y-1 mt-1">
+                                <a
+                                    href="magang-kkn.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Magang & KKN</a
+                                >
+                                <a
+                                    href="pedoman-akademik.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Pedoman Akademik</a
+                                >
+                                <a
+                                    href="kalender-akademik.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Kalender Akademik</a
+                                >
+                                <a
+                                    href="si-unima.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >SI Unima</a
+                                >
+                                <a
+                                    href="lms-unima.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >LMS Unima</a
+                                >
+                            </div>
+                        </details>
+                        <!-- Kemahasiswaan & Alumni Dropdown Mobile -->
+                        <details class="group">
+                            <summary
+                                class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer"
+                            >
+                                Kemahasiswaan & Alumni
+                                <i class="fas fa-caret-down ml-1"></i>
+                            </summary>
+                            <div class="ml-4 flex flex-col space-y-1 mt-1">
+                                <a
+                                    href="ormawa.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >ORMAWA</a
+                                >
+                                <a
+                                    href="alumni.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Alumni</a
+                                >
+                            </div>
+                        </details>
+                        <!-- Unit Dropdown Mobile -->
+                        <details class="group">
+                            <summary
+                                class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer"
+                            >
+                                Unit <i class="fas fa-caret-down ml-1"></i>
+                            </summary>
+                            <div class="ml-4 flex flex-col space-y-1 mt-1">
+                                <a
+                                    href="penjaminan-mutu.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Unit Penjaminan Mutu</a
+                                >
+                                <a
+                                    href="p3ki.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Rumah Publikasi (P3KI)</a
+                                >
+                                <a
+                                    href="p3rpm.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Ruang Kolaborasi (P3RPM)</a
+                                >
+                            </div>
+                        </details>
+                        <a
+                            href="zona-integritas.html"
+                            class="nav-link text-white hover:text-accent font-medium"
+                            >Zona Integritas</a
+                        >
+                        <a
+                            href="humas-kerjasama.html"
+                            class="nav-link text-white hover:text-accent font-medium"
+                            >Humas & Kerjasama</a
+                        >
+                        <!-- Layanan Dropdown Mobile -->
+                        <details class="group">
+                            <summary
+                                class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer"
+                            >
+                                Layanan <i class="fas fa-caret-down ml-1"></i>
+                            </summary>
+                            <div class="ml-4 flex flex-col space-y-1 mt-1">
+                                <details class="group">
+                                    <summary
+                                        class="nav-link text-white hover:text-accent font-medium flex items-center cursor-pointer"
+                                    >
+                                        Download
+                                        <i class="fas fa-caret-right ml-1"></i>
+                                    </summary>
+                                    <div
+                                        class="ml-4 flex flex-col space-y-1 mt-1"
+                                    >
+                                        <a
+                                            href="akreditasi.html"
+                                            class="nav-link text-white hover:text-accent font-medium"
+                                            >Link Akreditasi Institusi Unima</a
+                                        >
+                                    </div>
+                                </details>
+                                <a
+                                    href="tracer-study.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Tracer Study</a
+                                >
+                                <a
+                                    href="survei-layanan.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Survei Layanan</a
+                                >
+                                <a
+                                    href="laboratorium.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Layanan Laboratorium</a
+                                >
+                                <a
+                                    href="layanan-akademik.html"
+                                    class="nav-link text-white hover:text-accent font-medium"
+                                    >Layanan Akademik</a
+                                >
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main
+            class="container mx-auto py-16 px-4 min-h-[40vh] flex flex-col items-center justify-center"
+        >
+            <h2 class="text-2xl md:text-3xl font-bold text-orange-800 mb-4">
+                Jurusan
+            </h2>
+            <p class="text-center text-orange-900 max-w-2xl">
+                Halaman ini berisi informasi mengenai jurusan-jurusan yang ada
+                di Fakultas Teknik Universitas Negeri Manado, termasuk program
+                studi dan bidang keahlian masing-masing jurusan.
+            </p>
+        </main>
+        <!-- Footer -->
+        <footer class="bg-secondary text-white py-16 mt-8">
+            <div class="container mx-auto px-4">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                >
+                    <div class="flex flex-col items-center justify-center">
+                        <div
+                            class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4"
+                        >
+                            <img
+                                src="img/logo unima.png"
+                                alt="Logo UNIMA"
+                                class="w-28 h-28 object-contain"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-6">
+                            Informasi Kontak
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center text-gray-300">
+                                <i
+                                    class="fas fa-map-marker-alt mr-3 text-accent"
+                                ></i>
+                                <span
+                                    >Jl. Kampus UNIMA, Tondano, Minahasa,
+                                    Sulawesi Utara</span
+                                >
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-phone mr-3 text-accent"></i>
+                                <span>+62 431 325 123</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-envelope mr-3 text-accent"></i>
+                                <span>ft@unima.ac.id</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-6">Link Cepat</h4>
+                        <ul class="space-y-3">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Program Studi</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Fakultas & UNIMA</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Penelitian</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Publikasi</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Alumni</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Kerjasama</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-col items-center justify-center">
+                        <div
+                            class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4"
+                        >
+                            <img
+                                src="img/logo blu.png"
+                                alt="Logo BLU"
+                                class="w-28 h-28 object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-12 pt-8">
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-center"
+                    >
+                        <div class="flex space-x-4 mb-4 md:mb-0">
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"
+                                ><i class="fab fa-facebook-f"></i
+                            ></a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"
+                                ><i class="fab fa-twitter"></i
+                            ></a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"
+                                ><i class="fab fa-instagram"></i
+                            ></a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"
+                                ><i class="fab fa-linkedin-in"></i
+                            ></a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"
+                                ><i class="fab fa-youtube"></i
+                            ></a>
+                        </div>
+                        <p class="text-gray-400 text-center md:text-right">
+                            © 2024 Fakultas Teknik Universitas Negeri Manado.
+                            All rights reserved.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center text-gray-300">
-              <i class="fas fa-phone mr-3 text-accent"></i>
-              <span>+62 431 325 123</span>
-            </div>
-            <div class="flex items-center text-gray-300">
-              <i class="fas fa-envelope mr-3 text-accent"></i>
-              <span>fatek@unima.ac.id</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h4 class="text-lg font-semibold mb-6">Link Cepat</h4>
-          <ul class="space-y-3">
-            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Program Studi</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Fakultas & UNIMA</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Penelitian</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Publikasi</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Alumni</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-accent transition-colors">Kerjasama</a></li>
-          </ul>
-        </div>
-        <div class="flex flex-col items-center justify-center">
-          <div class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4">
-            <img src="img/logo blu.png" alt="Logo BLU" class="w-28 h-28 object-contain" />
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-gray-700 mt-12 pt-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="flex space-x-4 mb-4 md:mb-0">
-            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-youtube"></i></a>
-          </div>
-          <p class="text-gray-400 text-center md:text-right">© 2024 Fakultas Teknik Universitas Negeri Manado. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="js/main.js"></script>
-</body>
-</html> 
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
+</html>

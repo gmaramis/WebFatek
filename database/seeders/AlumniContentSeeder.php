@@ -18,7 +18,7 @@ class AlumniContentSeeder extends Seeder
             [
                 'section' => 'hero',
                 'key' => 'judul_utama',
-                'value' => 'Alumni Fatek UNIMA',
+                'value' => 'Alumni FT UNIMA',
                 'type' => 'text',
                 'urutan' => 1,
                 'is_active' => true,
@@ -78,7 +78,7 @@ class AlumniContentSeeder extends Seeder
                 'type' => 'text',
                 'urutan' => 4,
                 'is_active' => true,
-                'catatan' => 'Tahun pengalaman sejak berdirinya Fatek'
+                'catatan' => 'Tahun pengalaman sejak berdirinya Fakultas Teknik'
             ],
 
             // Testimonial
@@ -94,7 +94,7 @@ class AlumniContentSeeder extends Seeder
             [
                 'section' => 'testimonial',
                 'key' => 'deskripsi_section',
-                'value' => 'Apa kata alumni tentang pengalaman mereka di Fatek UNIMA dan kontribusinya terhadap kesuksesan karir',
+                'value' => 'Apa kata alumni tentang pengalaman mereka di Fakultas Teknik UNIMA dan kontribusinya terhadap kesuksesan karir',
                 'type' => 'text',
                 'urutan' => 2,
                 'is_active' => true,
@@ -121,7 +121,7 @@ class AlumniContentSeeder extends Seeder
             [
                 'section' => 'testimonial',
                 'key' => 'testimonial_1_isi',
-                'value' => 'Fatek UNIMA memberikan fondasi yang kuat untuk karir saya di dunia teknologi.',
+                'value' => 'Fakultas Teknik UNIMA memberikan fondasi yang kuat untuk karir saya di dunia teknologi.',
                 'type' => 'text',
                 'urutan' => 5,
                 'is_active' => true,
@@ -148,7 +148,7 @@ class AlumniContentSeeder extends Seeder
             [
                 'section' => 'testimonial',
                 'key' => 'testimonial_2_isi',
-                'value' => 'Dosen-dosen di Fatek sangat supportive dan memberikan pengetahuan praktis yang langsung bisa diterapkan di dunia kerja.',
+                'value' => 'Dosen-dosen di Fakultas Teknik sangat supportive dan memberikan pengetahuan praktis yang langsung bisa diterapkan di dunia kerja.',
                 'type' => 'text',
                 'urutan' => 8,
                 'is_active' => true,
@@ -175,7 +175,7 @@ class AlumniContentSeeder extends Seeder
             [
                 'section' => 'testimonial',
                 'key' => 'testimonial_3_isi',
-                'value' => 'Jaringan alumni Fatek sangat membantu dalam membuka peluang karir. Komunitas yang solid dan saling mendukung.',
+                'value' => 'Jaringan alumni Fakultas Teknik sangat membantu dalam membuka peluang karir. Komunitas yang solid dan saling mendukung.',
                 'type' => 'text',
                 'urutan' => 11,
                 'is_active' => true,
@@ -195,7 +195,7 @@ class AlumniContentSeeder extends Seeder
             [
                 'section' => 'galeri_kegiatan',
                 'key' => 'deskripsi_section',
-                'value' => 'Dokumentasi berbagai kegiatan dan acara yang diselenggarakan oleh jaringan alumni Fatek UNIMA',
+                'value' => 'Dokumentasi berbagai kegiatan dan acara yang diselenggarakan oleh jaringan alumni Fakultas Teknik UNIMA',
                 'type' => 'text',
                 'urutan' => 2,
                 'is_active' => true,

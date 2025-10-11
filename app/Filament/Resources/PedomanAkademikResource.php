@@ -73,7 +73,7 @@ class PedomanAkademikResource extends Resource
 
                         Forms\Components\TextInput::make('file_name')
                             ->label('Nama File')
-                            ->placeholder('Contoh: Pedoman_Akademik_Fatek_2025.pdf'),
+                            ->placeholder('Contoh: Pedoman_Akademik_FT_2025.pdf'),
 
                         Forms\Components\TextInput::make('file_size')
                             ->label('Ukuran File')
@@ -212,4 +212,4 @@ class PedomanAkademikResource extends Resource
             'edit' => Pages\EditPedomanAkademik::route('/{record}/edit'),
         ];
     }
-} 
+}

@@ -27,7 +27,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName('Admin Website Fatek')
+            ->brandName('Admin Website FT')
             ->colors([
                 'primary' => Color::Amber,
             ])

@@ -9,7 +9,7 @@
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center max-w-4xl mx-auto">
             <h1 class="text-4xl md:text-6xl font-bold mb-6" data-aos="fade-up">
-                Alumni Fatek UNIMA
+                Alumni Fakultas Teknik UNIMA
             </h1>
             <p class="text-xl md:text-2xl text-orange-100 mb-8" data-aos="fade-up" data-aos-delay="200">
                 Jaringan Alumni yang Sukses & Berkontribusi untuk Kemajuan Bangsa
@@ -41,10 +41,10 @@
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-aos="fade-up">
-                Statistik Alumni Fatek UNIMA
+                Statistik Alumni Fakultas Teknik UNIMA
             </h2>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                Data statistik yang menunjukkan keberhasilan dan kontribusi alumni Fatek UNIMA di berbagai bidang
+                Data statistik yang menunjukkan keberhasilan dan kontribusi alumni Fakultas Teknik UNIMA di berbagai bidang
             </p>
         </div>
 
@@ -82,7 +82,7 @@
                 </div>
                 <div class="text-3xl font-bold text-gray-800 mb-2">25</div>
                 <div class="text-gray-600 font-medium">Tahun Pengalaman</div>
-                <p class="text-sm text-gray-500 mt-2">Sejak berdirinya Fatek</p>
+                <p class="text-sm text-gray-500 mt-2">Sejak berdirinya Fakultas Teknik UNIMA</p>
             </div>
         </div>
     </div>
@@ -96,7 +96,7 @@
                 Alumni Berprestasi
             </h2>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                Beberapa alumni Fatek UNIMA yang telah berhasil mencapai kesuksesan di berbagai bidang dan industri
+                Beberapa alumni Fakultas Teknik UNIMA yang telah berhasil mencapai kesuksesan di berbagai bidang dan industri
             </p>
         </div>
 
@@ -266,7 +266,7 @@
                 Testimonial Alumni
             </h2>
             <p class="text-xl text-orange-100 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                Apa kata alumni tentang pengalaman mereka di Fatek UNIMA dan kontribusinya terhadap kesuksesan karir
+                Apa kata alumni tentang pengalaman mereka di Fakultas Teknik UNIMA dan kontribusinya terhadap kesuksesan karir
             </p>
         </div>
 
@@ -282,7 +282,7 @@
                     </div>
                 </div>
                 <p class="text-orange-100 italic">
-                    "Fatek UNIMA memberikan fondasi yang kuat untuk karir saya di dunia teknologi."
+                    "Fakultas Teknik UNIMA memberikan fondasi yang kuat untuk karir saya di dunia teknologi."
                 </p>
             </div>
 
@@ -297,7 +297,7 @@
                     </div>
                 </div>
                 <p class="text-orange-100 italic">
-                    "Dosen-dosen di Fatek sangat supportive dan memberikan pengetahuan praktis yang langsung bisa diterapkan di dunia kerja."
+                    "Dosen-dosen di Fakultas Teknik UNIMA sangat supportive dan memberikan pengetahuan praktis yang langsung bisa diterapkan di dunia kerja."
                 </p>
             </div>
 
@@ -312,7 +312,7 @@
                     </div>
                 </div>
                 <p class="text-orange-100 italic">
-                    "Jaringan alumni Fatek sangat membantu dalam membuka peluang karir. Komunitas yang solid dan saling mendukung."
+                    "Jaringan alumni Fakultas Teknik UNIMA sangat membantu dalam membuka peluang karir. Komunitas yang solid dan saling mendukung."
                 </p>
             </div>
         </div>
@@ -327,7 +327,7 @@
                 Galeri Kegiatan Alumni
             </h2>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                Dokumentasi berbagai kegiatan dan acara yang diselenggarakan oleh jaringan alumni Fatek UNIMA
+                Dokumentasi berbagai kegiatan dan acara yang diselenggarakan oleh jaringan alumni Fakultas Teknik UNIMA
             </p>
         </div>
 
@@ -410,7 +410,7 @@
                     Bergabung dengan Jaringan Alumni
                 </h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                    Daftarkan diri Anda sebagai alumni Fatek UNIMA dan bergabung dengan jaringan alumni yang luas
+                    Daftarkan diri Anda sebagai alumni Fakultas Teknik UNIMA dan bergabung dengan jaringan alumni yang luas
                 </p>
             </div>
 
@@ -422,7 +422,7 @@
 
             @if($errors->any())
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-6" data-aos="fade-up">
-                <strong>Error!</strong> 
+                <strong>Error!</strong>
                 <ul class="list-disc list-inside">
                     @foreach($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -509,7 +509,7 @@
 <section class="py-16 bg-gray-900 text-white">
     <div class="container mx-auto px-4 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">
-            Terhubung dengan Alumni Fatek UNIMA
+            Terhubung dengan Alumni Fakultas Teknik UNIMA
         </h2>
         <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
             Bergabunglah dengan jaringan alumni terbesar di Sulawesi Utara dan dapatkan berbagai manfaat untuk pengembangan karir Anda.
@@ -519,11 +519,11 @@
                 <i class="fas fa-user-plus mr-2"></i>
                 Daftar Sekarang
             </a>
-            <a href="mailto:alumni@fatek.unima.ac.id" class="border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center">
+            <a href="mailto:alumni@ft.unima.ac.id" class="border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors inline-flex items-center">
                 <i class="fas fa-envelope mr-2"></i>
                 Hubungi Kami
             </a>
         </div>
     </div>
 </section>
-@endsection 
+@endsection

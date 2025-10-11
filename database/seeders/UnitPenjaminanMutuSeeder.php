@@ -16,8 +16,8 @@ class UnitPenjaminanMutuSeeder extends Seeder
         UnitPenjaminanMutu::create([
             'nama_ketua' => 'Prof. Dr. Meytij Jeanne Rampe',
             'gelar' => 'M.Si.',
-            'jabatan' => 'Ketua Unit Penjaminan Mutu (UPM) Fatek',
-            'email' => 'upm.fatek@unima.ac.id',
+            'jabatan' => 'Ketua Unit Penjaminan Mutu (UPM) Fakultas Teknik',
+            'email' => 'upm.ft@unima.ac.id',
             'telepon' => '+62-431-123456 ext. 123',
             'deskripsi' => 'Bersama membangun budaya mutu di lingkungan Fakultas Teknik UNIMA untuk pendidikan yang unggul dan berdaya saing.',
             'is_active' => true,

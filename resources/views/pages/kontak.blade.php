@@ -40,8 +40,8 @@
                         </div>
                         <div>
                             <h4 class="font-semibold text-orange-700 mb-1">Email</h4>
-                            <p class="text-gray-600">fatek@unima.ac.id</p>
-                            <p class="text-gray-600">humas.fatek@unima.ac.id</p>
+                            <p class="text-gray-600">ft@unima.ac.id</p>
+                            <p class="text-gray-600">humas.ft@unima.ac.id</p>
                         </div>
                     </div>
                     <div class="flex items-start">
@@ -159,4 +159,4 @@
         </div>
     </div>
 </main>
-@endsection 
+@endsection

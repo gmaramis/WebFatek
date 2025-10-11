@@ -23,7 +23,7 @@
             @endforeach
         @else
             <h1 class="text-4xl md:text-6xl font-bold mb-4">P3RPM</h1>
-            <p class="text-xl md:text-2xl font-light mb-6">Pusat Penyusunan Proposal Riset dan Pengabdian Masyarakat Fatek UNIMA</p>
+            <p class="text-xl md:text-2xl font-light mb-6">Pusat Penyusunan Proposal Riset dan Pengabdian Masyarakat Fakultas Teknik UNIMA</p>
             <div class="flex justify-center">
                 <span class="inline-flex items-center bg-white/20 px-6 py-3 rounded-full text-lg font-semibold">
                     <svg class="w-6 h-6 mr-2 text-cyan-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@
                             </div>
                             <h3 class="text-xl font-bold text-indigo-800 mb-2">Ketua Tim Pengarah</h3>
                             <p class="text-lg font-semibold text-indigo-700">Prof. Dr. Revolson A. Mege, MS</p>
-                            <p class="text-gray-600 mt-2">Didampingi para guru besar sesuai bidang keahlian dan peta jalan riset Fatek</p>
+                            <p class="text-gray-600 mt-2">Didampingi para guru besar sesuai bidang keahlian dan peta jalan riset Fakultas Teknik UNIMA</p>
                         </div>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
     <!-- Roadmap Riset -->
     @if(isset($contents['roadmap']))
         <div class="mb-12">
-            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Roadmap Riset Fatek</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Roadmap Riset Fakultas Teknik UNIMA</h2>
             <div class="bg-white rounded-xl shadow-lg p-8">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach($contents['roadmap'] as $index => $roadmap)
@@ -186,7 +186,7 @@
     <!-- Call to Action -->
     <div class="bg-gradient-to-r from-indigo-600 to-cyan-600 rounded-xl p-8 text-center text-white mb-12">
         <h2 class="text-2xl font-bold mb-4">Siap Berkontribusi dalam Riset?</h2>
-        <p class="text-lg mb-6">Bergabunglah dengan P3RPM Fatek dan kembangkan proposal riset berkualitas tinggi</p>
+        <p class="text-lg mb-6">Bergabunglah dengan P3RPM Fakultas Teknik UNIMA dan kembangkan proposal riset berkualitas tinggi</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                 Konsultasi Proposal
@@ -235,4 +235,4 @@
         </div>
     @endif
 </div>
-@endsection 
+@endsection

@@ -16,12 +16,12 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::firstOrCreate(
-            ['email' => 'fatek@unima.ac.id'],
+            ['email' => 'ft@unima.ac.id'],
             [
-                'name' => 'Admin Fatek',
+                'name' => 'Admin Fakultas Teknik',
                 'email' => 'admink@ft.unima.ac.id',
                 'password' => Hash::make('password'),
             ]
         );
     }
-} 
+}

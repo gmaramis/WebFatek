@@ -2,7 +2,7 @@
 
 ## Deskripsi
 
-Menu **Zona Integritas Content** di grup **Unit** memungkinkan admin untuk mengelola konten dinamis halaman Zona Integritas Fatek UNIMA.
+Menu **Zona Integritas Content** di grup **Unit** memungkinkan admin untuk mengelola konten dinamis halaman Zona Integritas FT UNIMA.
 
 ## Lokasi Menu
 
@@ -78,7 +78,7 @@ Form input dengan field:
 
 -   Judul: "Maklumat Pelayanan Publik"
 -   Content: Penjelasan tentang reformasi birokrasi
--   Description: Komitmen Fatek UNIMA
+-   Description: Komitmen FT UNIMA
 -   Warna: Green
 
 ### 3. **Prinsip Zona Integritas**
@@ -111,7 +111,7 @@ Form input dengan field:
 
 ### 7. **Informasi Kontak**
 
--   Title: "Tim Zona Integritas Fatek" atau "Jam Pelayanan"
+-   Title: "Tim Zona Integritas FT" atau "Jam Pelayanan"
 -   Content: Email atau jam operasional
 -   Description: Telepon dan alamat atau catatan
 -   Icon: Envelope, Clock
@@ -226,7 +226,7 @@ php artisan db:seed --class=ZonaIntegritasContentSeeder
 
 Jika mengalami masalah dengan menu Zona Integritas Content, silakan hubungi:
 
--   Email: admin@fatek.unima.ac.id
+-   Email: admin@ft.unima.ac.id
 -   WhatsApp: +62-xxx-xxx-xxxx
 -   Jam kerja: Senin-Jumat 08:00-16:00
 

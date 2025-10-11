@@ -124,7 +124,7 @@ class AlumniSeeder extends Seeder
                 'gaji' => 15000000,
                 'status_kerja' => 'bekerja',
                 'prestasi' => 'Ph.D from MIT, Best Researcher Award 2023',
-                'kontribusi' => 'Mengajar di ITB, Penelitian kolaborasi dengan Fatek',
+                'kontribusi' => 'Mengajar di ITB, Penelitian kolaborasi dengan Fakultas Teknik UNIMA',
                 'is_active' => true,
                 'newsletter' => true,
             ],

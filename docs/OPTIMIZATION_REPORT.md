@@ -1,4 +1,4 @@
-# Laporan Optimasi Performa Website FATEK
+# Laporan Optimasi Performa Website FT
 
 ## Ringkasan Optimasi
 
@@ -120,4 +120,4 @@ Optimasi berhasil dilakukan dengan:
 -   ✅ Implementasi best practices
 -   ✅ Backup aman tersedia
 
-Website FATEK sekarang lebih cepat, efisien, dan user-friendly tanpa mengorbankan kualitas visual.
+Website FT sekarang lebih cepat, efisien, dan user-friendly tanpa mengorbankan kualitas visual.

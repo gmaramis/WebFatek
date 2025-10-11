@@ -14,7 +14,7 @@ class ImportDosenExcel extends Command
     public function handle()
     {
         $this->info('=== IMPORT DATA DOSEN DARI EXCEL ===');
-        $inputFileName = base_path('sumber/SISTER  Daftar_dosen fatek.xlsx');
+        $inputFileName = base_path('sumber/SISTER  Daftar_dosen FT.xlsx');
         if (!file_exists($inputFileName)) {
             $this->error('File Excel tidak ditemukan: ' . $inputFileName);
             return 1;
@@ -123,4 +123,4 @@ class ImportDosenExcel extends Command
         }
         return 0;
     }
-} 
+}

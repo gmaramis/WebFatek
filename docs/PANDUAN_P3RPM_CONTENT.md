@@ -2,7 +2,7 @@
 
 ## Deskripsi
 
-Menu **P3RPM Content** di grup **Unit** memungkinkan admin untuk mengelola konten dinamis halaman Ruang Kolaborasi (P3RPM) Fatek UNIMA.
+Menu **P3RPM Content** di grup **Unit** memungkinkan admin untuk mengelola konten dinamis halaman Ruang Kolaborasi (P3RPM) FT UNIMA.
 
 ## Lokasi Menu
 
@@ -84,7 +84,7 @@ Form input dengan field:
 ### 3. **Visi**
 
 -   Title: "Visi"
--   Content: Visi P3RPM Fatek
+-   Content: Visi P3RPM FT
 -   Icon: Check circle
 -   Warna: Green
 
@@ -234,7 +234,7 @@ php artisan db:seed --class=P3rpmContentSeeder
 
 Jika mengalami masalah dengan menu P3RPM Content, silakan hubungi:
 
--   Email: admin@fatek.unima.ac.id
+-   Email: admin@ft.unima.ac.id
 -   WhatsApp: +62-xxx-xxx-xxxx
 -   Jam kerja: Senin-Jumat 08:00-16:00
 

@@ -192,7 +192,7 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Penarikan Mahasiswa KKN Unima Tahun 2025</h3>
-                        <p class="text-gray-600 mb-4">806 mahasiswa rampungkan pengabdian, Fatek tegaskan komitmen untuk masyarakat</p>
+                        <p class="text-gray-600 mb-4">806 mahasiswa rampungkan pengabdian, Fakultas Teknik tegaskan komitmen untuk masyarakat</p>
                         <div class="flex items-center text-sm text-gray-500">
                             <i class="fas fa-calendar mr-2"></i>
                             <span>Januari 2025</span>
@@ -241,7 +241,7 @@
                     <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                         <i class="fas fa-envelope text-2xl mb-4"></i>
                         <h3 class="font-semibold mb-2">Email</h3>
-                        <p>magang@fatek.unima.ac.id</p>
+                        <p>magang@ft.unima.ac.id</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                         <i class="fas fa-phone text-2xl mb-4"></i>
@@ -251,11 +251,11 @@
                     <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                         <i class="fas fa-map-marker-alt text-2xl mb-4"></i>
                         <h3 class="font-semibold mb-2">Lokasi</h3>
-                        <p>Gedung Fatek Lt. 2</p>
+                        <p>Gedung Fakultas Teknik Lt. 2</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 </main>
-@endsection 
+@endsection

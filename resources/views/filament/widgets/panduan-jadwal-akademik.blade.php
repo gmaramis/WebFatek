@@ -16,6 +16,6 @@
         <b>Contoh:</b> <span class="bg-white border border-orange-200 rounded px-2 py-1 inline-block mt-1">Semester Ganjil | Perkuliahan: Agustus-Desember | Ujian: Desember | Libur: Natal & Tahun Baru</span>
     </div>
     <div class="mt-2 text-xs text-orange-700">
-        <b>Bantuan:</b> admin@fatek.unima.ac.id
+        <b>Bantuan:</b> admin@ft.unima.ac.id
     </div>
-</div> 
+</div>

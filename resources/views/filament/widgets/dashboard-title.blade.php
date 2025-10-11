@@ -1,7 +1,7 @@
 <x-filament-widgets::widget>
     <x-filament::section>
         <div class="flex items-center justify-between">
-            <h2 class="text-xl font-bold text-gray-800 dark:text-white">Admin Website Fatek</h2>
+            <h2 class="text-xl font-bold text-gray-800 dark:text-white">Admin Web FT</h2>
             <a href="{{ url('/') }}" target="_blank"
                class="inline-flex items-center px-4 py-2 bg-primary text-white rounded hover:bg-accent transition">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
@@ -11,4 +11,4 @@
             </a>
         </div>
     </x-filament::section>
-</x-filament-widgets::widget> 
+</x-filament-widgets::widget>

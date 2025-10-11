@@ -149,7 +149,7 @@ Detail Jadwal:
 
 Jika mengalami kesulitan, silakan hubungi:
 
--   Email: admin@fatek.unima.ac.id
+-   Email: admin@ft.unima.ac.id
 -   Telepon: +62-431-123456
 
 ---

@@ -57,7 +57,7 @@ class OrmawaResource extends Resource
                         Forms\Components\TextInput::make('singkatan')
                             ->label('Singkatan')
                             ->maxLength(50)
-                            ->placeholder('Contoh: BEM Fatek, HMTI, UKM Seni'),
+                            ->placeholder('Contoh: BEM FT, HMTI, UKM Seni'),
 
                         Forms\Components\Textarea::make('deskripsi')
                             ->label('Deskripsi Organisasi')
@@ -76,7 +76,7 @@ class OrmawaResource extends Resource
                         Forms\Components\TextInput::make('email')
                             ->label('Email Kontak')
                             ->email()
-                            ->placeholder('ormawa@fatek.unima.ac.id'),
+                            ->placeholder('ormawa@ft.unima.ac.id'),
 
                         Forms\Components\TextInput::make('telepon')
                             ->label('Nomor Telepon')
@@ -84,7 +84,7 @@ class OrmawaResource extends Resource
 
                         Forms\Components\TextInput::make('lokasi')
                             ->label('Lokasi Kantor')
-                            ->placeholder('Contoh: Ruang BEM Lt. 1, Gedung Fatek'),
+                            ->placeholder('Contoh: Ruang BEM Lt. 1, Gedung FT'),
                     ])->columns(2),
 
                 Forms\Components\Section::make('Media & Sosial Media')
@@ -92,19 +92,19 @@ class OrmawaResource extends Resource
                         Forms\Components\TextInput::make('website')
                             ->label('Website')
                             ->url()
-                            ->placeholder('https://bem-fatek.unima.ac.id'),
+                            ->placeholder('https://bem-ft.unima.ac.id'),
 
                         Forms\Components\TextInput::make('instagram')
                             ->label('Instagram')
-                            ->placeholder('@bemfatek_unima'),
+                            ->placeholder('@bemft_unima'),
 
                         Forms\Components\TextInput::make('facebook')
                             ->label('Facebook')
-                            ->placeholder('BEM Fatek UNIMA'),
+                            ->placeholder('BEM FT UNIMA'),
 
                         Forms\Components\TextInput::make('youtube')
                             ->label('YouTube')
-                            ->placeholder('BEM Fatek UNIMA Official'),
+                            ->placeholder('BEM FT UNIMA Official'),
                     ])->columns(2),
 
                 Forms\Components\Section::make('Pengaturan Tampilan')
@@ -166,7 +166,7 @@ class OrmawaResource extends Resource
                             ->addActionLabel('➕ Tambah Program')
                             ->deleteActionLabel('🗑️ Hapus')
                             ->reorderable()
-                            ->helperText('Contoh: <b>Fatek Mengajar</b> = Program pengabdian ke sekolah-sekolah, <b>Startup Competition</b> = Kompetisi startup mahasiswa')
+                            ->helperText('Contoh: <b>FT Mengajar</b> = Program pengabdian ke sekolah-sekolah, <b>Startup Competition</b> = Kompetisi startup mahasiswa')
                             ->columnSpanFull(),
                     ]),
 

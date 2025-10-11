@@ -6,7 +6,7 @@
 <div class="bg-gradient-to-r from-blue-900 via-blue-700 to-orange-400 py-12 mb-8">
     <div class="container mx-auto px-4 text-center text-white">
         <h1 class="text-4xl md:text-5xl font-bold mb-2">Unit Penjaminan Mutu</h1>
-        <p class="text-lg md:text-xl font-light mb-4">Lembaga Pengembangan Pembelajaran dan Penjaminan Mutu (LP3M) Fatek UNIMA</p>
+        <p class="text-lg md:text-xl font-light mb-4">Lembaga Pengembangan Pembelajaran dan Penjaminan Mutu (LP3M) Fakultas Teknik UNIMA</p>
         <div class="flex justify-center">
             <span class="inline-flex items-center bg-white/20 px-4 py-2 rounded-full text-base font-semibold">
                 <svg class="w-6 h-6 mr-2 text-orange-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-1.657-1.343-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3zm0 0c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z"/></svg>
@@ -80,7 +80,7 @@
                 <div id="ami{{ $tahun }}" class="hidden px-4 pb-4">
                     <ul class="list-disc ml-6 mt-2">
                         @foreach($dokumenAMI[$tahun] as $dokumen)
-                        <li>{{ $dokumen->program_studi_formatted }}: 
+                        <li>{{ $dokumen->program_studi_formatted }}:
                             @if($dokumen->file_dokumen)
                                 <a href="{{ $dokumen->file_url }}" target="_blank" class="text-blue-700 underline hover:text-orange-500">{{ $dokumen->judul_dokumen }}</a>
                             @elseif($dokumen->link_eksternal)
@@ -104,22 +104,22 @@
         <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-white rounded-lg shadow p-4 flex flex-col">
                 <img src="https://source.unsplash.com/400x200/?meeting,university" alt="Berita 1" class="rounded mb-3 object-cover h-32 w-full">
-                <h4 class="font-bold text-lg mb-1">Penarikan Mahasiswa KKN Fatek 2024</h4>
-                <p class="text-gray-600 text-sm mb-2">Sebanyak 300 mahasiswa Fatek menyelesaikan pengabdian KKN di berbagai daerah...</p>
+                <h4 class="font-bold text-lg mb-1">Penarikan Mahasiswa KKN Fakultas Teknik 2024</h4>
+                <p class="text-gray-600 text-sm mb-2">Sebanyak 300 mahasiswa Fakultas Teknik menyelesaikan pengabdian KKN di berbagai daerah...</p>
                 <span class="text-xs text-gray-400 mb-2">27 Januari 2024</span>
                 <a href="#" class="mt-auto text-blue-700 hover:text-orange-500 font-semibold">Baca Selengkapnya</a>
             </div>
             <div class="bg-white rounded-lg shadow p-4 flex flex-col">
                 <img src="https://source.unsplash.com/400x200/?audit,document" alt="Berita 2" class="rounded mb-3 object-cover h-32 w-full">
                 <h4 class="font-bold text-lg mb-1">Audit Mutu Internal Prodi Teknik Sipil</h4>
-                <p class="text-gray-600 text-sm mb-2">Prodi Teknik Sipil Fatek berhasil mempertahankan predikat mutu A pada audit tahun ini...</p>
+                <p class="text-gray-600 text-sm mb-2">Prodi Teknik Sipil Fakultas Teknik UNIMA berhasil mempertahankan predikat mutu A pada audit tahun ini...</p>
                 <span class="text-xs text-gray-400 mb-2">15 Januari 2024</span>
                 <a href="#" class="mt-auto text-blue-700 hover:text-orange-500 font-semibold">Baca Selengkapnya</a>
             </div>
             <div class="bg-white rounded-lg shadow p-4 flex flex-col">
                 <img src="https://source.unsplash.com/400x200/?teamwork,university" alt="Berita 3" class="rounded mb-3 object-cover h-32 w-full">
                 <h4 class="font-bold text-lg mb-1">Workshop Penyusunan Dokumen Mutu</h4>
-                <p class="text-gray-600 text-sm mb-2">UPM Fatek mengadakan workshop untuk meningkatkan pemahaman dosen tentang dokumen mutu...</p>
+                <p class="text-gray-600 text-sm mb-2">UPM Fakultas Teknik UNIMA mengadakan workshop untuk meningkatkan pemahaman dosen tentang dokumen mutu...</p>
                 <span class="text-xs text-gray-400 mb-2">10 Januari 2024</span>
                 <a href="#" class="mt-auto text-blue-700 hover:text-orange-500 font-semibold">Baca Selengkapnya</a>
             </div>
@@ -153,4 +153,4 @@
         </div>
     </div>
 </div>
-@endsection 
+@endsection

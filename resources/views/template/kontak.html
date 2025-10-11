@@ -1,417 +1,513 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontak - Fakultas Teknik UNIMA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="css/style.css" />
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    rel="stylesheet" />
-  <style>
-    /* Custom styles for UNIMA navbar */
-    .nav-link {
-      position: relative;
-      transition: all 0.3s ease;
-    }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kontak - Fakultas Teknik UNIMA</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            /* Custom styles for UNIMA navbar */
+            .nav-link {
+                position: relative;
+                transition: all 0.3s ease;
+            }
 
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #f59e0b;
-      transition: width 0.3s ease;
-    }
+            .nav-link::after {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: #f59e0b;
+                transition: width 0.3s ease;
+            }
 
-    .nav-link:hover::after {
-      width: 100%;
-    }
+            .nav-link:hover::after {
+                width: 100%;
+            }
 
-    /* Navbar scroll effect */
-    .navbar-scrolled {
-      background: rgba(234, 88, 12, 0.98) !important;
-      backdrop-filter: blur(20px) !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
-    }
+            /* Navbar scroll effect */
+            .navbar-scrolled {
+                background: rgba(234, 88, 12, 0.98) !important;
+                backdrop-filter: blur(20px) !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+            }
 
-    /* Kontak page specific styles */
-    body {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-      margin: 0;
-      font-family: 'Segoe UI', 'Arial', sans-serif;
-    }
-    .kontak-container {
-      max-width: 800px;
-      margin: 3rem auto;
-      background: #fff;
-      border-radius: 1.5rem;
-      box-shadow: 0 4px 24px rgba(30,41,59,0.08), 0 1.5px 6px rgba(234,88,12,0.07);
-      padding: 2.5rem 2rem;
-    }
-    .kontak-title {
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #ea580c;
-      margin-bottom: 2rem;
-      letter-spacing: 1px;
-    }
-    .kontak-info {
-      color: #222;
-      font-size: 1.15rem;
-      line-height: 1.8;
-    }
-    .kontak-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      background: #f8fafc;
-      border-radius: 0.5rem;
-      border-left: 4px solid #ea580c;
-    }
-    .kontak-icon {
-      font-size: 1.5rem;
-      color: #ea580c;
-      margin-right: 1rem;
-      width: 2rem;
-      text-align: center;
-    }
-    @media (max-width: 600px) {
-      .kontak-container {
-        padding: 1.2rem 0.5rem;
-        border-radius: 1rem;
-      }
-      .kontak-title {
-        font-size: 1.5rem;
-      }
-      .kontak-info {
-        font-size: 1rem;
-      }
-    }
-  </style>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: {
-              DEFAULT: "#ea580c",
-              50: "#fff7ed",
-              100: "#ffedd5",
-              200: "#fed7aa",
-              300: "#fdba74",
-              400: "#fb923c",
-              500: "#f97316",
-              600: "#ea580c",
-              700: "#c2410c",
-              800: "#9a3412",
-              900: "#7c2d12",
-            },
-            secondary: {
-              DEFAULT: "#1e293b",
-              50: "#f8fafc",
-              100: "#f1f5f9",
-              200: "#e2e8f0",
-              300: "#cbd5e1",
-              400: "#94a3b8",
-              500: "#64748b",
-              600: "#475569",
-              700: "#334155",
-              800: "#1e293b",
-              900: "#0f172a",
-            },
-            accent: {
-              DEFAULT: "#f59e0b",
-              50: "#fffbeb",
-              100: "#fef3c7",
-              200: "#fde68a",
-              300: "#fcd34d",
-              400: "#fbbf24",
-              500: "#f59e0b",
-              600: "#d97706",
-              700: "#b45309",
-              800: "#92400e",
-              900: "#78350f",
-            },
-          },
-        },
-      },
-    };
-  </script>
-</head>
-<body class="bg-gray-50">
-  <!-- Navigation -->
-  <nav
-    id="navbar"
-    class="fixed top-0 w-full bg-gradient-to-r from-orange-600/95 to-orange-700/95 backdrop-blur-md shadow-xl z-50 transition-all duration-300 border-b border-white/20">
-    <div class="container mx-auto px-4">
-      <div class="flex justify-between items-center py-4">
-        <!-- Logo -->
-        <div class="flex items-center space-x-3">
-          <img src="img/logo unima.png" alt="Logo UNIMA" class="w-16 h-16 object-contain rounded-lg shadow-lg" />
-          <div>
-            <h1 class="text-xl font-bold text-white">Fakultas Teknik</h1>
-            <p class="text-sm text-gray-200">Universitas Negeri Manado</p>
-          </div>
-        </div>
+            /* Kontak page specific styles */
+            body {
+                min-height: 100vh;
+                background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+                margin: 0;
+                font-family: "Segoe UI", "Arial", sans-serif;
+            }
+            .kontak-container {
+                max-width: 800px;
+                margin: 3rem auto;
+                background: #fff;
+                border-radius: 1.5rem;
+                box-shadow: 0 4px 24px rgba(30, 41, 59, 0.08),
+                    0 1.5px 6px rgba(234, 88, 12, 0.07);
+                padding: 2.5rem 2rem;
+            }
+            .kontak-title {
+                text-align: center;
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: #ea580c;
+                margin-bottom: 2rem;
+                letter-spacing: 1px;
+            }
+            .kontak-info {
+                color: #222;
+                font-size: 1.15rem;
+                line-height: 1.8;
+            }
+            .kontak-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1.5rem;
+                padding: 1rem;
+                background: #f8fafc;
+                border-radius: 0.5rem;
+                border-left: 4px solid #ea580c;
+            }
+            .kontak-icon {
+                font-size: 1.5rem;
+                color: #ea580c;
+                margin-right: 1rem;
+                width: 2rem;
+                text-align: center;
+            }
+            @media (max-width: 600px) {
+                .kontak-container {
+                    padding: 1.2rem 0.5rem;
+                    border-radius: 1rem;
+                }
+                .kontak-title {
+                    font-size: 1.5rem;
+                }
+                .kontak-info {
+                    font-size: 1rem;
+                }
+            }
+        </style>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: {
+                                DEFAULT: "#ea580c",
+                                50: "#fff7ed",
+                                100: "#ffedd5",
+                                200: "#fed7aa",
+                                300: "#fdba74",
+                                400: "#fb923c",
+                                500: "#f97316",
+                                600: "#ea580c",
+                                700: "#c2410c",
+                                800: "#9a3412",
+                                900: "#7c2d12",
+                            },
+                            secondary: {
+                                DEFAULT: "#1e293b",
+                                50: "#f8fafc",
+                                100: "#f1f5f9",
+                                200: "#e2e8f0",
+                                300: "#cbd5e1",
+                                400: "#94a3b8",
+                                500: "#64748b",
+                                600: "#475569",
+                                700: "#334155",
+                                800: "#1e293b",
+                                900: "#0f172a",
+                            },
+                            accent: {
+                                DEFAULT: "#f59e0b",
+                                50: "#fffbeb",
+                                100: "#fef3c7",
+                                200: "#fde68a",
+                                300: "#fcd34d",
+                                400: "#fbbf24",
+                                500: "#f59e0b",
+                                600: "#d97706",
+                                700: "#b45309",
+                                800: "#92400e",
+                                900: "#78350f",
+                            },
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+    <body class="bg-gray-50">
+        <!-- Navigation -->
+        <nav
+            id="navbar"
+            class="fixed top-0 w-full bg-gradient-to-r from-orange-600/95 to-orange-700/95 backdrop-blur-md shadow-xl z-50 transition-all duration-300 border-b border-white/20"
+        >
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center py-4">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-3">
+                        <img
+                            src="img/logo unima.png"
+                            alt="Logo UNIMA"
+                            class="w-16 h-16 object-contain rounded-lg shadow-lg"
+                        />
+                        <div>
+                            <h1 class="text-xl font-bold text-white">
+                                Fakultas Teknik
+                            </h1>
+                            <p class="text-sm text-gray-200">
+                                Universitas Negeri Manado
+                            </p>
+                        </div>
+                    </div>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="index.html" class="nav-link text-white hover:text-accent font-medium">Beranda</a>
-          <div class="relative group">
-            <button class="nav-link text-white hover:text-accent font-medium flex items-center">
-              Tentang <i class="fas fa-caret-down ml-1"></i>
-            </button>
-            <ul class="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50">
-              <li><a href="sejarah.html" class="block px-4 py-2 text-secondary hover:bg-gray-100">Sejarah</a></li>
-              <li><a href="tentang.html" class="block px-4 py-2 text-secondary hover:bg-gray-100">Tentang</a></li>
-              <li><a href="struktur.html" class="block px-4 py-2 text-secondary hover:bg-gray-100">Struktur Organisasi</a></li>
-              <li><a href="manajemen.html" class="block px-4 py-2 text-secondary hover:bg-gray-100">Manajemen</a></li>
-              <li><a href="peta.html" class="block px-4 py-2 text-secondary hover:bg-gray-100">Peta FT</a></li>
-            </ul>
-          </div>
-          <a href="pengumuman.html" class="nav-link text-white hover:text-accent font-medium">Pengumuman</a>
-          <a href="kontak.html" class="nav-link text-white hover:text-accent font-medium">Kontak</a>
-          
-          <!-- Logo BLU di sebelah kanan kontak -->
-          <div class="flex items-center space-x-2 ml-4">
-            <img src="img/logo blu.png" alt="Logo BLU" class="w-14 h-14 object-contain rounded-lg shadow-lg" />
-          </div>
-        </div>
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a
+                            href="index.html"
+                            class="nav-link text-white hover:text-accent font-medium"
+                            >Beranda</a
+                        >
+                        <div class="relative group">
+                            <button
+                                class="nav-link text-white hover:text-accent font-medium flex items-center"
+                            >
+                                Tentang <i class="fas fa-caret-down ml-1"></i>
+                            </button>
+                            <ul
+                                class="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 z-50"
+                            >
+                                <li>
+                                    <a
+                                        href="sejarah.html"
+                                        class="block px-4 py-2 text-secondary hover:bg-gray-100"
+                                        >Sejarah</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="tentang.html"
+                                        class="block px-4 py-2 text-secondary hover:bg-gray-100"
+                                        >Tentang</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="struktur.html"
+                                        class="block px-4 py-2 text-secondary hover:bg-gray-100"
+                                        >Struktur Organisasi</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="manajemen.html"
+                                        class="block px-4 py-2 text-secondary hover:bg-gray-100"
+                                        >Manajemen</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="peta.html"
+                                        class="block px-4 py-2 text-secondary hover:bg-gray-100"
+                                        >Peta FT</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <a
+                            href="pengumuman.html"
+                            class="nav-link text-white hover:text-accent font-medium"
+                            >Pengumuman</a
+                        >
+                        <a
+                            href="kontak.html"
+                            class="nav-link text-white hover:text-accent font-medium"
+                            >Kontak</a
+                        >
 
-        <!-- Mobile Menu Button -->
-        <button
-          id="mobile-menu-btn"
-          class="md:hidden text-white hover:text-accent transition-colors">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
-      </div>
+                        <!-- Logo BLU di sebelah kanan kontak -->
+                        <div class="flex items-center space-x-2 ml-4">
+                            <img
+                                src="img/logo blu.png"
+                                alt="Logo BLU"
+                                class="w-14 h-14 object-contain rounded-lg shadow-lg"
+                            />
+                        </div>
+                    </div>
 
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="md:hidden hidden pb-4">
-        <div
-          class="flex flex-col space-y-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-          <a
-            href="index.html"
-            class="nav-link text-white hover:text-accent transition-colors font-medium"
-            >Beranda</a
-          >
-          <a
-            href="tentang.html"
-            class="nav-link text-white hover:text-accent transition-colors font-medium"
-            >Tentang</a
-          >
-          <a
-            href="sejarah.html"
-            class="nav-link text-white hover:text-accent transition-colors font-medium"
-            >Sejarah</a
-          >
-          <a
-            href="pengumuman.html"
-            class="nav-link text-white hover:text-accent transition-colors font-medium"
-            >Pengumuman</a
-          >
-          <a
-            href="kontak.html"
-            class="nav-link text-white hover:text-accent transition-colors font-medium"
-            >Kontak</a
-          >
-        </div>
-      </div>
-    </div>
-  </nav>
+                    <!-- Mobile Menu Button -->
+                    <button
+                        id="mobile-menu-btn"
+                        class="md:hidden text-white hover:text-accent transition-colors"
+                    >
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
 
-  <main class="pt-24">
-    <div class="kontak-container">
-      <div class="kontak-title">Informasi Kontak</div>
-      <div class="kontak-info">
-        <div class="kontak-item">
-          <div class="kontak-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg mb-1">Alamat</h3>
-            <p>Jl. Kampus UNIMA, Tondano, Minahasa, Sulawesi Utara</p>
-          </div>
-        </div>
-        
-        <div class="kontak-item">
-          <div class="kontak-icon">
-            <i class="fas fa-phone"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg mb-1">Telepon</h3>
-            <p>+62 431 325 123</p>
-          </div>
-        </div>
-        
-        <div class="kontak-item">
-          <div class="kontak-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg mb-1">Email</h3>
-            <p>fatek@unima.ac.id</p>
-          </div>
-        </div>
-        
-        <div class="kontak-item">
-          <div class="kontak-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg mb-1">Jam Kerja</h3>
-            <p>Senin - Jumat: 08:00 - 16:00 WITA</p>
-          </div>
-        </div>
-        
-        <div class="kontak-item">
-          <div class="kontak-icon">
-            <i class="fab fa-facebook"></i>
-          </div>
-          <div>
-            <h3 class="font-semibold text-lg mb-1">Facebook</h3>
-            <p>Fakultas Teknik UNIMA</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-secondary text-white py-16">
-    <div class="container mx-auto px-4">
-      <!-- Main Footer Content -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Logo Template Left -->
-        <div class="flex flex-col items-center justify-center">
-          <div class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4">
-            <img src="img/logo unima.png" alt="Logo UNIMA" class="w-28 h-28 object-contain" />
-          </div>
-        </div>
-
-        <!-- Contact Info -->
-        <div>
-          <h4 class="text-lg font-semibold mb-6">Informasi Kontak</h4>
-          <div class="space-y-4">
-            <div class="flex items-center text-gray-300">
-              <i class="fas fa-map-marker-alt mr-3 text-accent"></i>
-              <span>Jl. Kampus UNIMA, Tondano, Minahasa, Sulawesi Utara</span>
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="md:hidden hidden pb-4">
+                    <div
+                        class="flex flex-col space-y-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+                    >
+                        <a
+                            href="index.html"
+                            class="nav-link text-white hover:text-accent transition-colors font-medium"
+                            >Beranda</a
+                        >
+                        <a
+                            href="tentang.html"
+                            class="nav-link text-white hover:text-accent transition-colors font-medium"
+                            >Tentang</a
+                        >
+                        <a
+                            href="sejarah.html"
+                            class="nav-link text-white hover:text-accent transition-colors font-medium"
+                            >Sejarah</a
+                        >
+                        <a
+                            href="pengumuman.html"
+                            class="nav-link text-white hover:text-accent transition-colors font-medium"
+                            >Pengumuman</a
+                        >
+                        <a
+                            href="kontak.html"
+                            class="nav-link text-white hover:text-accent transition-colors font-medium"
+                            >Kontak</a
+                        >
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center text-gray-300">
-              <i class="fas fa-phone mr-3 text-accent"></i>
-              <span>+62 431 325 123</span>
+        </nav>
+
+        <main class="pt-24">
+            <div class="kontak-container">
+                <div class="kontak-title">Informasi Kontak</div>
+                <div class="kontak-info">
+                    <div class="kontak-item">
+                        <div class="kontak-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Alamat</h3>
+                            <p>
+                                Jl. Kampus UNIMA, Tondano, Minahasa, Sulawesi
+                                Utara
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="kontak-item">
+                        <div class="kontak-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Telepon</h3>
+                            <p>+62 431 325 123</p>
+                        </div>
+                    </div>
+
+                    <div class="kontak-item">
+                        <div class="kontak-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Email</h3>
+                            <p>ft@unima.ac.id</p>
+                        </div>
+                    </div>
+
+                    <div class="kontak-item">
+                        <div class="kontak-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">
+                                Jam Kerja
+                            </h3>
+                            <p>Senin - Jumat: 08:00 - 16:00 WITA</p>
+                        </div>
+                    </div>
+
+                    <div class="kontak-item">
+                        <div class="kontak-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg mb-1">Facebook</h3>
+                            <p>Fakultas Teknik UNIMA</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center text-gray-300">
-              <i class="fas fa-envelope mr-3 text-accent"></i>
-              <span>fatek@unima.ac.id</span>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-secondary text-white py-16">
+            <div class="container mx-auto px-4">
+                <!-- Main Footer Content -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                >
+                    <!-- Logo Template Left -->
+                    <div class="flex flex-col items-center justify-center">
+                        <div
+                            class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4"
+                        >
+                            <img
+                                src="img/logo unima.png"
+                                alt="Logo UNIMA"
+                                class="w-28 h-28 object-contain"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-6">
+                            Informasi Kontak
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center text-gray-300">
+                                <i
+                                    class="fas fa-map-marker-alt mr-3 text-accent"
+                                ></i>
+                                <span
+                                    >Jl. Kampus UNIMA, Tondano, Minahasa,
+                                    Sulawesi Utara</span
+                                >
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-phone mr-3 text-accent"></i>
+                                <span>+62 431 325 123</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-envelope mr-3 text-accent"></i>
+                                <span>ft@unima.ac.id</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-6">Link Cepat</h4>
+                        <ul class="space-y-3">
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Program Studi</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Fakultas & UNIMA</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Penelitian</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Publikasi</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Alumni</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="text-gray-300 hover:text-accent transition-colors"
+                                    >Kerjasama</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Logo Template Right -->
+                    <div class="flex flex-col items-center justify-center">
+                        <div
+                            class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4"
+                        >
+                            <img
+                                src="img/logo blu.png"
+                                alt="Logo BLU"
+                                class="w-28 h-28 object-contain"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media & Copyright -->
+                <div class="border-t border-gray-700 mt-12 pt-8">
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-center"
+                    >
+                        <div class="flex space-x-4 mb-4 md:mb-0">
+                            <a
+                                href="https://www.facebook.com/share/16qPWv3mWv/?mibextid=wwXIfr"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"
+                            >
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"
+                            >
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"
+                            >
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors"
+                            >
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                        <div class="text-center md:text-right">
+                            <p class="text-gray-300">
+                                © 2024 Fakultas Teknik UNIMA. Semua hak
+                                dilindungi.
+                            </p>
+                            <p class="text-gray-400 text-sm mt-1">
+                                Dibuat dengan ❤️ untuk pendidikan Indonesia
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
+        </footer>
 
-        <!-- Quick Links -->
-        <div>
-          <h4 class="text-lg font-semibold mb-6">Link Cepat</h4>
-          <ul class="space-y-3">
-            <li>
-              <a
-                href="#"
-                class="text-gray-300 hover:text-accent transition-colors"
-                >Program Studi</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-gray-300 hover:text-accent transition-colors"
-                >Fakultas & UNIMA</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-gray-300 hover:text-accent transition-colors"
-                >Penelitian</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-gray-300 hover:text-accent transition-colors"
-                >Publikasi</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-gray-300 hover:text-accent transition-colors"
-                >Alumni</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-gray-300 hover:text-accent transition-colors"
-                >Kerjasama</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <!-- Logo Template Right -->
-        <div class="flex flex-col items-center justify-center">
-          <div class="w-32 h-32 rounded-lg flex items-center justify-center shadow-lg mb-4">
-            <img src="img/logo blu.png" alt="Logo BLU" class="w-28 h-28 object-contain" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Social Media & Copyright -->
-      <div class="border-t border-gray-700 mt-12 pt-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="flex space-x-4 mb-4 md:mb-0">
-            <a
-              href="https://www.facebook.com/share/16qPWv3mWv/?mibextid=wwXIfr"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a
-              href="#"
-              class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a
-              href="#"
-              class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a
-              href="#"
-              class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-accent transition-colors">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </div>
-          <div class="text-center md:text-right">
-            <p class="text-gray-300">
-              © 2024 Fakultas Teknik UNIMA. Semua hak dilindungi.
-            </p>
-            <p class="text-gray-400 text-sm mt-1">
-              Dibuat dengan ❤️ untuk pendidikan Indonesia
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-</body>
-</html> 
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', $pengumuman->judul . ' - Pengumuman Fatek UNIMA')
+@section('title', $pengumuman->judul . ' - Pengumuman FT UNIMA')
 
 @section('content')
 <!-- Hero Section -->
@@ -52,53 +52,53 @@
               <span>{{ $pengumuman->tanggal_posting->format('d F Y H:i') }}</span>
               <span class="mx-2">•</span>
               <i class="fas fa-user mr-2"></i>
-              <span>Admin Fatek</span>
+              <span>Admin Fakultas Teknik UNIMA</span>
               <span class="mx-2">•</span>
               <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full font-medium">
                 {{ ucfirst($pengumuman->kategori) }}
               </span>
             </div>
-            
+
             <!-- Title -->
             <h1 class="text-3xl font-bold text-secondary mb-6">{{ $pengumuman->judul }}</h1>
-            
+
             <!-- Content -->
             <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed mb-6">
               {!! $pengumuman->isi !!}
             </div>
-            
+
             <!-- File Lampiran -->
             @if($pengumuman->file_lampiran)
               <div class="border-t border-gray-200 pt-6 mb-6">
                 <h3 class="text-lg font-semibold text-secondary mb-4">Lampiran</h3>
-                <a href="{{ asset('storage/' . $pengumuman->file_lampiran) }}" 
-                   target="_blank" 
+                <a href="{{ asset('storage/' . $pengumuman->file_lampiran) }}"
+                   target="_blank"
                    class="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-accent transition-colors">
                   <i class="fas fa-download mr-2"></i>
                   Download Lampiran
                 </a>
               </div>
             @endif
-            
+
             <!-- Share Buttons -->
             <div class="border-t border-gray-200 pt-6">
               <div class="flex items-center space-x-4">
                 <span class="font-bold text-orange-700">Bagikan pengumuman ini:</span>
-                <a href="https://wa.me/?text={{ urlencode($pengumuman->judul . ' - ' . url()->current()) }}" 
-                   target="_blank" 
-                   class="w-9 h-9 flex items-center justify-center rounded-full bg-green-100 text-green-600 hover:bg-green-500 hover:text-white transition" 
+                <a href="https://wa.me/?text={{ urlencode($pengumuman->judul . ' - ' . url()->current()) }}"
+                   target="_blank"
+                   class="w-9 h-9 flex items-center justify-center rounded-full bg-green-100 text-green-600 hover:bg-green-500 hover:text-white transition"
                    title="Bagikan ke WhatsApp">
                   <i class="fab fa-whatsapp fa-lg"></i>
                 </a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" 
-                   target="_blank" 
-                   class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white transition" 
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
+                   target="_blank"
+                   class="w-9 h-9 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white transition"
                    title="Bagikan ke Facebook">
                   <i class="fab fa-facebook fa-lg"></i>
                 </a>
-                <a href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($pengumuman->judul) }}" 
-                   target="_blank" 
-                   class="w-9 h-9 flex items-center justify-center rounded-full bg-sky-100 text-sky-500 hover:bg-sky-500 hover:text-white transition" 
+                <a href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($pengumuman->judul) }}"
+                   target="_blank"
+                   class="w-9 h-9 flex items-center justify-center rounded-full bg-sky-100 text-sky-500 hover:bg-sky-500 hover:text-white transition"
                    title="Bagikan ke Twitter">
                   <i class="fab fa-twitter fa-lg"></i>
                 </a>
@@ -106,7 +106,7 @@
             </div>
           </div>
         </article>
-        
+
         <!-- Navigation -->
         <div class="flex justify-between items-center mt-8">
           <a href="{{ url('pengumuman') }}" class="text-orange-700 hover:underline flex items-center transition-colors duration-200">
@@ -114,7 +114,7 @@
           </a>
         </div>
       </div>
-      
+
       <!-- Sidebar -->
       <div class="lg:col-span-1">
         <!-- Pengumuman Terkait -->
@@ -129,7 +129,7 @@
                 ->limit(3)
                 ->get();
             @endphp
-            
+
             @forelse($pengumumanTerkait as $pengumumanLain)
               <article class="border-b border-gray-200 pb-4 last:border-b-0">
                 <div class="flex items-center text-xs text-gray-500 mb-2">
@@ -146,7 +146,7 @@
             @endforelse
           </div>
         </div>
-        
+
         <!-- Quick Links -->
         <div class="bg-white rounded-lg shadow-lg p-6">
           <h3 class="text-xl font-bold text-secondary mb-6">Link Cepat</h3>
@@ -177,4 +177,4 @@
     </div>
   </div>
 </section>
-@endsection 
+@endsection

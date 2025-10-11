@@ -73,15 +73,15 @@
                     <h2 class="text-3xl font-bold text-gray-800 mb-4">{{ $contents['maklumat']->first()->title }}</h2>
                     <div class="w-24 h-1 bg-green-600 mx-auto"></div>
                 </div>
-                
+
                 <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                     <p class="text-lg mb-6">
                         {{ $contents['maklumat']->first()->content }}
                     </p>
-                    
+
                     @if($contents['maklumat']->first()->description)
                         <div class="bg-green-50 border-l-4 border-green-500 p-6 my-8">
-                            <h3 class="text-xl font-bold text-green-800 mb-3">Komitmen Fatek UNIMA</h3>
+                            <h3 class="text-xl font-bold text-green-800 mb-3">Komitmen Fakultas Teknik UNIMAUNIMA</h3>
                             <p class="text-green-700">
                                 {{ $contents['maklumat']->first()->description }}
                             </p>
@@ -119,7 +119,7 @@
     @if(isset($contents['sasaran']))
         <div class="mb-12">
             <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8">
-                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Sasaran Zona Integritas Fatek UNIMA</h2>
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Sasaran Zona Integritas Fakultas Teknik UNIMAUNIMA</h2>
                 <div class="grid md:grid-cols-2 gap-8">
                     @foreach($contents['sasaran'] as $sasaran)
                         <div>
@@ -185,7 +185,7 @@
                     <h2 class="text-3xl font-bold text-gray-800 mb-4">Dokumen Pendukung</h2>
                     <div class="w-24 h-1 bg-green-600 mx-auto"></div>
                 </div>
-                
+
                 <div class="grid md:grid-cols-2 gap-6">
                     @foreach($contents['dokumen'] as $dokumen)
                         <div class="bg-gray-50 rounded-lg p-6">
@@ -208,7 +208,7 @@
 
     <!-- Call to Action -->
     <div class="bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl p-8 text-center text-white mb-12">
-        <h2 class="text-2xl font-bold mb-4">Bersama Wujudkan Fatek yang Bersih dan Melayani</h2>
+        <h2 class="text-2xl font-bold mb-4">Bersama Wujudkan Fakultas Teknik UNIMAyang Bersih dan Melayani</h2>
         <p class="text-lg mb-6">Mari kita dukung program Zona Integritas untuk mewujudkan Fakultas Teknik UNIMA yang bebas korupsi dan memberikan pelayanan terbaik</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#" class="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
@@ -248,7 +248,7 @@
                         @if(str_contains($kontak->description, 'Jam'))
                             <div class="mt-4 p-3 bg-green-50 rounded-lg">
                                 <p class="text-sm text-green-800">
-                                    <strong>Note:</strong> Pengaduan dapat disampaikan secara langsung, melalui email, atau melalui kotak pengaduan yang tersedia di setiap gedung Fatek.
+                                    <strong>Note:</strong> Pengaduan dapat disampaikan secara langsung, melalui email, atau melalui kotak pengaduan yang tersedia di setiap gedung Fakultas Teknik UNIMA.
                                 </p>
                             </div>
                         @endif
@@ -258,4 +258,4 @@
         </div>
     @endif
 </div>
-@endsection 
+@endsection

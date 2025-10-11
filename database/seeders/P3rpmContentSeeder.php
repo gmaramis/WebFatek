@@ -17,9 +17,9 @@ class P3rpmContentSeeder extends Seeder
         P3rpmContent::create([
             'section' => 'hero',
             'title' => 'P3RPM',
-            'subtitle' => 'Pusat Penyusunan Proposal Riset dan Pengabdian Masyarakat Fatek UNIMA',
+            'subtitle' => 'Pusat Penyusunan Proposal Riset dan Pengabdian Masyarakat Fakultas Teknik UNIMA',
             'content' => 'Wadah Kolaborasi Riset dan Pengabdian',
-            'description' => 'P3RPM Fatek merupakan pusat unggulan dalam pengembangan proposal riset dan pengabdian masyarakat yang berkualitas tinggi.',
+            'description' => 'P3RPM Fakultas Teknik merupakan pusat unggulan dalam pengembangan proposal riset dan pengabdian masyarakat yang berkualitas tinggi.',
             'icon' => 'heroicon-o-users',
             'color' => 'indigo',
             'order' => 1,
@@ -29,8 +29,8 @@ class P3rpmContentSeeder extends Seeder
         // Deskripsi P3RPM
         P3rpmContent::create([
             'section' => 'deskripsi',
-            'title' => 'PUSAT PENYUSUNAN PROPOSAL RISET DAN PENGABDIAN MASYARAKAT (P3RPM) FATEK',
-            'content' => 'P3RPM Fatek merupakan wadah Ruang Kolaborasi bagi Dosen Fatek UNIMA untuk menghasilkan Proposal/Rencana Riset untuk diikutsertakan dalam kompetisi. P3RPM Fatek merupakan wujud komitmen Fatek dalam mendorong dan mempercepat partisipasi aktif dosen dalam berbagai ajang kompetisi riset, baik di tingkat nasional maupun internasional.',
+            'title' => 'PUSAT PENYUSUNAN PROPOSAL RISET DAN PENGABDIAN MASYARAKAT (P3RPM) FT',
+            'content' => 'P3RPM FT merupakan wadah Ruang Kolaborasi bagi Dosen FT UNIMA untuk menghasilkan Proposal/Rencana Riset untuk diikutsertakan dalam kompetisi. P3RPM FT merupakan wujud komitmen FT dalam mendorong dan mempercepat partisipasi aktif dosen dalam berbagai ajang kompetisi riset, baik di tingkat nasional maupun internasional.',
             'description' => 'Pusat ini bertujuan untuk menyusun proposal riset yang selaras dengan Kurikulum Berbasis Kompetensi (KBK) masing-masing jurusan atau program studi, sehingga siap untuk diikutsertakan dalam skema pendanaan riset seperti DRTPM, BRIN, maupun kompetisi internasional.',
             'color' => 'blue',
             'order' => 2,
@@ -181,8 +181,8 @@ class P3rpmContentSeeder extends Seeder
         P3rpmContent::create([
             'section' => 'kontak',
             'title' => 'Informasi Kontak P3RPM',
-            'content' => 'p3rpm.fatek@unima.ac.id',
-            'description' => '+62-431-123456 ext. 789 | Gedung P3RPM Lt. 3, Fatek UNIMA',
+            'content' => 'p3rpm.ft@unima.ac.id',
+            'description' => '+62-431-123456 ext. 789 | Gedung P3RPM Lt. 3, FT UNIMA',
             'icon' => 'heroicon-o-envelope-open',
             'color' => 'indigo',
             'order' => 16,

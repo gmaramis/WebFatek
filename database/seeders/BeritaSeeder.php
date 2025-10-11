@@ -16,9 +16,9 @@ class BeritaSeeder extends Seeder
     public function run(): void
     {
         for ($i = 1; $i <= 10; $i++) {
-            $judul = "Berita Ke-$i: Prestasi Mahasiswa Fatek";
+            $judul = "Berita Ke-$i: Prestasi Mahasiswa Fakultas Teknik UNIMA";
             $slug = Str::slug($judul.'-'.Str::random(5));
-            
+
             Berita::updateOrCreate(
                 ['judul' => $judul], // Cari berdasarkan judul
                 [
@@ -31,4 +31,4 @@ class BeritaSeeder extends Seeder
             );
         }
     }
-} 
+}

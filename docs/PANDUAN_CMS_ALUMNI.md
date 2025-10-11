@@ -1,14 +1,14 @@
-# PANDUAN CMS ALUMNI FATEK UNIMA
+# PANDUAN CMS ALUMNI FT UNIMA
 
 ## Deskripsi
 
-CMS (Content Management System) Alumni adalah sistem untuk mengelola konten halaman Alumni Fatek UNIMA melalui admin panel Filament. Admin dapat mengubah judul, deskripsi, statistik, testimonial, dan konten lainnya tanpa perlu mengubah kode.
+CMS (Content Management System) Alumni adalah sistem untuk mengelola konten halaman Alumni FT UNIMA melalui admin panel Filament. Admin dapat mengubah judul, deskripsi, statistik, testimonial, dan konten lainnya tanpa perlu mengubah kode.
 
 ## Fitur CMS
 
 ### 1. Hero Section
 
--   **Judul Utama**: "Alumni Fatek UNIMA"
+-   **Judul Utama**: "Alumni FT UNIMA"
 -   **Subtitle**: Deskripsi singkat tentang jaringan alumni
 -   **Deskripsi CTA**: Teks untuk call to action
 
@@ -17,7 +17,7 @@ CMS (Content Management System) Alumni adalah sistem untuk mengelola konten hala
 -   **Total Alumni**: Jumlah alumni yang ditampilkan
 -   **Tingkat Penyerapan**: Persentase tingkat penyerapan kerja
 -   **Perusahaan Mitra**: Jumlah perusahaan mitra
--   **Tahun Pengalaman**: Tahun pengalaman sejak berdirinya Fatek
+-   **Tahun Pengalaman**: Tahun pengalaman sejak berdirinya FT
 
 ### 3. Testimonial
 
@@ -246,7 +246,7 @@ $cmsContent = [
 ];
 
 // Di view
-{{ $cmsContent['hero']['judul_utama']->value ?? 'Alumni Fatek UNIMA' }}
+{{ $cmsContent['hero']['judul_utama']->value ?? 'Alumni FT UNIMA' }}
 {{ $cmsContent['statistik']['total_alumni']->value ?? '5000+' }}
 ```
 
@@ -254,7 +254,7 @@ $cmsContent = [
 
 ```php
 // Jika konten tidak ada, gunakan nilai default
-{{ $cmsContent['hero']['judul_utama']->value ?? 'Alumni Fatek UNIMA' }}
+{{ $cmsContent['hero']['judul_utama']->value ?? 'Alumni FT UNIMA' }}
 ```
 
 ## Maintenance
@@ -319,6 +319,6 @@ $cmsContent = [
 
 ## Kontak Support
 
--   **Email**: admin@fatek.unima.ac.id
+-   **Email**: admin@ft.unima.ac.id
 -   **Admin Panel**: `/admin`
 -   **Documentation**: Lihat file ini dan komentar kode

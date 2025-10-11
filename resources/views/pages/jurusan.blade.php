@@ -8,7 +8,7 @@
     <section class="relative py-20 px-4">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl md:text-6xl font-bold text-orange-800 mb-6">
-                Jurusan FATEK UNIMA
+                Jurusan Fakultas Teknik UNIMA
             </h1>
             <p class="text-xl text-orange-700 max-w-3xl mx-auto leading-relaxed">
                 Temukan jurusan yang sesuai dengan passion dan cita-cita Anda.
@@ -82,7 +82,7 @@
         <div class="container mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-orange-800 mb-4">
-                    Mengapa Memilih FATEK UNIMA?
+                    Mengapa Memilih Fakultas Teknik UNIMA?
                 </h2>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                     Fakultas Teknik UNIMA telah menghasilkan ribuan lulusan berkualitas
@@ -115,7 +115,7 @@
     <section class="py-16 px-4 bg-gradient-to-r from-orange-600 to-amber-600">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-                Siap Bergabung dengan FATEK UNIMA?
+                Siap Bergabung dengan Fakultas Teknik UNIMA?
             </h2>
             <p class="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
                 Daftar sekarang dan wujudkan impian Anda menjadi insinyur profesional

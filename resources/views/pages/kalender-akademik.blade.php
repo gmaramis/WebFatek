@@ -58,16 +58,16 @@
                                 <!-- Download Buttons -->
                                 <div class="space-y-4">
                                     @if($kalender->pdf_url)
-                                        <a href="{{ $kalender->pdf_url }}" 
-                                           target="_blank" 
+                                        <a href="{{ $kalender->pdf_url }}"
+                                           target="_blank"
                                            class="block w-full text-center px-6 py-4 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                                             <i class="fas fa-file-pdf mr-3 text-xl"></i>
                                             Download PDF
                                         </a>
                                     @endif
                                     @if($kalender->jpg_url)
-                                        <a href="{{ $kalender->jpg_url }}" 
-                                           target="_blank" 
+                                        <a href="{{ $kalender->jpg_url }}"
+                                           target="_blank"
                                            class="block w-full text-center px-6 py-4 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                                             <i class="fas fa-file-image mr-3 text-xl"></i>
                                             Download JPG
@@ -133,7 +133,7 @@
                             </div>
                             <h3 class="text-xl font-semibold text-gray-800 mb-3">{{ $jadwal->judul }}</h3>
                             <p class="text-gray-600 text-sm mb-4">{{ $jadwal->deskripsi }}</p>
-                            
+
                             @if($jadwal->periode_formatted)
                                 <div class="mb-3">
                                     <span class="inline-block bg-{{ $jadwal->warna }}-100 text-{{ $jadwal->warna }}-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
@@ -276,7 +276,7 @@
                     <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                         <i class="fas fa-envelope text-2xl mb-4"></i>
                         <h3 class="font-semibold mb-2">Email</h3>
-                        <p>akademik@fatek.unima.ac.id</p>
+                        <p>akademik@ft.unima.ac.id</p>
                     </div>
                     <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                         <i class="fas fa-phone text-2xl mb-4"></i>
@@ -286,7 +286,7 @@
                     <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
                         <i class="fas fa-map-marker-alt text-2xl mb-4"></i>
                         <h3 class="font-semibold mb-2">Lokasi</h3>
-                        <p>Gedung Fatek Lt. 1</p>
+                        <p>Gedung Fakultas Teknik Lt. 1</p>
                     </div>
                 </div>
             </div>
@@ -340,4 +340,4 @@ document.addEventListener('keydown', function(e) {
     }
 });
 </script>
-@endsection 
+@endsection
